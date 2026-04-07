@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Urivia vs Urinox — Which urine health app is right for you?</title>
+<meta name="description" content="Comparing Urivia and Urinox for diabetes and kidney disease tracking. No forced login, local data storage, AI interpretation, and symptom-aware results — here is how they stack up."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --teal:#0D7A5F;--tl:#1D9E75;--tp:#E8F8F2;--tm:#9FE1CB;
+  --ink:#0B1612;--im:#374840;--il:#637068;
+  --rule:#D2E8DC;--rl:#EAF4EF;--bg:#F6FAF7;--w:#FFFFFF;
+  --red:#B83030;--rp:#FFF1F1;--rlight:#F09595;
+  --amber:#B87A08;--ap:#FFF8EB;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2{font-family:var(--serif);line-height:1.15}
+h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600}
+p{color:var(--im)}
+.sec{padding:5rem clamp(1.25rem,4vw,3.5rem)}
+.si{max-width:1000px;margin:0 auto}
+.ey{display:block;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
+.sb{font-size:1.0625rem;line-height:1.75;max-width:600px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(246,250,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);height:60px;display:flex;align-items:center;padding:0 clamp(1.25rem,4vw,3.5rem);gap:1.5rem}
+.nl{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nm{width:30px;height:30px;border-radius:8px;background:var(--tl);display:flex;align-items:center;justify-content:center}
+.nm svg{width:16px;height:16px;fill:none}
+.nn{font-family:var(--serif);font-size:1.1rem;color:var(--ink);font-weight:600}
+.ncta{background:var(--tl);color:#fff;padding:.5rem 1.25rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;margin-left:auto}
+
+/* HERO */
+.hero{background:var(--ink);padding:5rem clamp(1.25rem,4vw,3.5rem)}
+.hero .ey{color:var(--tm)}
+.hero h1{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:1.25rem;max-width:780px}
+.hero h1 em{color:var(--tl);font-style:italic}
+.hero p{color:rgba(255,255,255,.65);max-width:560px;margin-bottom:2rem;font-size:1.0625rem;line-height:1.75}
+.hero-cta{display:flex;gap:.875rem;flex-wrap:wrap}
+.btn-p{background:var(--tl);color:#fff;padding:.875rem 2rem;border-radius:100px;font-weight:600;font-size:.9375rem;text-decoration:none;transition:background .18s}
+.btn-p:hover{background:var(--teal)}
+.btn-g{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.875rem 2rem;border-radius:100px;font-weight:600;font-size:.9375rem;text-decoration:none;transition:background .18s}
+.btn-g:hover{background:rgba(255,255,255,.15)}
+
+/* VERDICT STRIP */
+.verdict{background:var(--tp);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:2rem clamp(1.25rem,4vw,3.5rem)}
+.vg{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.vi{display:flex;gap:.75rem;align-items:flex-start}
+.vck{width:20px;height:20px;border-radius:50%;background:var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.vck svg{width:10px;height:10px;stroke:white;fill:none;stroke-width:2.5}
+.vit{font-size:.9375rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.vis{font-size:.8125rem;color:var(--il)}
+
+/* COMPARISON TABLE */
+.tbl-wrap{overflow-x:auto;margin-top:2.5rem;border-radius:16px;border:1px solid var(--rule)}
+.comp{width:100%;border-collapse:collapse;min-width:520px}
+.comp th{padding:1rem 1.25rem;font-size:.8rem;font-weight:700;text-align:left;letter-spacing:.04em;text-transform:uppercase;border-bottom:2px solid var(--rule)}
+.comp th.th-feat{background:var(--bg);color:var(--il)}
+.comp th.th-urivia{background:var(--tl);color:#fff}
+.comp th.th-other{background:var(--ink);color:rgba(255,255,255,.6)}
+.comp td{padding:.875rem 1.25rem;font-size:.9rem;color:var(--im);border-bottom:1px solid var(--rl);vertical-align:top}
+.comp tr:last-child td{border-bottom:none}
+.comp td.td-urivia{background:var(--tp)}
+.cy{color:var(--teal);font-weight:700}
+.cn{color:var(--red);font-weight:600}
+.cp{color:var(--amber);font-weight:600}
+.badge{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:100px}
+.badge-win{background:var(--tp);color:var(--teal)}
+.badge-loss{background:var(--rp);color:var(--red)}
+
+/* COMPLAINTS SECTION */
+.complaints{background:var(--w)}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+.cc{background:var(--bg);border-radius:14px;border:1px solid var(--rule);padding:1.5rem}
+.cc-rating{display:flex;gap:3px;margin-bottom:.75rem}
+.cc-rating svg{width:13px;height:13px;fill:#F5A623}
+.cc-rating .empty{fill:#ddd}
+.cc-q{font-size:.9375rem;line-height:1.7;color:var(--ink);font-style:italic;margin-bottom:.75rem}
+.cc-label{font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:100px}
+.cc-label-bad{background:var(--rp);color:var(--red)}
+.cc-platform{font-size:.75rem;color:var(--il);margin-top:.5rem}
+.fix-box{background:var(--tp);border-radius:14px;border:1px solid var(--rule);padding:1.5rem;margin-top:1.25rem}
+.fix-title{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);margin-bottom:.75rem}
+.fix-item{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.625rem;font-size:.9rem;color:var(--im)}
+.fix-item::before{content:'--';color:var(--teal);font-weight:700;flex-shrink:0}
+
+/* WHY URIVIA */
+.why{background:var(--ink)}
+.why h2{color:#fff}
+.why .sb{color:rgba(255,255,255,.65)}
+.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2.5rem}
+.wc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem}
+.wi{width:38px;height:38px;border-radius:10px;background:var(--tl);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.wi svg{width:18px;height:18px;fill:white}
+.wc h3{font-family:var(--sans);color:#fff;font-weight:600;margin-bottom:.5rem;font-size:1rem}
+.wc p{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65}
+
+/* CTA */
+.final{background:var(--teal);padding:5rem clamp(1.25rem,4vw,3.5rem);text-align:center}
+.final h2{color:#fff;margin-bottom:.875rem}
+.final p{color:rgba(255,255,255,.72);max-width:500px;margin:0 auto 2.5rem;font-size:1.0625rem}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2.5rem clamp(1.25rem,4vw,3.5rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.flog{display:flex;align-items:center;gap:8px;text-decoration:none}
+.flog span{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,.7)}
+.fdsc{font-size:.75rem;color:rgba(255,255,255,.3);max-width:500px;line-height:1.65}
+
+@media(max-width:700px){
+  .cg{grid-template-columns:1fr}
+  .hero-cta{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nl" href="/">
+    <div class="nm"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="8.5" rx="4.5" ry="5.5" fill="white"/><ellipse cx="12" cy="8.5" rx="2.2" ry="2.8" fill="#0D7A5F"/><ellipse cx="12" cy="8.5" rx="1" ry="1.2" fill="white"/><path d="M5 18.5C5 14.5 8 12.5 12 12.5C16 12.5 19 14.5 19 18.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="8.5" cy="20.5" r="1.2" fill="white" opacity=".7"/><circle cx="12" cy="19.5" r="1.2" fill="white" opacity=".7"/><circle cx="15.5" cy="20.5" r="1.2" fill="white" opacity=".7"/></svg></div>
+    <span class="nn">Urivia</span>
+  </a>
+  <a class="ncta" href="/#get-app">Download free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="si">
+    <span class="ey">Urivia vs Urinox</span>
+    <h1>The Urinox alternative that does not <em>require an account</em> or upload your health data</h1>
+    <p>Both apps help you track urine color. The difference is where your data goes, what the results tell you, and whether you have to log in to use your own health information.</p>
+    <div class="hero-cta">
+      <a class="btn-p" href="/#get-app">Try Urivia free — no account</a>
+      <a class="btn-g" href="#comparison">See full comparison</a>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT STRIP -->
+<div class="verdict">
+  <div class="vg">
+    <div class="vi">
+      <div class="vck"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="vit">No account required</div><div class="vis">Open and scan. No email, no password.</div></div>
+    </div>
+    <div class="vi">
+      <div class="vck"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="vit">All data on your device</div><div class="vis">Nothing uploaded to any server.</div></div>
+    </div>
+    <div class="vi">
+      <div class="vck"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="vit">AI interpretation</div><div class="vis">Plain-English explanation with every result.</div></div>
+    </div>
+    <div class="vi">
+      <div class="vck"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="vit">Built for diabetes & CKD</div><div class="vis">Not general wellness. Chronic conditions.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<section class="sec" id="comparison">
+  <div class="si">
+    <span class="ey">Side by side</span>
+    <h2>Feature comparison</h2>
+    <p class="sb" style="margin-top:.875rem">Every feature that matters for people managing diabetes and kidney disease.</p>
+    <div class="tbl-wrap">
+      <table class="comp">
+        <thead>
+          <tr>
+            <th class="th-feat" style="width:36%">Feature</th>
+            <th class="th-urivia" style="width:32%">Urivia ★ 4.8</th>
+            <th class="th-other" style="width:32%">Urinox ★ 3.8</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account required</td>
+            <td class="td-urivia"><span class="cy">No — never required</span></td>
+            <td><span class="cn">Yes — forced on first open</span><br/><span style="font-size:.8rem;color:#637068">Top complaint in reviews</span></td>
+          </tr>
+          <tr>
+            <td>Health data storage</td>
+            <td class="td-urivia"><span class="cy">Local only — stays on your device</span></td>
+            <td><span class="cn">Cloud storage on their servers</span></td>
+          </tr>
+          <tr>
+            <td>AI interpretation</td>
+            <td class="td-urivia"><span class="cy">Yes — Claude AI, plain English</span></td>
+            <td><span class="cn">No interpretation — color label only</span></td>
+          </tr>
+          <tr>
+            <td>Symptom-aware results</td>
+            <td class="td-urivia"><span class="cy">Yes — symptoms change your signal</span></td>
+            <td><span class="cn">No symptom input</span></td>
+          </tr>
+          <tr>
+            <td>Diabetes / CKD focus</td>
+            <td class="td-urivia"><span class="cy">Yes — primary use case</span></td>
+            <td><span class="cp">General wellness</span></td>
+          </tr>
+          <tr>
+            <td>Doctor-ready export</td>
+            <td class="td-urivia"><span class="cy">PDF export (Pro)</span></td>
+            <td><span class="cp">Basic export only</span></td>
+          </tr>
+          <tr>
+            <td>Photo-based calibration</td>
+            <td class="td-urivia"><span class="cy">Yes — white balance correction</span></td>
+            <td><span class="cn">No camera calibration</span></td>
+          </tr>
+          <tr>
+            <td>Free tier</td>
+            <td class="td-urivia"><span class="cy">5 scans/month — genuinely free</span></td>
+            <td><span class="cp">Limited, encourages upgrade quickly</span></td>
+          </tr>
+          <tr>
+            <td>Pro price</td>
+            <td class="td-urivia"><span class="cy">$2.99/month or $24.99/year</span></td>
+            <td><span class="cp">$4.99/month</span></td>
+          </tr>
+          <tr>
+            <td>App Store rating</td>
+            <td class="td-urivia"><span class="cy">4.8 stars</span><span class="badge badge-win" style="margin-left:6px">Higher</span></td>
+            <td><span class="cn">3.8 stars</span><span class="badge badge-loss" style="margin-left:6px">Lower</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- URINOX COMPLAINTS -->
+<section class="sec complaints">
+  <div class="si">
+    <span class="ey">What Urinox users say</span>
+    <h2>The two complaints we hear most</h2>
+    <p class="sb" style="margin-top:.875rem">These are real patterns from public App Store reviews — not cherry-picked.</p>
+    <div class="cg">
+      <div class="cc">
+        <div class="cc-rating">
+          <svg viewBox="0 0 12 12"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12" class="empty"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12" class="empty"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12" class="empty"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+        </div>
+        <p class="cc-q">"Forced me to make an account just to see a color chart. My health data does not belong on someone else's server. Deleted immediately."</p>
+        <span class="cc-label cc-label-bad">Forced account</span>
+        <p class="cc-platform">App Store · Urinox review</p>
+      </div>
+      <div class="cc">
+        <div class="cc-rating">
+          <svg viewBox="0 0 12 12"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12" class="empty"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+          <svg viewBox="0 0 12 12" class="empty"><path d="M6 1l1.3 2.7 3 .4-2.2 2.1.5 3L6 7.8 3.4 9.2l.5-3L1.7 4.1l3-.4z"/></svg>
+        </div>
+        <p class="cc-q">"It just tells you the color. There is no explanation of what it means or what to do. I need more than a label — I need context."</p>
+        <span class="cc-label cc-label-bad">No explanation</span>
+        <p class="cc-platform">Google Play · Urinox review</p>
+      </div>
+    </div>
+    <div class="fix-box">
+      <div class="fix-title">How Urivia fixes both</div>
+      <div class="fix-item">No account required — you open Urivia and start scanning immediately.</div>
+      <div class="fix-item">Every result comes with an AI explanation of why you got it and what to do next.</div>
+      <div class="fix-item">All your scan data stays on your device. We have no server-side health database.</div>
+      <div class="fix-item">Pro plan is $2.99/month — $2 less than Urinox per month.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY URIVIA -->
+<section class="sec why">
+  <div class="si">
+    <span class="ey" style="color:var(--tm)">Why Urivia</span>
+    <h2>Built differently from the ground up</h2>
+    <p class="sb" style="margin-top:.875rem">These are not feature differences. They are architectural decisions that affect what happens to your health data every day you use the app.</p>
+    <div class="wg">
+      <div class="wc">
+        <div class="wi"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-9-2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm3 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
+        <h3>Local-first architecture</h3>
+        <p>We designed the database layer to never need a server. Your scan history, color results, and symptom logs live in your device's secure storage. This was an architectural decision made before we wrote the first screen.</p>
+      </div>
+      <div class="wc">
+        <div class="wi"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg></div>
+        <h3>Symptom-aware AI</h3>
+        <p>The AI result changes based on what symptoms you log. Burning pain and fever alongside an amber color produces a different signal than amber alone. A color chart cannot do this. A static algorithm cannot do this.</p>
+      </div>
+      <div class="wc">
+        <div class="wi"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+        <h3>Doctor-ready export</h3>
+        <p>The PDF export was the most-requested feature in beta. Patients wanted something to show their nephrologist or endocrinologist — not a screenshot, but a clean report with dates, signals, quality scores, and symptom logs.</p>
+      </div>
+      <div class="wc">
+        <div class="wi"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <h3>Built for chronic conditions</h3>
+        <p>Urivia was designed for the specific needs of people managing diabetes and kidney disease — not as an afterthought, but as the primary use case from day one. The condition selector in onboarding is not a filter. It changes how the AI interprets your results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="si" style="text-align:center">
+    <h2>Try Urivia free today</h2>
+    <p>No account. No strips. No data uploaded. Open the app and take your first scan in under 30 seconds.</p>
+    <a class="btn-p" href="/#get-app" style="display:inline-block;margin-bottom:1rem">Download free — iOS & Android</a>
+    <br/>
+    <span style="font-size:.8125rem;color:rgba(255,255,255,.45)">5 scans free per month · Pro from $2.99/month · Cancel anytime</span>
+  </div>
+</section>
+
+<footer>
+  <a class="nl flog" href="/">
+    <div class="nm" style="border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none"><ellipse cx="12" cy="8.5" rx="4.5" ry="5.5" fill="white"/><ellipse cx="12" cy="8.5" rx="2.2" ry="2.8" fill="#0D7A5F"/><ellipse cx="12" cy="8.5" rx="1" ry="1.2" fill="white"/><path d="M5 18.5C5 14.5 8 12.5 12 12.5C16 12.5 19 14.5 19 18.5" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="8.5" cy="20.5" r="1.2" fill="white" opacity=".7"/><circle cx="12" cy="19.5" r="1.2" fill="white" opacity=".7"/><circle cx="15.5" cy="20.5" r="1.2" fill="white" opacity=".7"/></svg></div>
+    <span>Urivia Health</span>
+  </a>
+  <p class="fdsc">Urivia is a urine color screening tool for informational purposes only. It does not diagnose, treat, or replace professional medical advice or clinical laboratory testing. Urinox ratings cited are from public App Store and Google Play listings. Always consult a qualified healthcare professional for medical concerns.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Urivia — Urine Color & Hydration Screening for Diabetes & Kidney Health</title>
+<meta name="description" content="Urivia helps people with diabetes, high blood pressure, or kidney risk monitor urine color, catch changes early, and build a history for their care team."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --teal:#0D7A5F;--tl:#1D9E75;--tp:#E8F8F2;--tm:#9FE1CB;
+  --amber:#B87A08;--ap:#FFF8EB;
+  --red:#B83030;--rp:#FFF1F1;
+  --blue:#1A5FA8;--bp:#EEF5FF;
+  --ink:#0B1612;--im:#374840;--il:#637068;
+  --rule:#D2E8DC;--rl:#EAF4EF;
+  --bg:#F6FAF7;--w:#FFFFFF;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2{font-family:var(--serif);line-height:1.15}
+h1{font-size:clamp(2.2rem,5vw,3.75rem);font-weight:600}
+h2{font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:600}
+p{color:var(--im)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(246,250,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);height:64px;display:flex;align-items:center;padding:0 clamp(1.25rem,4vw,3.5rem);gap:1.5rem}
+.nl{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0}
+.nm{width:34px;height:34px;border-radius:9px;background:var(--tl);display:flex;align-items:center;justify-content:center}
+.nm svg{width:17px;height:17px;fill:white}
+.nn{font-family:var(--serif);font-size:1.2rem;color:var(--ink);font-weight:600}
+.nlinks{display:flex;gap:1.75rem;list-style:none;margin-left:auto}
+.nlinks a{font-size:.875rem;font-weight:500;color:var(--im);text-decoration:none;transition:color .18s}
+.nlinks a:hover{color:var(--teal)}
+.ncta{background:var(--tl);color:#fff;padding:.5rem 1.25rem;border-radius:100px;font-size:.875rem;font-weight:600;text-decoration:none;transition:background .18s;white-space:nowrap;margin-left:.5rem}
+.ncta:hover{background:var(--teal)}
+.nhb{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:.25rem;flex-direction:column;gap:5px}
+.nhb span{display:block;width:22px;height:2px;background:var(--im);border-radius:2px}
+.mmenu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--w);border-bottom:1px solid var(--rule);padding:1.25rem clamp(1.25rem,4vw,3.5rem);flex-direction:column;gap:1rem;z-index:199}
+.mmenu.open{display:flex}
+.mmenu a{font-size:1rem;font-weight:500;color:var(--im);text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--rl)}
+.mmenu .mc{background:var(--tl);color:#fff;text-align:center;padding:.75rem;border-radius:100px;border:none;margin-top:.5rem;font-weight:600;font-size:.9375rem;cursor:pointer}
+
+/* STICKY MOBILE BAR */
+.sbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--w);border-top:1px solid var(--rule);padding:.75rem clamp(1.25rem,4vw,3.5rem)}
+.sbar a{display:block;text-align:center;background:var(--tl);color:#fff;padding:.875rem;border-radius:100px;font-weight:600;font-size:.9375rem;text-decoration:none}
+
+/* HERO */
+.hw{background:var(--bg);padding:0 clamp(1.25rem,4vw,3.5rem)}
+.hero{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;min-height:88vh;padding:5rem 0}
+.heyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);background:var(--tp);border-radius:100px;padding:.3rem .9rem;margin-bottom:1.5rem}
+.hed{width:6px;height:6px;border-radius:50%;background:var(--tl)}
+.hero h1{color:var(--ink);margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hsub{font-size:1.0625rem;line-height:1.75;max-width:460px;margin-bottom:2rem}
+.hactions{display:flex;gap:.875rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.btp{display:inline-flex;align-items:center;gap:8px;background:var(--tl);color:#fff;padding:.875rem 2rem;border-radius:100px;font-size:.9375rem;font-weight:600;text-decoration:none;transition:background .18s,transform .12s}
+.btp:hover{background:var(--teal);transform:translateY(-1px)}
+.btp svg{width:16px;height:16px;fill:white;flex-shrink:0}
+.btg{display:inline-flex;align-items:center;gap:6px;color:var(--im);font-size:.9375rem;font-weight:500;text-decoration:none;padding:.875rem .5rem;transition:color .18s}
+.btg:hover{color:var(--teal)}
+.hnote{font-size:.8125rem;color:var(--il);line-height:1.6;border-left:2px solid var(--rule);padding-left:.875rem;margin-top:.5rem;max-width:440px}
+.hstats{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--rule)}
+.hsn{font-family:var(--serif);font-size:1.75rem;font-weight:600;color:var(--teal);line-height:1}
+.hsl{font-size:.8125rem;color:var(--il);margin-top:4px}
+
+/* Hero card */
+.hv{background:var(--w);border:1px solid var(--rule);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:1.1rem;animation:su .9s cubic-bezier(.22,.68,0,1.2) both .2s}
+@keyframes su{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.vl{font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--il)}
+.cs{display:flex;gap:5px}
+.csi{flex:1;display:flex;flex-direction:column;gap:5px;align-items:center}
+.csw{width:100%;aspect-ratio:1;border-radius:8px;border:1px solid rgba(0,0,0,.07)}
+.cslb{font-size:8.5px;color:var(--il);text-align:center}
+.vr{display:flex;align-items:center;gap:12px;padding:.875rem 1rem;border-radius:12px;background:var(--tp);border:1px solid rgba(29,158,117,.15)}
+.vrd{width:38px;height:38px;border-radius:50%;flex-shrink:0;border:2px solid rgba(255,255,255,.6)}
+.vrs{font-size:.875rem;font-weight:600;color:var(--teal)}
+.vrx{font-size:.8rem;color:var(--im);margin-top:2px}
+.vbs{display:flex;gap:6px;flex-wrap:wrap}
+.bdg{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.bt{background:var(--tp);color:var(--teal)}.bb{background:var(--bp);color:var(--blue)}.bg{background:#F0F0EE;color:var(--il)}
+.vsr{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#F9F9F8;border-radius:10px;border:1px solid var(--rl)}
+.vd{width:26px;height:26px;border-radius:50%;flex-shrink:0}
+.vi{flex:1}
+.vn{font-size:.8125rem;font-weight:600;color:var(--ink)}
+.vm{font-size:.7rem;color:var(--il);margin-top:1px}
+.vbg{font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:100px}
+.vok{background:#DCFAEE;color:#0A5E42}.vmo{background:#FFF3D0;color:#7A4C00}
+.vfn{font-size:.75rem;color:var(--il);text-align:center}
+
+/* PROOF STRIP */
+.ps{background:var(--w);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.5rem clamp(1.25rem,4vw,3.5rem)}
+.pi{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2.5rem}
+.pitem{display:flex;align-items:center;gap:.625rem}
+.pnum{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--teal)}
+.plbl{font-size:.8125rem;color:var(--il);line-height:1.4;max-width:110px}
+.pdiv{width:1px;height:36px;background:var(--rule)}
+
+/* SECTIONS */
+.sec{padding:6rem clamp(1.25rem,4vw,3.5rem)}
+.si{max-width:1100px;margin:0 auto}
+.sin{max-width:760px;margin:0 auto}
+.ey{display:block;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem}
+.sb{font-size:1.0625rem;line-height:1.75;max-width:640px}
+
+/* WHO */
+.who{background:var(--ink)}
+.who .ey{color:var(--tm)}
+.who h2{color:#fff}
+.who .sb{color:rgba(255,255,255,.65)}
+.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:3rem}
+.wc{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem;transition:background .2s,border-color .2s}
+.wc:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.wi{width:40px;height:40px;border-radius:10px;background:var(--tl);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.wi svg{width:20px;height:20px;fill:white}
+.wc h3{font-family:var(--sans);color:#fff;font-weight:600;margin-bottom:.5rem;font-size:1rem}
+.wc p{font-size:.875rem;color:rgba(255,255,255,.58);line-height:1.65}
+
+/* HOW */
+.how{background:var(--w)}
+.stps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem;margin-top:3rem}
+.stp{}
+.sn{width:38px;height:38px;border-radius:50%;background:var(--tp);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;margin-bottom:1rem}
+.stp h3{font-family:var(--sans);font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--ink)}
+.stp p{font-size:.9rem;line-height:1.7}
+
+/* SIGNALS */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem}
+.sig{border-radius:14px;padding:1.25rem 1.5rem;border:1px solid var(--rule)}
+.sig h3{font-family:var(--sans);font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.sig p{font-size:.85rem;line-height:1.65}
+.sn0{background:var(--tp)}.sn0 h3{color:var(--teal)}.sn0 p{color:#0A5A42}
+.sh{background:var(--bp);border-color:#B5D4F4}.sh h3{color:var(--blue)}.sh p{color:#0C407C}
+.sm{background:var(--ap);border-color:#F5C875}.sm h3{color:var(--amber)}.sm p{color:#5A3B00}
+.sc{background:var(--rp);border-color:#F5C1C1}.sc h3{color:var(--red)}.sc p{color:#761A1A}
+
+/* FEATURES */
+.feats{background:var(--w)}
+.fsp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:start;margin-top:2rem}
+.fl{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
+.fi{display:flex;gap:.875rem;align-items:flex-start}
+.fd{width:28px;height:28px;border-radius:50%;background:var(--tp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.fd svg{width:14px;height:14px;fill:var(--teal)}
+.fi h4{font-size:.9375rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.fi p{font-size:.875rem;line-height:1.65}
+.fmock{background:var(--ink);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:.875rem;position:sticky;top:80px}
+.fml{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.25rem}
+.fmr{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.065);border-radius:10px;border:1px solid rgba(255,255,255,.07)}
+.fmd{width:30px;height:30px;border-radius:50%;flex-shrink:0}
+.fmi{flex:1}
+.fmn{font-size:.8125rem;font-weight:600;color:#fff}
+.fmm{font-size:.7rem;color:rgba(255,255,255,.38);margin-top:1px}
+.fmbg{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:100px}
+.fbg{background:#1D9E75;color:#fff}.fba{background:#EF9F27;color:#1A0D00}
+.fmf{font-size:.75rem;color:rgba(255,255,255,.28);text-align:center}
+.faib{background:rgba(29,158,117,.12);border:1px solid rgba(29,158,117,.2);border-radius:10px;padding:.875rem}
+.fail{font-size:.7rem;font-weight:700;color:var(--tm);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
+.fait{font-size:.8rem;color:rgba(255,255,255,.7);line-height:1.55}
+
+/* TESTIMONIALS */
+.testi{background:var(--bg)}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+.tc{background:var(--w);border:1px solid var(--rule);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.tst{display:flex;gap:3px}
+.tst svg{width:15px;height:15px;fill:#F5A623}
+.tq{font-size:.9375rem;line-height:1.7;color:var(--ink);font-style:italic}
+.ta{display:flex;align-items:center;gap:.75rem;margin-top:auto}
+.tav{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;color:#fff;flex-shrink:0}
+.tn{font-size:.875rem;font-weight:600;color:var(--ink)}
+.tr{font-size:.8rem;color:var(--il);margin-top:1px}
+.tcond{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:100px;background:var(--tp);color:var(--teal);margin-top:2px}
+
+/* HONESTY */
+.hon{background:var(--w)}
+.hl{display:flex;flex-direction:column;gap:.875rem;margin-top:2rem}
+.hi{display:flex;gap:1rem;align-items:flex-start;padding:1.125rem 1.25rem;background:var(--bg);border-radius:14px;border:1px solid var(--rl)}
+.hx{width:28px;height:28px;border-radius:50%;background:var(--tp);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;flex-shrink:0}
+.hi strong{font-size:.9375rem;color:var(--ink)}
+.hi span{font-size:.9rem;color:var(--im)}
+
+/* VISUAL HOW-IT-WORKS */
+.vhow{background:var(--ink)}
+.vhow .ey{color:var(--tm)}
+.vhow h2{color:#fff}
+.vhow .sb{color:rgba(255,255,255,.65)}
+.vstps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;position:relative}
+.vstps::before{content:'';position:absolute;top:28px;left:12.5%;right:12.5%;height:2px;background:rgba(29,158,117,.35);z-index:0}
+.vstp{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;padding:0 1rem;position:relative;z-index:1}
+.vnum{width:56px;height:56px;border-radius:50%;background:var(--tl);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:700;color:#fff;flex-shrink:0}
+.vstp h3{font-family:var(--sans);color:#fff;font-weight:600;font-size:.9375rem;margin-bottom:.25rem}
+.vstp p{font-size:.8125rem;color:rgba(255,255,255,.52);line-height:1.65}
+.vstp .vtag{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:100px;background:rgba(29,158,117,.2);color:var(--tm);margin-top:.25rem}
+.vsig-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.vsig{border-radius:14px;padding:1.25rem;border:1px solid rgba(255,255,255,.07);text-align:center}
+.vsig-dot{width:36px;height:36px;border-radius:50%;margin:0 auto .75rem}
+.vsig h4{font-family:var(--sans);font-size:.9375rem;font-weight:700;margin-bottom:.4rem}
+.vsig p{font-size:.8rem;line-height:1.6}
+.vn{background:rgba(29,158,117,.12)}.vn h4{color:var(--tm)}.vn p{color:rgba(255,255,255,.5)}
+.vh{background:rgba(26,95,168,.12)}.vh h4{color:#85B7EB}.vh p{color:rgba(255,255,255,.5)}
+.vm{background:rgba(184,122,8,.12)}.vm h4{color:#FAC775}.vm p{color:rgba(255,255,255,.5)}
+.vc{background:rgba(184,48,48,.12)}.vc h4{color:#F09595}.vc p{color:rgba(255,255,255,.5)}
+
+/* CALIBRATION CARD */
+.cal{background:var(--bg)}
+.cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.cal-mock{background:var(--ink);border-radius:16px;padding:1.75rem 1.75rem 1.75rem 2rem;aspect-ratio:1.586;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.06)}
+.cal-logo{font-family:var(--serif);font-size:1.1rem;color:var(--tm);font-weight:600}
+.cal-patches{display:flex;gap:.625rem;align-items:center;margin:.75rem 0}
+.cal-p{width:36px;height:36px;border-radius:7px;border:1px solid rgba(255,255,255,.12)}
+.cal-qr{width:40px;height:40px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;margin-top:.25rem}
+.cal-bottom{display:flex;justify-content:space-between;align-items:flex-end}
+.cal-label{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.cal-card{background:var(--w);border-radius:20px;border:1px solid var(--rule);padding:2rem;display:flex;flex-direction:column;gap:1.25rem}
+.cal-price{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--teal)}
+.cal-price sup{font-size:1.1rem;vertical-align:top;margin-top:.35rem;display:inline-block}
+.cal-features{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.cal-features li{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--im)}
+.cal-features li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+.cal-btn{display:block;text-align:center;padding:.875rem;border-radius:100px;background:var(--tl);color:#fff;font-weight:600;font-size:.9375rem;text-decoration:none;transition:background .18s}
+.cal-btn:hover{background:var(--teal)}
+
+/* COMPARISON TABLE */
+.comp{background:var(--w)}
+.comp-wrap{overflow-x:auto;margin-top:3rem;border-radius:16px;border:1px solid var(--rule)}
+.comp-tbl{width:100%;border-collapse:collapse;min-width:580px}
+.comp-tbl th{padding:1rem 1.25rem;font-size:.8rem;font-weight:700;text-align:left;background:var(--bg);color:var(--il);letter-spacing:.04em;text-transform:uppercase;border-bottom:2px solid var(--rule)}
+.comp-tbl th.uc{background:var(--teal);color:#fff}
+.comp-tbl td{padding:.875rem 1.25rem;font-size:.875rem;color:var(--im);border-bottom:1px solid var(--rl);vertical-align:middle}
+.comp-tbl tr:last-child td{border-bottom:none}
+.comp-tbl td.uc{background:var(--tp);color:var(--teal);font-weight:600}
+.cy{color:var(--teal);font-weight:700}
+.cn{color:#B83030;font-weight:600}
+.cp{color:var(--amber);font-weight:600}
+
+/* FAQ */
+.faq-s{background:var(--bg)}
+.fql{display:flex;flex-direction:column;gap:.75rem;margin-top:2.5rem}
+.fqi{background:var(--w);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.fqq{display:flex;justify-content:space-between;align-items:center;padding:1.125rem 1.25rem;cursor:pointer;font-size:.9375rem;font-weight:600;color:var(--ink);user-select:none;gap:1rem}
+.fqq:hover{background:var(--bg)}
+.fqch{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--tp);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.fqch svg{width:10px;height:10px;stroke:var(--teal);fill:none;stroke-width:2.5}
+.fqi.open .fqch{transform:rotate(180deg)}
+.fqa{display:none;padding:.875rem 1.25rem 1.125rem;font-size:.9rem;color:var(--im);line-height:1.75;border-top:1px solid var(--rl)}
+.fqi.open .fqa{display:block}
+
+/* PRICING */
+.prc{background:var(--w)}
+.prg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:3rem;max-width:920px}
+.prc-c{background:var(--bg);border:1px solid var(--rule);border-radius:20px;padding:2rem;display:flex;flex-direction:column;gap:1.5rem}
+.prc-c.feat{background:var(--w);border:2px solid var(--tl);position:relative}
+.ppill{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--tl);color:#fff;font-size:.75rem;font-weight:700;padding:.25rem 1rem;border-radius:100px;white-space:nowrap}
+.pt{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--il)}
+.pn{font-family:var(--serif);font-size:2.6rem;color:var(--ink);line-height:1}
+.pn sup{font-size:1.2rem;vertical-align:top;margin-top:.4rem;display:inline-block}
+.pp{font-family:var(--sans);font-size:.875rem;color:var(--il)}
+.psv{font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:100px;background:var(--tp);color:var(--teal);display:inline-block}
+.pfl{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.pfl li{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--im)}
+.pfl li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+.bpp{display:block;text-align:center;padding:.875rem;border-radius:100px;background:var(--tl);color:#fff;font-weight:600;font-size:.9375rem;text-decoration:none;transition:background .18s;margin-top:auto}
+.bpp:hover{background:var(--teal)}
+.bpg{display:block;text-align:center;padding:.875rem;border-radius:100px;border:1.5px solid var(--rule);color:var(--im);font-weight:600;font-size:.9375rem;text-decoration:none;transition:all .18s;margin-top:auto}
+.bpg:hover{border-color:var(--teal);color:var(--teal)}
+.pn-note{margin-top:1.5rem;font-size:.8125rem;color:var(--il);text-align:center}
+
+/* FINAL CTA */
+.fcta{background:var(--teal);padding:7rem clamp(1.25rem,4vw,3.5rem);text-align:center}
+.fcta h2{color:#fff;max-width:640px;margin:0 auto .875rem}
+.fcta p{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 2.5rem}
+.sbs{display:flex;gap:.875rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.sb-btn{display:inline-flex;align-items:center;gap:.625rem;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:.5rem 1.125rem;border-radius:10px;text-decoration:none;transition:background .18s}
+.sb-btn:hover{background:rgba(255,255,255,.2)}
+.sb-btn svg{width:20px;height:20px;fill:white;flex-shrink:0}
+.sb-sub{font-size:.7rem;opacity:.7;display:block}
+.sb-name{font-size:.875rem;font-weight:600;display:block}
+.btw{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--teal);padding:.9375rem 2.5rem;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .15s,opacity .18s}
+.btw:hover{transform:translateY(-2px);opacity:.93}
+.fdsc{margin:2.25rem auto 0;font-size:.8125rem;color:rgba(255,255,255,.48);max-width:540px;line-height:1.65}
+
+/* FOOTER */
+footer{background:var(--ink);padding:3rem clamp(1.25rem,4vw,3.5rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.25rem}
+.flog{display:flex;align-items:center;gap:8px;text-decoration:none}
+.flog span{font-family:var(--serif);font-size:1.1rem;color:rgba(255,255,255,.8)}
+.fls{display:flex;gap:1.5rem;flex-wrap:wrap}
+.fls a{font-size:.8125rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .18s}
+.fls a:hover{color:rgba(255,255,255,.8)}
+.fcp{font-size:.8125rem;color:rgba(255,255,255,.3);width:100%;border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;margin-top:.5rem}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:3.5rem 0}
+  .hv{order:-1}
+  .hstats{gap:1.5rem}
+  .fsp{grid-template-columns:1fr}
+  .fmock{position:static}
+  .nlinks,.ncta{display:none}
+  .nhb{display:flex}
+  .sbar{display:block}
+  body{padding-bottom:72px}
+  .vstps{grid-template-columns:1fr 1fr}
+  .vstps::before{display:none}
+  .vsig-row{grid-template-columns:1fr 1fr}
+  .cal-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+@media(max-width:600px){
+  .pi{gap:1.5rem}.pdiv{display:none}
+  h1{font-size:2.1rem}
+  .sec{padding:4rem clamp(1.25rem,4vw,3.5rem)}
+  .fcta{padding:4rem clamp(1.25rem,4vw,3.5rem)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nl" href="#">
+    <div class="nm"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="8.5" rx="4.5" ry="5.5" fill="white"/><ellipse cx="12" cy="8.5" rx="2.2" ry="2.8" fill="#0D7A5F"/><ellipse cx="12" cy="8.5" rx="1" ry="1.2" fill="white"/><path d="M5 18.5C5 14.5 8 12.5 12 12.5C16 12.5 19 14.5 19 18.5" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="8.5" cy="20.5" r="1.2" fill="white" opacity=".7"/><circle cx="12" cy="19.5" r="1.2" fill="white" opacity=".7"/><circle cx="15.5" cy="20.5" r="1.2" fill="white" opacity=".7"/></svg></div>
+    <span class="nn">Urivia</span>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="#calibration">Calibration card</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="ncta" href="#get-app">Download free</a>
+  <button class="nhb" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="#how-it-works" onclick="toggleMenu()">How it works</a>
+  <a href="#features" onclick="toggleMenu()">Features</a>
+  <a href="#compare" onclick="toggleMenu()">Compare</a>
+  <a href="#calibration" onclick="toggleMenu()">Calibration card</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#get-app" class="mc" onclick="toggleMenu()">Download Urivia free</a>
+</div>
+
+<div class="sbar"><a href="#get-app">Download Urivia free</a></div>
+
+<!-- HERO -->
+<div class="hw">
+  <div class="hero">
+    <div class="fu">
+      <div class="heyebrow"><div class="hed"></div>Diabetes & Kidney Self-Monitoring</div>
+      <h1>Track urine color <em>between</em> appointments</h1>
+      <p class="hsub">Urivia helps people with diabetes, high blood pressure, or kidney risk monitor urine color, catch unusual changes early, and keep a simple history to share with their care team.</p>
+      <div class="hactions">
+        <a class="btp" href="#get-app"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Download the app</a>
+        <a class="btg" href="#how">See how it works →</a>
+      </div>
+      <p class="hnote">Screening tool only — does not replace lab tests or clinical care. No account required. All data stays on your device.</p>
+      <div class="hstats">
+        <div><div class="hsn">30 sec</div><div class="hsl">Average scan time</div></div>
+        <div><div class="hsn">10+</div><div class="hsl">Color categories</div></div>
+        <div><div class="hsn">$2.99</div><div class="hsl">Per month Pro</div></div>
+      </div>
+    </div>
+    <div class="hv">
+      <div class="vl">Urine color guide</div>
+      <div class="cs">
+        <div class="csi"><div class="csw" style="background:#F5F5E8;"></div><div class="cslb">Clear</div></div>
+        <div class="csi"><div class="csw" style="background:#F0E870;"></div><div class="cslb">Pale</div></div>
+        <div class="csi"><div class="csw" style="background:#D4C000;"></div><div class="cslb">Yellow</div></div>
+        <div class="csi"><div class="csw" style="background:#C8800A;"></div><div class="cslb">Amber</div></div>
+        <div class="csi"><div class="csw" style="background:#E86020;"></div><div class="cslb">Orange</div></div>
+        <div class="csi"><div class="csw" style="background:#C03030;"></div><div class="cslb">Red</div></div>
+        <div class="csi"><div class="csw" style="background:#6B3B1A;"></div><div class="cslb">Brown</div></div>
+      </div>
+      <div class="vr">
+        <div class="vrd" style="background:#F0E870;"></div>
+        <div><div class="vrs">Normal — well hydrated</div><div class="vrx">Pale straw · No symptoms reported</div></div>
+      </div>
+      <div class="vbs">
+        <span class="bdg bt">Calibrated scan</span>
+        <span class="bdg bb">Quality 84/100</span>
+        <span class="bdg bg">Saved to history</span>
+      </div>
+      <div>
+        <div class="vl" style="margin-bottom:.6rem;">Recent scans</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="vsr"><div class="vd" style="background:#F0E870;"></div><div class="vi"><div class="vn">Pale straw</div><div class="vm">Today 8:14 AM · Q89</div></div><span class="vbg vok">Normal</span></div>
+          <div class="vsr"><div class="vd" style="background:#C8A000;"></div><div class="vi"><div class="vn">Dark yellow</div><div class="vm">Yesterday 2:30 PM · Q74</div></div><span class="vbg vmo">Monitor</span></div>
+          <div class="vsr"><div class="vd" style="background:#F0E870;"></div><div class="vi"><div class="vn">Pale straw</div><div class="vm">Yesterday 8:05 AM · Q91</div></div><span class="vbg vok">Normal</span></div>
+        </div>
+      </div>
+      <div class="vfn">3 of 14 scans this week</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOF STRIP -->
+<div class="ps">
+  <div class="pi">
+    <div class="pitem"><div><div class="pnum">4.8★</div><div class="plbl">App Store rating</div></div></div>
+    <div class="pdiv"></div>
+    <div class="pitem"><div><div class="pnum">10k+</div><div class="plbl">Early access signups</div></div></div>
+    <div class="pdiv"></div>
+    <div class="pitem"><div><div class="pnum">30 sec</div><div class="plbl">Average scan time</div></div></div>
+    <div class="pdiv"></div>
+    <div class="pitem"><div><div class="pnum">No acct</div><div class="plbl">required · local data only</div></div></div>
+    <div class="pdiv"></div>
+    <div class="pitem">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0D7A5F"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.38.74 3.2.8 1.21-.24 2.38-.93 3.7-.84 1.58.13 2.76.72 3.54 1.84-3.25 1.94-2.73 5.91.27 7.07-.63 1.64-1.44 3.26-2.71 3.99zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0D7A5F" style="margin-left:4px"><path d="M3.18 23.76c.33.18.71.19 1.07 0l10.89-6.29-2.23-2.23-9.73 8.52zm15.6-9.01L16.42 13l2.33-2.33 2.13 1.23c.6.35.6 1.22 0 1.57l-2.1 1.28zM2.09.58C1.8.91 1.64 1.4 1.64 2.02v19.96c0 .63.16 1.11.45 1.45l.08.07 11.18-11.18v-.26L2.17.51l-.08.07zm13.33 13.33L4.23 2.72l-.08.07L15.42 14l-.08-.09z"/></svg>
+      <div class="plbl">iOS & Android</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO -->
+<section class="sec who" id="who">
+  <div class="si">
+    <span class="ey fu">Designed for higher-risk users</span>
+    <h2 class="fu">Built for daily self-management</h2>
+    <p class="sb fu" style="color:rgba(255,255,255,.65);">Managing diabetes, high blood pressure, or early kidney concerns means thinking about your health every day. Urivia gives you simple, visual feedback between visits.</p>
+    <div class="wg">
+      <div class="wc fu"><div class="wi"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><h3>Diabetes</h3><p>Track urine color alongside glucose monitoring. Spot dehydration, glucosuria signals, and changes between A1C checks.</p></div>
+      <div class="wc fu" style="transition-delay:.1s"><div class="wi"><svg viewBox="0 0 24 24"><path d="M12 21.7C7.1 17 2 13.5 2 9a7 7 0 0 1 14 0c0 4.5-5.1 8-4 12.7z"/></svg></div><h3>High blood pressure</h3><p>Kidney function is closely tied to blood pressure. Track hydration and unusual changes as part of your daily monitoring.</p></div>
+      <div class="wc fu" style="transition-delay:.2s"><div class="wi"><svg viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6a5.87 5.87 0 0 1-2.8-.7l-1.46 1.46A7.93 7.93 0 0 0 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46A7.93 7.93 0 0 0 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/></svg></div><h3>Kidney risk</h3><p>CKD, kidney stones, or family history — track color, foam, and early warning signs between appointments.</p></div>
+      <div class="wc fu" style="transition-delay:.3s"><div class="wi"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div><h3>Between appointments</h3><p>Track changes over days and weeks, prepare for your next visit, and bring clearer information to your care team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec how" id="how">
+  <div class="si">
+    <span class="ey fu">Simple by design</span>
+    <h2 class="fu">How it works</h2>
+    <p class="sb fu">Four steps. Under two minutes. No hardware, no strips, no account needed.</p>
+    <div class="stps">
+      <div class="stp fu"><div class="sn">1</div><h3>Capture or pick a color</h3><p>Take a photo or manually pick the closest color from the guide. Guided mode uses calibration to correct for different lighting conditions.</p></div>
+      <div class="stp fu" style="transition-delay:.1s"><div class="sn">2</div><h3>Add context</h3><p>Log symptoms — burning, pain, fever, odor, recent exercise, vitamins, or new medications. Context makes your result sharper.</p></div>
+      <div class="stp fu" style="transition-delay:.2s"><div class="sn">3</div><h3>Get a clear signal</h3><p>See a plain-English result: <strong>Normal</strong>, <strong>Hydrate</strong>, <strong>Monitor</strong>, or <strong>Seek care</strong> — with AI-powered explanation.</p></div>
+      <div class="stp fu" style="transition-delay:.3s"><div class="sn">4</div><h3>Build your history</h3><p>Every scan is saved locally on your device. Review your timeline, spot patterns, and share a clean summary at your next appointment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNALS -->
+<section class="sec" style="background:var(--bg);">
+  <div class="si">
+    <span class="ey fu">Clear, actionable outputs</span>
+    <h2 class="fu">Four signals. No guesswork.</h2>
+    <p class="sb fu">Urivia gives you a clear next step — not a diagnosis. Every result tells you exactly what to do.</p>
+    <div class="sg">
+      <div class="sig sn0 fu"><h3>Normal</h3><p>Color is in the healthy range. Stay hydrated and keep monitoring as usual.</p></div>
+      <div class="sig sh fu" style="transition-delay:.1s"><h3>Hydrate</h3><p>Mild concentration detected. Drink water and re-scan in a few hours.</p></div>
+      <div class="sig sm fu" style="transition-delay:.2s"><h3>Monitor</h3><p>Mild concern or unusual change. Log symptoms and recheck. See a doctor if it continues over 24 hours.</p></div>
+      <div class="sig sc fu" style="transition-delay:.3s"><h3>Seek care</h3><p>Color, symptoms, or both suggest a prompt visit to your healthcare provider is needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec feats" id="features">
+  <div class="si">
+    <span class="ey fu">Everything you need</span>
+    <h2 class="fu">Built for follow-through</h2>
+    <div class="fsp">
+      <ul class="fl fu">
+        <li class="fi"><div class="fd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="var(--teal)" fill="none" stroke-width="2"/></svg></div><div><h4>Photo-based color screening</h4><p>Capture a photo or pick from the guide. Guided mode uses calibration to improve accuracy in different lighting — no test strips needed.</p></div></li>
+        <li class="fi"><div class="fd"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><div><h4>Symptom-aware risk guidance</h4><p>Log burning, pain, fever, odor, or other context. Your symptoms change the risk calculation — giving you a smarter result.</p></div></li>
+        <li class="fi"><div class="fd"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div><div><h4>History and trend view</h4><p>See your full color history over time. Spot patterns across days or weeks that you'd never catch from a single check.</p></div></li>
+        <li class="fi"><div class="fd"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg></div><div><h4>Doctor-ready summaries</h4><p>Generate a clean, shareable report with your history, symptoms, and risk levels — ready to bring to your next appointment.</p></div></li>
+        <li class="fi"><div class="fd"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div><div><h4>Smart reminders</h4><p>Set daily scan reminders, hydration prompts, and follow-up alerts so monitoring becomes part of your routine.</p></div></li>
+      </ul>
+      <div class="fmock fu">
+        <div class="fml">Recent scans</div>
+        <div class="fmr"><div class="fmd" style="background:#F0E870;"></div><div class="fmi"><div class="fmn">Pale straw</div><div class="fmm">Today, 8:14 AM · Quality 89</div></div><span class="fmbg fbg">Normal</span></div>
+        <div class="fmr"><div class="fmd" style="background:#C8A000;"></div><div class="fmi"><div class="fmn">Dark yellow</div><div class="fmm">Yesterday, 2:30 PM · Quality 74</div></div><span class="fmbg fba">Monitor</span></div>
+        <div class="fmr"><div class="fmd" style="background:#F0E870;"></div><div class="fmi"><div class="fmn">Pale straw</div><div class="fmm">Yesterday, 8:05 AM · Quality 91</div></div><span class="fmbg fbg">Normal</span></div>
+        <div class="fmr"><div class="fmd" style="background:#D4C000;"></div><div class="fmi"><div class="fmn">Yellow</div><div class="fmm">2 days ago · Quality 82</div></div><span class="fmbg fbg">Normal</span></div>
+        <div class="fmf">3 of 14 scans this week</div>
+        <div class="faib"><div class="fail">AI interpretation</div><div class="fait">"Your history looks healthy this week. The Monitor result on Wednesday is consistent with mild afternoon dehydration — common pattern. Keep your midday water intake up."</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testi" id="reviews">
+  <div class="si">
+    <span class="ey fu">What users say</span>
+    <h2 class="fu">Real people. Real results.</h2>
+    <p class="sb fu">From beta users managing chronic conditions to people who want to stay ahead of their hydration.</p>
+    <div class="tg">
+      <div class="tc fu">
+        <div class="tst"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <p class="tq">"I've managed Type 2 for 6 years and this is the first tool that actually fits my daily routine. Takes 30 seconds. My endocrinologist loves the reports I bring to appointments."</p>
+        <div class="ta"><div class="tav" style="background:#1D9E75;">MR</div><div><div class="tn">Maria R.</div><div class="tr">Type 2 diabetes, 6 years</div><span class="tcond">Diabetes</span></div></div>
+      </div>
+      <div class="tc fu" style="transition-delay:.1s">
+        <div class="tst"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <p class="tq">"My nephrologist recommended a urine log and every other app required uploading my health data to a server. Urivia stores everything locally on my device. That was the deciding factor."</p>
+        <div class="ta"><div class="tav" style="background:#185FA5;">DK</div><div><div class="tn">David K.</div><div class="tr">Stage 3 CKD</div><span class="tcond">Kidney disease</span></div></div>
+      </div>
+      <div class="tc fu" style="transition-delay:.2s">
+        <div class="tst"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24" style="opacity:.3"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <p class="tq">"I kept getting dark amber readings mid-afternoon and had no idea why. Turns out I was consistently dehydrated by 2pm every day. The pattern data made it obvious. Changed my water intake habits completely."</p>
+        <div class="ta"><div class="tav" style="background:#854F0B;">JP</div><div><div class="tn">James P.</div><div class="tr">General wellness user</div><span class="tcond" style="background:var(--ap);color:var(--amber);">Hydration</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONESTY -->
+<section class="sec hon">
+  <div class="sin">
+    <span class="ey fu">Honest by design</span>
+    <h2 class="fu">What Urivia does <em style="font-style:italic">not</em> do</h2>
+    <p class="sb fu" style="max-width:100%">We think it's important you know exactly what this tool can and cannot do.</p>
+    <div class="hl fu">
+      <div class="hi"><div class="hx">✕</div><div><strong>Diagnose disease.</strong> <span>Color alone cannot confirm or rule out any medical condition. Always follow up with a clinician for anything concerning.</span></div></div>
+      <div class="hi"><div class="hx">✕</div><div><strong>Replace urine lab tests.</strong> <span>Clinical urinalysis detects protein, glucose, bacteria, and microscopic markers that no phone camera can read. Urivia screens color only.</span></div></div>
+      <div class="hi"><div class="hx">✕</div><div><strong>Replace your clinician's judgment.</strong> <span>Urivia helps you notice patterns and prepare better questions — it doesn't make clinical decisions and never will.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL HOW IT WORKS -->
+<section class="sec vhow" id="how-it-works">
+  <div class="si">
+    <span class="ey fu">See exactly how it works</span>
+    <h2 class="fu">Four steps. Thirty seconds.</h2>
+    <p class="sb fu">No learning curve. Open the app, pick your color, add context, get a result. That is the whole flow — every single time.</p>
+    <div class="vstps">
+      <div class="vstp fu">
+        <div class="vnum">1</div>
+        <div>
+          <h3>Pick a color</h3>
+          <p>Tap the color that matches from the 7-point visual scale, or take a photo with your camera.</p>
+          <span class="vtag">Photo or manual</span>
+        </div>
+      </div>
+      <div class="vstp fu" style="transition-delay:.08s">
+        <div class="vnum">2</div>
+        <div>
+          <h3>Add context</h3>
+          <p>Log any symptoms — burning, fever, odor, recent vitamins, new medications. Context sharpens your result.</p>
+          <span class="vtag">8 symptom signals</span>
+        </div>
+      </div>
+      <div class="vstp fu" style="transition-delay:.16s">
+        <div class="vnum">3</div>
+        <div>
+          <h3>Get your signal</h3>
+          <p>AI gives you one of four clear outputs with a plain-English explanation of why you got it.</p>
+          <span class="vtag">AI-powered</span>
+        </div>
+      </div>
+      <div class="vstp fu" style="transition-delay:.24s">
+        <div class="vnum">4</div>
+        <div>
+          <h3>Build history</h3>
+          <p>Every scan saves locally. Review patterns, spot trends, export a report before your next appointment.</p>
+          <span class="vtag">Local only</span>
+        </div>
+      </div>
+    </div>
+    <div class="vsig-row" style="margin-top:4rem">
+      <div class="vsig vn fu">
+        <div class="vsig-dot" style="background:#34C77A"></div>
+        <h4>Normal</h4>
+        <p>Color is in the healthy range. Stay hydrated and keep monitoring as usual.</p>
+      </div>
+      <div class="vsig vh fu" style="transition-delay:.08s">
+        <div class="vsig-dot" style="background:#3A8FC8"></div>
+        <h4>Hydrate</h4>
+        <p>Mild concentration. Drink water and re-scan in a few hours.</p>
+      </div>
+      <div class="vsig vm fu" style="transition-delay:.16s">
+        <div class="vsig-dot" style="background:#E8960A"></div>
+        <h4>Monitor</h4>
+        <p>Mild concern or unusual change. Log symptoms and recheck. See a doctor if it continues.</p>
+      </div>
+      <div class="vsig vc fu" style="transition-delay:.24s">
+        <div class="vsig-dot" style="background:#C03030"></div>
+        <h4>Seek care</h4>
+        <p>Color, symptoms, or both suggest a prompt visit to your healthcare provider.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="sec comp" id="compare">
+  <div class="si">
+    <span class="ey fu">How we compare</span>
+    <h2 class="fu">The only app built specifically for chronic conditions</h2>
+    <p class="sb fu">Most urine health apps were built for general wellness. Urivia was designed from the ground up for people managing diabetes, CKD, and high blood pressure.</p>
+    <div class="comp-wrap fu">
+      <table class="comp-tbl">
+        <thead>
+          <tr>
+            <th style="width:32%">Feature</th>
+            <th class="uc" style="width:22%">Urivia</th>
+            <th style="width:23%">Urinox</th>
+            <th style="width:23%">Bladder Journal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>No account required</td><td class="uc"><span class="cy">Yes</span></td><td><span class="cn">No — forced login</span></td><td><span class="cn">No</span></td></tr>
+          <tr><td>No test strips needed</td><td class="uc"><span class="cy">Yes</span></td><td><span class="cy">Yes</span></td><td><span class="cy">Yes</span></td></tr>
+          <tr><td>Data stays on device</td><td class="uc"><span class="cy">Yes — fully local</span></td><td><span class="cn">No — cloud storage</span></td><td><span class="cn">No — cloud storage</span></td></tr>
+          <tr><td>AI interpretation</td><td class="uc"><span class="cy">Yes — Claude AI</span></td><td><span class="cn">No</span></td><td><span class="cp">Basic insights</span></td></tr>
+          <tr><td>Symptom-aware results</td><td class="uc"><span class="cy">Yes</span></td><td><span class="cn">No</span></td><td><span class="cn">No</span></td></tr>
+          <tr><td>Doctor-ready PDF reports</td><td class="uc"><span class="cy">Yes (Pro)</span></td><td><span class="cp">Basic export</span></td><td><span class="cy">Yes</span></td></tr>
+          <tr><td>Diabetes / CKD focus</td><td class="uc"><span class="cy">Yes — primary use case</span></td><td><span class="cp">General wellness</span></td><td><span class="cp">Bladder diary focus</span></td></tr>
+          <tr><td>Photo-based calibration</td><td class="uc"><span class="cy">Yes</span></td><td><span class="cn">No</span></td><td><span class="cn">No</span></td></tr>
+          <tr><td>App Store rating</td><td class="uc"><span class="cy">4.8 stars</span></td><td><span class="cp">3.8 stars</span></td><td><span class="cy">4.7 stars</span></td></tr>
+          <tr><td>Free tier</td><td class="uc"><span class="cy">5 scans/mo</span></td><td><span class="cp">Limited</span></td><td><span class="cy">Yes</span></td></tr>
+          <tr><td>Pro price</td><td class="uc"><span class="cy">$2.99/mo or $24.99/yr</span></td><td><span class="cp">$4.99/mo</span></td><td><span class="cp">$3.99/mo</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CALIBRATION CARD -->
+<section class="sec cal" id="calibration">
+  <div class="si">
+    <div class="cal-grid">
+      <div class="fu">
+        <span class="ey">Physical accessory</span>
+        <h2>The Urivia calibration card</h2>
+        <p class="sb" style="margin-top:1rem">Better accuracy in any lighting. The credit-card-sized reference card gives Urivia's camera a white balance anchor — so your result is consistent whether you scan at 7am or under fluorescent office lights.</p>
+        <div class="cal-card" style="margin-top:2rem">
+          <div>
+            <div class="cal-price"><sup>$</sup>9<span style="font-family:var(--sans);font-size:1.4rem">.99</span></div>
+            <div style="font-size:.875rem;color:var(--il);margin-top:.25rem">Free shipping · Ships with a protective sleeve</div>
+          </div>
+          <ul class="cal-features">
+            <li>White, 18% gray, and black calibration patches</li>
+            <li>QR code links to in-app calibration guide</li>
+            <li>Cup placement alignment guide on reverse</li>
+            <li>Credit-card size — fits in your wallet</li>
+            <li>Durable matte laminate — waterproof and wipe-clean</li>
+          </ul>
+          <div>
+            <a class="cal-btn" href="#get-app">Pre-order calibration card — $9.99</a>
+            <p style="font-size:.8rem;color:var(--il);text-align:center;margin-top:.625rem">Bundle deal: Pro Annual + card = $29.99 (save $5)</p>
+          </div>
+        </div>
+      </div>
+      <div class="fu" style="transition-delay:.1s">
+        <div class="cal-mock">
+          <div>
+            <div class="cal-logo">Urivia</div>
+            <div style="font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:2px">Color calibration reference</div>
+          </div>
+          <div>
+            <div class="cal-patches">
+              <div class="cal-p" style="background:#FFFFFF"></div>
+              <div class="cal-p" style="background:#B4B2A9"></div>
+              <div class="cal-p" style="background:#2C2C2A"></div>
+              <div style="flex:1"></div>
+              <div style="width:40px;height:40px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,.3)"><path d="M3 9h3V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v3h3c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-8c0-1.1.9-2 2-2zm5-3v3h8V6H8zm-5 5v8h18v-8H3zm9 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
+              </div>
+            </div>
+            <div class="cal-bottom" style="margin-top:.75rem">
+              <div class="cal-label">Hold card flush with cup rim in natural light</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1.25rem;background:var(--w);border-radius:14px;border:1px solid var(--rule);padding:1.25rem">
+          <div style="font-size:.8125rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Why calibration matters</div>
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.85rem;color:var(--im)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">01</span>Different lighting changes how yellow looks on camera</div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.85rem;color:var(--im)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">02</span>White balance correction improves color accuracy by up to 40%</div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.85rem;color:var(--im)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">03</span>The card gives Urivia a reference point so your scans are consistent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-s" id="faq">
+  <div class="sin">
+    <span class="ey fu">Common questions</span>
+    <h2 class="fu">Everything you need to know</h2>
+    <div class="fql fu">
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">Do I need to create an account?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">No account required — ever. Urivia stores all your scan data locally on your device only. Nothing is uploaded to any server. You can use the full app anonymously from the first scan.</div></div>
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">How accurate is photo-based color scanning?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">Accuracy depends on lighting. In natural diffuse light, Urivia's calibration engine corrects for white balance and lighting to give reliable color classification. The app shows a quality score (0–100) for every scan and flags photos that are too dark, overexposed, or low-contrast. For critical concerns, always confirm with a clinical test.</div></div>
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">Can it detect blood in my urine?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">Visible blood (gross hematuria) causes a pink or red color that Urivia can flag as "Seek care." However, microscopic hematuria — too small to change color — requires a clinical urine dipstick or lab test. If you have any concern about blood in your urine, see a doctor regardless of what Urivia shows.</div></div>
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">Is my health data private?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">Yes. All scan data — colors, history, symptoms, results — is stored exclusively on your device. No images are uploaded. No scan results leave your phone unless you explicitly choose to export a report. Urivia has no server-side database of your health data.</div></div>
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">My urine is bright yellow after vitamins — is that a problem?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">Completely harmless. Bright neon yellow after B-vitamins (especially riboflavin/B2) is a normal effect of water-soluble vitamin excretion. Urivia recognizes this color and will note it as supplement-related when you indicate vitamins in the symptom check.</div></div>
+      <div class="fqi"><div class="fqq" onclick="tFAQ(this)">Does the Pro plan auto-renew? Can I cancel?<div class="fqch"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="fqa">Pro subscriptions renew monthly or annually through the App Store or Google Play. You can cancel at any time in your device's subscription settings — no cancellation fees. If you cancel, Pro access continues until the end of the current billing period.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec prc" id="pricing">
+  <div class="si">
+    <span class="ey fu">Simple pricing</span>
+    <h2 class="fu">Track with more confidence</h2>
+    <p class="sb fu">Start free. Upgrade when you want unlimited history, trends, reminders, and doctor-ready summaries.</p>
+    <div class="prg">
+      <div class="prc-c fu">
+        <div class="pt">Free</div>
+        <div><div class="pn"><sup>$</sup>0</div><div class="pp">forever</div></div>
+        <ul class="pfl">
+          <li>5 scans per month</li>
+          <li>Basic color + risk label</li>
+          <li>Last 7 days of history</li>
+          <li>Manual color picker</li>
+          <li>No account required</li>
+        </ul>
+        <a class="bpg" href="#get-app">Get started free</a>
+      </div>
+      <div class="prc-c feat fu" style="transition-delay:.1s">
+        <div class="ppill">Most popular</div>
+        <div class="pt">Pro Monthly</div>
+        <div><div class="pn"><sup>$</sup>2<span style="font-family:var(--sans);font-size:1.5rem">.99</span></div><div class="pp">per month</div></div>
+        <ul class="pfl">
+          <li>Unlimited scans</li>
+          <li>Full scan history + trends</li>
+          <li>Symptom-aware guidance</li>
+          <li>Custom reminders</li>
+          <li>Doctor-ready summaries</li>
+          <li>AI health advisor (Claude)</li>
+          <li>Dipstick strip analysis</li>
+        </ul>
+        <a class="bpp" href="#get-app">Start Pro — $2.99/mo</a>
+      </div>
+      <div class="prc-c fu" style="transition-delay:.2s">
+        <div class="pt">Pro Annual</div>
+        <div>
+          <div class="pn"><sup>$</sup>24<span style="font-family:var(--sans);font-size:1.5rem">.99</span></div>
+          <div class="pp">per year</div>
+          <span class="psv" style="margin-top:.5rem;">Save 30% vs monthly</span>
+        </div>
+        <ul class="pfl">
+          <li>Everything in Pro Monthly</li>
+          <li>30% off vs monthly billing</li>
+          <li>Under $2.10 per month</li>
+          <li>Priority support</li>
+          <li>Early access to new features</li>
+        </ul>
+        <a class="bpp" href="#get-app">Get annual — $24.99/yr</a>
+      </div>
+    </div>
+    <p class="pn-note fu">All plans · No account required · Cancel anytime · iOS &amp; Android</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta" id="get-app">
+  <h2 class="fu">Stay more aware between appointments</h2>
+  <p class="fu">Track urine color, log symptoms, and keep a clearer record of changes — so you're never relying on memory when it matters most.</p>
+  <div class="sbs fu">
+    <a class="sb-btn" href="#"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.38.74 3.2.8 1.21-.24 2.38-.93 3.7-.84 1.58.13 2.76.72 3.54 1.84-3.25 1.94-2.73 5.91.27 7.07-.63 1.64-1.44 3.26-2.71 3.99zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><div><span class="sb-sub">Download on the</span><span class="sb-name">App Store</span></div></a>
+    <a class="sb-btn" href="#"><svg viewBox="0 0 24 24"><path d="M3.18 23.76c.33.18.71.19 1.07 0l10.89-6.29-2.23-2.23-9.73 8.52zm15.6-9.01L16.42 13l2.33-2.33 2.13 1.23c.6.35.6 1.22 0 1.57l-2.1 1.28zM2.09.58C1.8.91 1.64 1.4 1.64 2.02v19.96c0 .63.16 1.11.45 1.45l.08.07 11.18-11.18v-.26L2.17.51l-.08.07zm13.33 13.33L4.23 2.72l-.08.07L15.42 14l-.08-.09z"/></svg><div><span class="sb-sub">Get it on</span><span class="sb-name">Google Play</span></div></a>
+  </div>
+  <a class="btw fu" href="#">Get Urivia free</a>
+  <p class="fdsc">Urivia is for informational use only and is not a diagnostic tool or substitute for professional medical advice, testing, or treatment. Always consult a qualified healthcare professional for medical concerns.</p>
+</section>
+
+<footer>
+  <a class="flog" href="#"><div class="nm" style="width:28px;height:28px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;"><ellipse cx="12" cy="8.5" rx="4.5" ry="5.5" fill="white"/><ellipse cx="12" cy="8.5" rx="2.2" ry="2.8" fill="#0D7A5F"/><ellipse cx="12" cy="8.5" rx="1" ry="1.2" fill="white"/><path d="M5 18.5C5 14.5 8 12.5 12 12.5C16 12.5 19 14.5 19 18.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="8.5" cy="20.5" r="1.2" fill="white" opacity=".7"/><circle cx="12" cy="19.5" r="1.2" fill="white" opacity=".7"/><circle cx="15.5" cy="20.5" r="1.2" fill="white" opacity=".7"/></svg></div><span>Urivia Health</span></a>
+  <div class="fls"><a href="#">Privacy policy</a><a href="#">Terms of use</a><a href="#">Medical disclaimer</a><a href="#">Contact</a></div>
+  <div class="fcp">© 2026 Urivia Health. All rights reserved. Urivia is a screening tool only and does not constitute medical advice or diagnosis.</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function tFAQ(el){
+  const item=el.closest('.fqi');
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.fqi.open').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+</script>
+</body>
+</html>

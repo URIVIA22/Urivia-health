@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Urine Tests: What Dipsticks Actually Tell You — UriVia Health</title>
+<meta name="description" content="Home urine dipsticks detect 10 different markers. Here's what each one means, what they miss, and when to trust the result.">
+<meta property="og:title" content="Home Urine Tests: What Dipsticks Actually Tell You">
+<meta property="og:description" content="Home urine dipsticks detect 10 different markers. Here's what each one means, what they miss, and when to trust the result.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+  <div class="post-meta">
+    <span>Hydration</span><span class="dot"></span><span class="read-time">5 min read</span>
+  </div>
+  <h1 class="post-title serif">Home Urine Tests: What Dipsticks Actually Tell You</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>Standard 10-parameter home urine dipsticks test for glucose, ketones, blood, protein, nitrites, leukocytes, bilirubin, urobilinogen, pH, and specific gravity. A pack of 100 costs about $12 on Amazon. They're useful for spotting patterns — repeated protein, repeated glucose, repeated nitrites — but they're screening tools, not diagnostic ones. A single abnormal reading rarely means anything. A repeating pattern is a reason to call your doctor.</p>
+<p>This guide explains what each of the 10 parameters means, where dipsticks fall short, and how to get useful information out of them without reading too much into a single result.</p>
+<h2 class="serif">Why home urine testing took off</h2>
+<p>Home health testing went mainstream in the 2020s. Blood pressure cuffs, pulse oximeters, glucose meters, and now urine dipsticks are all normal household tools.</p>
+<p>For chronic conditions, that shift is genuinely useful. People with diabetes or kidney risk want more information between lab visits. Parents want to confirm a UTI before an urgent care trip. People on new medications want to see if their urine changes.</p>
+<p>The catch is that dipsticks produce results in under a minute — and that speed makes them easy to over-interpret.</p>
+<h2 class="serif">The 10 parameters on a standard strip</h2>
+<h3 class="serif">Glucose</h3>
+<p>Normally absent in urine. Appears when blood glucose exceeds about 180 mg/dL (the renal threshold). Useful screening for undiagnosed diabetes or for tracking how well blood sugar is controlled.</p>
+<h3 class="serif">Ketones</h3>
+<p>Markers of fat breakdown. Elevated in prolonged fasting, very low-carb diets, prolonged exercise, untreated Type 1 diabetes (where it's dangerous), and during illness. High ketones with high glucose is a diabetic emergency warning.</p>
+<h3 class="serif">Blood</h3>
+<p>Detects even small amounts of blood invisible to the eye. Positive blood can come from menstruation, kidney stones, UTIs, exercise, or other causes. Always deserves medical follow-up if repeated.</p>
+<h3 class="serif">Protein</h3>
+<p>Small amounts of protein are normal after heavy exercise or during illness. Persistent protein can be an early sign of kidney damage — especially in people with diabetes or hypertension.</p>
+<h3 class="serif">Nitrites</h3>
+<p>Most bacteria that cause UTIs convert nitrates into nitrites. Positive nitrites usually mean bacterial infection. Negative nitrites don't rule out UTI, because some bacteria don't produce nitrites.</p>
+<h3 class="serif">Leukocytes</h3>
+<p>Markers of white blood cells, which rise with infection or inflammation. Combined with positive nitrites, strongly suggests UTI.</p>
+<h3 class="serif">Bilirubin</h3>
+<p>Normally absent. Positive bilirubin can indicate liver or bile duct issues. Worth a medical workup if repeated.</p>
+<h3 class="serif">Urobilinogen</h3>
+<p>A small amount is normal. High levels can indicate liver disease; absent levels can indicate bile duct blockage.</p>
+<h3 class="serif">pH</h3>
+<p>Normal range is about 4.5 to 8. Very acidic or very alkaline urine can occur with certain diets, medications, or kidney conditions. Single readings rarely matter; persistent extremes might.</p>
+<h3 class="serif">Specific gravity</h3>
+<p>A measure of how concentrated your urine is — essentially a hydration measurement. Low means dilute (well hydrated or overhydrated); high means concentrated (dehydrated).</p>
+<h2 class="serif">Where home dipsticks fall short</h2>
+<p>Dipsticks have real limitations worth knowing:</p>
+<p><strong>Technique matters.</strong> Dip too long, read too late, store strips in a humid bathroom — all of these produce false results.</p>
+<p><strong>They're screening tools, not diagnostic ones.</strong> Positive protein doesn't mean kidney disease. Positive nitrites doesn't confirm UTI. They're signals that deserve clinical follow-up if repeated.</p>
+<p><strong>They have thresholds.</strong> A "trace" protein result might mean nothing or might mean early kidney damage. Only lab testing (urine albumin-to-creatinine ratio) can tell the difference.</p>
+<p><strong>They expire.</strong> Strips degrade after the bottle is opened. Use within 6 months and don't store in humid environments.</p>
+<p><strong>They can't see everything.</strong> Kidney stones, small tumors, and some infections won't show on a dipstick.</p>
+<h2 class="serif">How to use dipsticks well</h2>
+<p>If you use home dipsticks, a few practical rules:</p>
+<ol>
+<li><strong>Read at the right time.</strong> Most strips specify exact times for each pad (30 seconds for nitrites, 60 seconds for glucose, etc.). Use a timer.</li>
+</ol>
+<ol>
+<li><strong>Use natural light.</strong> Fluorescent bathroom light distorts color matching. Test near a window if possible.</li>
+</ol>
+<ol>
+<li><strong>Log every result.</strong> A single "trace protein" is useless. Ten readings over three weeks showing a pattern is useful.</li>
+</ol>
+<ol>
+<li><strong>Don't make treatment decisions.</strong> A positive result is a prompt to call your doctor, not to self-medicate or self-reassure.</li>
+</ol>
+<ol>
+<li><strong>Store strips correctly.</strong> Tight cap, dry location, away from heat.</li>
+</ol>
+<p><code>[INFORMATION GAIN — once UriVia Health has real data: "UriVia Health users who log dipstick results catch patterns about [X] weeks earlier on average than users relying on symptom tracking alone."]</code></p>
+<h2 class="serif">Where UriVia Health fits in</h2>
+<p>UriVia Health includes a 10-parameter strip reader. You enter your results from any standard over-the-counter strip, and UriVia Health logs them to your private on-device history. Over time, patterns emerge that a single strip reading can't show.</p>
+<p>The app also runs combination rules. A single positive nitrite might be nothing. Nitrites plus leukocytes plus reported burning is a UTI pattern worth calling your doctor about. UriVia Health flags those combinations so you don't have to interpret them on your own.</p>
+<p>Strip reading is optional. The core UriVia Health scan uses your phone camera to read urine color — no strips required for the basic use case.</p>
+<h2 class="serif">When a positive result warrants a same-day call</h2>
+<p>Some dipstick findings need attention fast:</p>
+<ul>
+<li><strong>Positive blood</strong> (first time)</li>
+<li><strong>Positive protein</strong> that persists over multiple readings</li>
+<li><strong>Positive ketones</strong> in someone with Type 1 diabetes, especially with high glucose</li>
+<li><strong>Positive nitrites + leukocytes</strong> with UTI symptoms (burning, urgency)</li>
+<li><strong>Very high glucose</strong> on a strip if you're not known to be diabetic</li>
+</ul>
+<p>All of these deserve a same-day conversation with your clinician or a visit to urgent care.</p>
+<h2 class="serif">Final thoughts</h2>
+<p>Home urine dipsticks are useful when you treat them as one data point, not a diagnosis. They'll never replace lab-based urinalysis, and they're not supposed to. Where they genuinely add value: catching patterns over weeks, spotting repeated abnormalities, and giving you a reason to call your doctor a week earlier than you otherwise would.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="/blog/urine-color-chart">Urine Color Chart — A Complete Guide</a></li>
+<li><a href="/blog/home-vs-clinic-kidney-checks">At-Home Kidney Checks vs Clinic Tests</a></li>
+<li><a href="/blog/diabetes-kidney-health-tracking">Diabetes and Kidney Health Tracking</a></li>
+</ul>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. Home urine dipsticks are screening tools and do not replace laboratory testing or medical diagnosis. Consult a qualified healthcare provider for medical concerns.</strong></p>
+<h2 class="serif">SCHEMA</h2>
+<p>``<code>json { "@context": "https://schema.org", "@type": "MedicalWebPage", "@id": "https://uriviahealth.com/blog/home-urine-tests-dipsticks", "url": "https://uriviahealth.com/blog/home-urine-tests-dipsticks", "name": "Home Urine Tests: What Dipsticks Actually Tell You", "headline": "Home Urine Tests: What Dipsticks Actually Tell You", "description": "Home urine dipsticks detect 10 different markers. Here's what each one means, what they miss, and when to trust the result.", "inLanguage": "en", "author": { "@type": "Person", "name": "Ben Spanier", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "UriVia Health" } }, "datePublished": "2026-05-02", "dateModified": "2026-05-02", "lastReviewed": "2026-05-02", "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" }, "specialty": { "@type": "MedicalSpecialty", "name": "PrimaryCare" }, "publisher": { "@type": "Organization", "name": "UriVia Health", "url": "https://uriviahealth.com" } } </code>``</p>
+<h2 class="serif">EDITOR NOTES</h2>
+<ul>
+<li><strong>Cannibalization note:</strong> This blog originally overlapped heavily with Blog 9 (home vs clinic). I reframed Blog 3 to focus specifically on dipstick parameters (the "what each test means" angle) so it's complementary to Blog 9 rather than competitive.</li>
+<li>Consider adding a table of the 10 parameters — tables often get extracted by AI Overviews.</li>
+<li>Verify the renal threshold (180 mg/dL) and UTI screening claims with any medical reviewer you eventually retain.</li>
+</ul>
+<hr>
+<hr>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./urine-color-chart.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</div>
+    </a>
+    <a href="./hydration-kidney-health.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Hydration and Kidney Health: How Much Does Your Urine Really Tell You?</div>
+    </a>
+    <a href="./urine-diary-guide.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System)</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

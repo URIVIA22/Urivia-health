@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound) — UriVia Health</title>
+<meta name="description" content="GLP-1 meds change hydration more than anyone warns you about. Here's what happens to your urine color — and when darker readings actually matter.">
+<meta property="og:title" content="What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound)">
+<meta property="og:description" content="GLP-1 meds change hydration more than anyone warns you about. Here's what happens to your urine color — and when darker readings actually matter.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+  <div class="post-meta">
+    <span>GLP-1</span><span class="dot"></span><span class="read-time">6 min read</span>
+  </div>
+  <h1 class="post-title serif">What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound)</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>GLP-1 medications — Ozempic, Wegovy, Mounjaro, Zepbound — commonly cause urine to run darker than normal in the first several weeks of treatment. The main reason is reduced thirst signaling: GLP-1s suppress appetite and the thirst drive alongside it, so most users simply drink less without realizing it. Smaller meals also contribute fewer liters of food-based water intake. Amber or dark-yellow urine is the most common pattern, especially in the morning and after dose increases. It usually resolves with conscious rehydration. Persistent dark urine, brown or cola-colored urine, or urine changes paired with fatigue, dizziness, or reduced output warrant a call to your doctor.</p>
+<p>This guide covers what GLP-1 medications actually do to your urine color, why the changes happen, which patterns are normal, and which ones are worth acting on. If you're within your first three months of Ozempic, Wegovy, Mounjaro, or Zepbound, this is the information your prescriber probably didn't have time to walk through.</p>
+<h2 class="serif">Why GLP-1 medications change urine color in the first place</h2>
+<p>GLP-1 receptor agonists work by mimicking the body's own GLP-1 hormone, which is released after eating. The medication slows gastric emptying, reduces appetite, and — critically — reduces the thirst drive.</p>
+<p>That last part is the one most people aren't warned about. Thirst is a cue your body uses to tell you when to drink. GLP-1 medications mute that cue substantially. Most users report that within 2-4 weeks of starting, they simply don't feel thirsty the way they used to.</p>
+<p>Combined with three other factors, this creates a hydration debt most people don't feel:</p>
+<ol>
+<li><strong>Smaller meals mean less water from food.</strong> Adults typically get about 20-30% of daily water intake from food. When portions drop by half, food-based water drops with them.</li>
+<li><strong>Nausea in early treatment</strong> reduces overall intake further.</li>
+<li><strong>Some people increase physical activity</strong> once they start losing weight, raising water needs.</li>
+</ol>
+<p>The result: darker urine, often for weeks, in users who feel perfectly fine.</p>
+<h2 class="serif">What "normal" urine looks like on a GLP-1</h2>
+<p>Most GLP-1 users cycle through a predictable pattern:</p>
+<p><strong>Weeks 1-2:</strong> Slightly darker than usual, especially in the morning. Most people don't notice unless they're paying attention.</p>
+<p><strong>Weeks 3-6:</strong> Often the darkest period. Thirst signal is muted, smaller meals are established, weight loss is accelerating. Amber morning urine is common.</p>
+<p><strong>Weeks 7+:</strong> Users who've developed conscious hydration habits stabilize back to pale or light yellow. Users who haven't often stay in the amber range long-term.</p>
+<p><strong>After dose increases:</strong> The pattern often repeats. A bump from 0.5 mg to 1.0 mg Wegovy, or 5 mg to 10 mg Zepbound, can produce a fresh round of darker urine while your body adjusts.</p>
+<p>This is why urine color tracking is especially useful on GLP-1s: your body's built-in thirst cue isn't reliable, so you need a replacement.</p>
+<h2 class="serif">Which colors are normal, which are worth tracking, and which are worth a call</h2>
+<h3 class="serif">Pale yellow — hydration target</h3>
+<p>This is where you want to live most days. If you're hitting pale yellow consistently, your hydration habits are working despite the muted thirst signal.</p>
+<h3 class="serif">Yellow to dark yellow — drink water now, re-check in a few hours</h3>
+<p>Normal variation. Most GLP-1 users see these colors regularly. A glass of water and a re-check in 2-3 hours usually resolves it.</p>
+<h3 class="serif">Amber — the most common GLP-1 pattern, worth attention</h3>
+<p>Amber typically signals moderate dehydration. On a GLP-1, this is often the default color for people who haven't adjusted their hydration habits. It's not an emergency, but it's worth addressing deliberately — drink more, check urine again later, and build in conscious hydration reminders.</p>
+<p>If amber persists for 5+ days despite active hydration effort, that's worth a call.</p>
+<h3 class="serif">Dark amber or orange — escalating dehydration</h3>
+<p>Beyond amber, you're into moderately significant dehydration territory. On a GLP-1, this can happen during dose increases, during illness, after heavy exercise, or just after a week of particularly low fluid intake.</p>
+<p>Drink water aggressively, rest, and re-check. If it doesn't improve within 24 hours, call your doctor.</p>
+<h3 class="serif">Brown, tea-colored, or cola-colored — same-day call</h3>
+<p>These colors can come from muscle breakdown (rhabdomyolysis), severe dehydration, medications, or liver issues. On a GLP-1, where rapid weight loss can occasionally lead to muscle breakdown during intense exercise, brown or cola-colored urine warrants a same-day call to your doctor.</p>
+<h3 class="serif">Pink, red, or visibly bloody — same-day call or urgent care</h3>
+<p>Always worth immediate medical attention, GLP-1 or not. Can be caused by beets or food dye, but can also indicate blood in urine, kidney stones (more common during rapid weight loss), or UTI.</p>
+<h2 class="serif">The silent dehydration problem most GLP-1 users don't know about</h2>
+<p>Here's the counterintuitive part: most GLP-1 users who are significantly dehydrated <em>feel fine</em>.</p>
+<p>Normally, dehydration triggers thirst. You feel dry-mouthed, headachy, tired. You drink water, feel better, move on. GLP-1 medications break that loop. You can be genuinely dehydrated without experiencing any of the usual warning signs.</p>
+<p>The body's backup signals still work — kidneys still concentrate urine, skin still loses elasticity at severe dehydration, blood pressure still drops — but those signals kick in later than thirst would have. Which is why tracking urine color matters more on GLP-1s than off them.</p>
+<p>For a deeper dive on the silent dehydration pattern specifically, see <a href="/blog/dehydration-on-ozempic">Dehydration on Ozempic: Signs Most People Miss</a>.</p>
+<h2 class="serif">What about ketones on a GLP-1?</h2>
+<p>GLP-1 users sometimes see positive ketones on home dipsticks. This happens for a few reasons:</p>
+<ul>
+<li><strong>Smaller meals plus lower carb intake</strong> naturally increases fat burning</li>
+<li><strong>Occasional meal skipping</strong> from low appetite produces ketones</li>
+<li><strong>Significant caloric deficit</strong> during active weight loss promotes ketosis</li>
+</ul>
+<p>Low-level ketones without high glucose is generally not dangerous on a GLP-1. But <strong>high ketones with high glucose is a diabetic emergency warning</strong> (diabetic ketoacidosis, DKA) — especially for users who have Type 1 or Type 2 diabetes alongside their GLP-1 prescription.</p>
+<p>For more detail, see <a href="/blog/ketones-on-glp1">Ketones in Urine on GLP-1: What It Means</a>.</p>
+<h2 class="serif">What your prescriber probably didn't tell you</h2>
+<p>Three practical things that most GLP-1 prescribers don't mention:</p>
+<p><strong>1. Set fluid intake targets, not thirst-driven drinking.</strong> Aim for a specific number — 2.5 to 3 liters per day is reasonable for most adults on a GLP-1 without kidney or heart restrictions — because you can't rely on your thirst cue anymore.</p>
+<p><strong>2. Watch your urine color in the morning for the first signal.</strong> Morning urine is almost always darker than afternoon urine. If your morning urine stays amber for a week, your overnight hydration is insufficient.</p>
+<p><strong>3. Hydrate deliberately around dose increases.</strong> The week you bump your dose is usually when urine darkens noticeably. Add 500 ml to your daily target for that week.</p>
+<p><code>[INFORMATION GAIN — once UriVia Health has real data: "Across UriVia Health users who reported a GLP-1 medication in onboarding, [X]% logged at least one amber reading in week 2 of their prescription, compared to [Y]% in the general user base — consistent with the thirst-suppression effect of GLP-1 medications."]</code></p>
+<h2 class="serif">Where UriVia Health fits in</h2>
+<p>UriVia Health is a free iPhone app that scans urine color with your phone camera in about 30 seconds. For GLP-1 users, it replaces the muted thirst signal with an objective daily check — pale yellow means your hydration is working, amber means you need to drink more.</p>
+<p>Users who select GLP-1 medication context in onboarding get an AI health advisor tuned for that condition — one that understands reduced thirst, dose-increase dehydration patterns, and ketone questions specific to GLP-1 use.</p>
+<p>The basic scan is free, no account required. Pro plans ($1.99/month on annual) add unlimited scans, the AI advisor, and a doctor-ready PDF export that's especially useful for endocrinology appointments.</p>
+<h2 class="serif">When to call your doctor</h2>
+<p>The GLP-1-specific urgent patterns:</p>
+<ul>
+<li>Brown, tea-colored, or cola-colored urine</li>
+<li>Visible blood or pink/red urine</li>
+<li>Persistent dark urine with reduced output</li>
+<li>Dark urine paired with severe nausea, vomiting, or inability to keep fluids down</li>
+<li>Dark urine with severe flank or back pain</li>
+<li>Severe dizziness or fainting episodes</li>
+<li>Very high glucose plus positive ketones (if diabetic)</li>
+</ul>
+<p>Any of these means a same-day call to your prescriber or a visit to urgent care.</p>
+<h2 class="serif">Final thoughts</h2>
+<p>GLP-1 medications are powerful tools. They're also tools that change your body's normal hydration signaling in ways that take getting used to. Urine color is the most reliable daily signal for whether your hydration habits are keeping up with the medication's effects.</p>
+<p>The goal isn't perfection. It's a consistent habit of checking — morning is ideal — so that amber days trigger conscious rehydration instead of being quietly ignored.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="/blog/dehydration-on-ozempic">Dehydration on Ozempic: Signs Most People Miss</a></li>
+<li><a href="/blog/ketones-on-glp1">Ketones in Urine on GLP-1: What It Means</a></li>
+<li><a href="/blog/hydration-kidney-health">Hydration and Kidney Health</a></li>
+<li><a href="/blog/urine-color-chart">Urine Color Chart — A Complete Guide</a></li>
+</ul>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. This content is for informational purposes only and does not replace personalized medical advice. Consult your prescribing physician for questions about your GLP-1 medication.</strong></p>
+<h2 class="serif">SCHEMA</h2>
+<p>``<code>json { "@context": "https://schema.org", "@type": "MedicalWebPage", "@id": "https://uriviahealth.com/blog/glp1-urine-color", "url": "https://uriviahealth.com/blog/glp1-urine-color", "name": "What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound)", "headline": "What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound)", "description": "GLP-1 meds change hydration more than anyone warns you about. Here's what happens to your urine color — and when darker readings actually matter.", "inLanguage": "en", "author": { "@type": "Person", "name": "Ben Spanier", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "UriVia Health" } }, "datePublished": "2026-05-20", "dateModified": "2026-05-20", "lastReviewed": "2026-05-20", "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" }, "specialty": { "@type": "MedicalSpecialty", "name": "Endocrinology" }, "mainEntity": { "@type": "Drug", "name": "GLP-1 Receptor Agonists" }, "publisher": { "@type": "Organization", "name": "UriVia Health", "url": "https://uriviahealth.com" } } </code>``</p>
+<h2 class="serif">EDITOR NOTES</h2>
+<ul>
+<li><strong>THIS IS YOUR HIGHEST-VALUE BLOG.</strong> Your hybrid-plan TikTok ads targeting GLP-1 users should drive traffic here first. Consider featuring it on your <code>/glp1</code> landing page.</li>
+<li>The medication brand names (Ozempic, Wegovy, Mounjaro, Zepbound) are intentionally in the title and throughout — these are the actual search queries people use. Don't remove them.</li>
+<li>The "20-30% of daily water from food" stat is from EFSA (European Food Safety Authority) and US Institute of Medicine — well-established.</li>
+<li>The "thirst suppression" claim is documented in the original Ozempic/Wegovy clinical trials — not controversial.</li>
+<li>Consider pitching this to r/Ozempic, r/Mounjaro, r/Zepbound, r/WegovyWeightLoss — it's exactly the kind of content those communities upvote.</li>
+</ul>
+<hr>
+<hr>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./dehydration-on-ozempic.html" class="related-card">
+      <div class="rc-topic">GLP-1</div>
+      <div class="rc-title">Dehydration on Ozempic: The Silent Signs Most People Miss</div>
+    </a>
+    <a href="./ketones-on-glp1.html" class="related-card">
+      <div class="rc-topic">GLP-1</div>
+      <div class="rc-title">Ketones in Urine on a GLP-1: What It Means (and What to Do)</div>
+    </a>
+    <a href="./urine-color-chart.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

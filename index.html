@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UriVia Health — The urine color app doctors wish existed</title>
+<meta name="description" content="UriVia Health is a daily urine color screening app for diabetes, kidney health, blood pressure and hydration. 30 seconds, your phone camera, science-based color analysis. Currently in private beta — join the waitlist for founding member pricing.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0f1419;
+    --ink-soft: #1e2530;
+    --bone: #f5f1e8;
+    --bone-warm: #ebe4d2;
+    --paper: #faf7ef;
+    --amber: #c8761f;
+    --amber-deep: #a85c14;
+    --amber-soft: #e8b87a;
+    --sage: #6b7a5a;
+    --rule: rgba(15, 20, 25, 0.12);
+    --rule-strong: rgba(15, 20, 25, 0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+  }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 247, 239, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+  }
+  .nav-tag {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    padding: 4px 10px;
+    border: 1px solid var(--amber);
+    border-radius: 100px;
+    margin-left: 8px;
+  }
+  .nav-cta {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 10px 18px;
+    background: var(--ink);
+    color: var(--bone);
+    border-radius: 100px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--amber-deep); }
+
+  /* ============ HERO ============ */
+  .hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 32px 100px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  h1.hero-title {
+    font-size: clamp(48px, 6.2vw, 88px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--amber-deep);
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 26px 14px 22px;
+    background: var(--ink);
+    color: var(--bone);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .app-badge:hover { transform: translateY(-2px); background: var(--ink-soft); }
+  .app-badge svg { width: 28px; height: 28px; }
+  .app-badge-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .app-badge-text span:first-child { font-size: 11px; opacity: 0.75; letter-spacing: 0.05em; }
+  .app-badge-text span:last-child { font-size: 18px; font-weight: 500; font-family: 'Fraunces', serif; }
+
+  .trust-line {
+    font-size: 13px;
+    color: var(--ink-soft);
+    opacity: 0.75;
+  }
+
+  /* Hero visual - the "strip scan" illustration */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 460px;
+    justify-self: end;
+    width: 100%;
+  }
+  .phone-frame {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 100%);
+    border-radius: 42px;
+    padding: 14px;
+    box-shadow:
+      0 40px 80px -20px rgba(15, 20, 25, 0.35),
+      0 20px 40px -15px rgba(168, 92, 20, 0.15),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    transform: rotate(-3deg);
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+    border-radius: 32px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .screen-greeting {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .screen-sub {
+    font-size: 12px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-bottom: 22px;
+  }
+
+  .hydration-ring {
+    width: 180px;
+    height: 180px;
+    margin: 8px auto 18px;
+    position: relative;
+  }
+  .hydration-ring svg { transform: rotate(-90deg); }
+  .ring-bg { fill: none; stroke: var(--rule); stroke-width: 8; }
+  .ring-fg {
+    fill: none;
+    stroke: url(#ringGrad);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 130;
+    animation: ringFill 1.8s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  @keyframes ringFill { from { stroke-dashoffset: 502; } to { stroke-dashoffset: 130; } }
+  .ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ring-value {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .ring-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  /* Color scan result (primary hero mockup) */
+  .color-result {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+  .color-sample {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .color-meta { flex: 1; }
+  .color-name {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .color-sub {
+    font-size: 11px;
+    color: var(--ink-soft);
+    opacity: 0.65;
+    margin-top: 3px;
+  }
+  .color-badge {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--sage);
+    color: var(--bone);
+    padding: 6px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .color-history {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .history-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    font-size: 11px;
+  }
+  .history-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    box-shadow: inset 0 -1px 2px rgba(0,0,0,0.1);
+  }
+  .history-lbl {
+    flex: 1;
+    color: var(--ink);
+    font-size: 11px;
+  }
+  .history-tag {
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .history-tag.ok { background: rgba(107, 122, 90, 0.15); color: var(--sage); }
+  .history-tag.warn { background: rgba(200, 118, 31, 0.12); color: var(--amber-deep); }
+
+  .glp1-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bone-warm);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .glp1-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sage);
+    box-shadow: 0 0 0 3px rgba(107, 122, 90, 0.2);
+  }
+  .glp1-badge-label {
+    font-weight: 500;
+  }
+  .glp1-badge-meta {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  .metric-row {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .metric-chip {
+    flex: 1;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .metric-chip-label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.6;
+  }
+  .metric-chip-value {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    margin-top: 2px;
+  }
+
+  /* Floating strip element */
+  .floating-strip {
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    width: 130px;
+    padding: 16px 18px;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 20, 25, 0.15);
+    transform: rotate(6deg);
+    z-index: 2;
+  }
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    margin-bottom: 8px;
+  }
+  .strip-pad {
+    aspect-ratio: 1;
+    border-radius: 2px;
+  }
+  .strip-pad:nth-child(1) { background: #e8c56a; }
+  .strip-pad:nth-child(2) { background: #d4a94e; }
+  .strip-pad:nth-child(3) { background: #c8761f; }
+  .strip-pad:nth-child(4) { background: #e8c56a; }
+  .strip-pad:nth-child(5) { background: #d4a94e; }
+  .strip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  /* ============ DIVIDER ============ */
+  .divider {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .divider-line {
+    height: 1px;
+    background: var(--rule);
+    position: relative;
+  }
+  .divider-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  /* ============ MARQUEE / STAT STRIP ============ */
+  .stat-strip {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 48px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .stat-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+  .stat-item {
+    text-align: left;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--amber-soft);
+    margin-bottom: 12px;
+  }
+  .stat-label {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--bone);
+    opacity: 0.8;
+    max-width: 280px;
+  }
+
+  /* ============ WHY GLP-1 USERS ============ */
+  .section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 120px 32px;
+  }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 820px;
+    margin-bottom: 24px;
+  }
+  .section-title em { font-style: italic; color: var(--amber-deep); }
+
+  .section-lead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin-bottom: 72px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .why-cell {
+    padding: 40px 36px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .why-cell-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--amber-deep);
+    margin-bottom: 20px;
+  }
+  .why-cell-title {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .why-cell-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* ============ THE THREE PILLARS ============ */
+  .pillars {
+    background: var(--bone);
+    padding: 120px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .pillars-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .pillar {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 80px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pillar:last-child { border-bottom: none; }
+  .pillar-num {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .pillar-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 3.6vw, 44px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .pillar-title em { font-style: italic; color: var(--amber-deep); }
+  .pillar-body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .pillar-visual {
+    aspect-ratio: 4/3;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Pillar 1 — onboarding path */
+  .onboard-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+    justify-content: center;
+  }
+  .onboard-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  .onboard-step.active {
+    border-color: var(--amber);
+    background: linear-gradient(90deg, rgba(200, 118, 31, 0.08), transparent);
+  }
+  .onboard-step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--rule-strong);
+    flex-shrink: 0;
+  }
+  .onboard-step.active .onboard-step-dot {
+    background: var(--amber);
+    box-shadow: 0 0 0 4px rgba(200, 118, 31, 0.15);
+  }
+  .onboard-step-text { flex: 1; }
+  .onboard-step-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    opacity: 0.5;
+  }
+
+  /* Pillar 2 — weekly narrative */
+  .narrative-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .narrative-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .narrative-week {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+  }
+  .narrative-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--amber-deep);
+    padding: 4px 10px;
+    border: 1px solid var(--amber);
+    border-radius: 100px;
+  }
+  .narrative-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--ink);
+    padding: 18px 0;
+    position: relative;
+  }
+  .narrative-quote::before {
+    content: '"';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    font-size: 40px;
+    color: var(--amber);
+    opacity: 0.4;
+    font-family: 'Fraunces', serif;
+  }
+  .narrative-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+  }
+  .narrative-metric {
+    text-align: center;
+  }
+  .narrative-metric-val {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .narrative-metric-lbl {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  /* Pillar 3 — symptom tracker */
+  .symptom-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 100%;
+    align-content: start;
+  }
+  .symptom-chip {
+    padding: 14px 16px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .symptom-chip.selected {
+    border-color: var(--amber);
+    background: rgba(200, 118, 31, 0.06);
+  }
+  .symptom-chip-lbl { font-weight: 500; }
+  .symptom-chip-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+  .symptom-chip.selected .symptom-chip-val { color: var(--amber-deep); opacity: 1; }
+
+  /* AI Advisor card */
+  .advisor-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .advisor-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .advisor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 0 3px rgba(200, 118, 31, 0.2);
+  }
+  .advisor-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .advisor-question {
+    background: var(--bone-warm);
+    border-radius: 14px 14px 4px 14px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--ink);
+    align-self: flex-end;
+    max-width: 85%;
+    line-height: 1.45;
+  }
+  .advisor-typing {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 14px;
+    background: rgba(15, 20, 25, 0.06);
+    border-radius: 14px 14px 14px 4px;
+  }
+  .advisor-typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-soft);
+    opacity: 0.4;
+    animation: typingDot 1.4s ease-in-out infinite;
+  }
+  .advisor-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .advisor-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingDot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+  .advisor-response {
+    background: var(--ink);
+    color: var(--bone);
+    border-radius: 14px 14px 14px 4px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.55;
+    max-width: 92%;
+    align-self: flex-start;
+    position: relative;
+  }
+  .advisor-followup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  .advisor-followup-chip {
+    font-size: 12px;
+    padding: 8px 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .advisor-followup-chip:hover {
+    background: var(--ink);
+    color: var(--bone);
+    border-color: var(--ink);
+  }
+  .advisor-response-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--amber-soft);
+    margin-right: 6px;
+    vertical-align: middle;
+    animation: pulseDot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Doctor PDF card — mirrors real UriVia export */
+  .pdf-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px 20px;
+    box-shadow: 0 20px 40px -15px rgba(15, 20, 25, 0.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .pdf-card::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    right: 20px;
+    height: 6px;
+    background: #fff;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid var(--rule);
+    border-bottom: none;
+    opacity: 0.6;
+  }
+
+  /* Header block — brand + meta */
+  .pdf-brand-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--amber);
+  }
+  .pdf-brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--amber-deep);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .pdf-brand-sub {
+    font-size: 9px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 2px;
+    letter-spacing: 0.02em;
+  }
+  .pdf-meta {
+    text-align: right;
+    font-size: 9px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .pdf-meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Section labels */
+  .pdf-section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+
+  /* Health scores row — 3 big numbers */
+  .pdf-scores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 4px 0 6px;
+  }
+  .pdf-score {
+    text-align: center;
+  }
+  .pdf-score-value {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--sage);
+    letter-spacing: -0.02em;
+  }
+  .pdf-score-value.amber { color: var(--amber-deep); font-size: 22px; }
+  .pdf-score-tag {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .pdf-score-label {
+    font-size: 8px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 3px;
+    line-height: 1.25;
+  }
+
+  /* Smaller metric chips row */
+  .pdf-metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    padding: 4px 0;
+  }
+  .pdf-metric {
+    text-align: center;
+  }
+  .pdf-metric-num {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .pdf-metric-num.flagged { color: var(--amber-deep); }
+  .pdf-metric-num.good { color: var(--sage); }
+  .pdf-metric-lbl {
+    font-size: 7px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  /* Trend bars */
+  .pdf-trend {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 42px;
+    padding: 4px 0;
+  }
+  .pdf-trend-bar {
+    flex: 1;
+    border-radius: 2px 2px 0 0;
+    min-height: 4px;
+  }
+
+  /* Flagged table row */
+  .pdf-flag-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 90px;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 10px;
+    border-bottom: 1px solid var(--rule);
+    align-items: center;
+  }
+  .pdf-flag-row:last-child { border-bottom: none; }
+  .pdf-flag-date { color: var(--ink-soft); font-weight: 500; }
+  .pdf-flag-desc { color: var(--ink); }
+  .pdf-flag-tag {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    border-radius: 100px;
+    background: rgba(200, 118, 31, 0.12);
+    color: var(--amber-deep);
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Disclaimer footer */
+  .pdf-disclaimer {
+    margin-top: auto;
+    padding: 8px 10px;
+    background: rgba(200, 118, 31, 0.06);
+    border-left: 2px solid var(--amber);
+    border-radius: 2px;
+    font-size: 8px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .pdf-disclaimer strong { color: var(--ink); font-weight: 600; }
+
+  /* ============ HOW IT WORKS ============ */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--rule);
+  }
+  .how-step {
+    padding: 44px 32px 44px 0;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .how-step:last-child { border-right: none; padding-right: 0; }
+  .how-step:not(:first-child) { padding-left: 32px; }
+  .how-step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--amber);
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
+  }
+  .how-step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .how-step-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .how-step-time {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--amber-deep);
+  }
+
+  /* ============ BETA TESTERS ============ */
+  .beta-section {
+    background: var(--paper);
+  }
+  .beta-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .beta-header-row .section-title {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 300px;
+  }
+  .beta-framing {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--bone-warm);
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .beta-framing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sage);
+    box-shadow: 0 0 0 3px rgba(107, 122, 90, 0.2);
+  }
+
+  .beta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .beta-card {
+    padding: 32px 28px;
+    background: var(--bone);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+  .beta-quote-mark {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--amber);
+    opacity: 0.25;
+  }
+  .beta-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .beta-attribution {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+  }
+  .beta-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber-soft), var(--amber));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--bone);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .beta-meta {
+    flex: 1;
+  }
+  .beta-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .beta-context {
+    font-size: 12px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+  .beta-footer-note {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  /* ============ PRICING ============ */
+  .pricing-section {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--bone) 100%);
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .plan {
+    padding: 44px 36px 40px;
+    background: var(--paper);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .plan:last-child { border-right: none; }
+  .plan-featured {
+    background: var(--ink);
+    color: var(--bone);
+    padding-top: 56px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 30px 60px -20px rgba(15, 20, 25, 0.25);
+  }
+  .plan-featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .plan-badge {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--amber-soft);
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  .plan-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .plan-featured .plan-tag { color: var(--amber-soft); }
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .plan-price-num {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+  .plan-price-unit {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    font-weight: 500;
+  }
+  .plan-featured .plan-price-unit { color: var(--bone); opacity: 0.6; }
+  .plan-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    min-height: 60px;
+  }
+  .plan-featured .plan-desc { color: var(--bone); opacity: 0.75; }
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  .plan-features li {
+    font-size: 14px;
+    line-height: 1.45;
+    padding-left: 24px;
+    position: relative;
+    color: var(--ink);
+  }
+  .plan-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 14px;
+    height: 7px;
+    border-left: 1.5px solid var(--amber-deep);
+    border-bottom: 1.5px solid var(--amber-deep);
+    transform: rotate(-45deg);
+  }
+  .plan-featured .plan-features li { color: var(--bone); }
+  .plan-featured .plan-features li::before { border-color: var(--amber-soft); }
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: auto;
+  }
+  .plan-cta-primary {
+    background: var(--amber);
+    color: var(--bone);
+  }
+  .plan-cta-primary:hover { background: var(--amber-deep); transform: translateY(-1px); }
+  .plan-cta-secondary {
+    background: var(--ink);
+    color: var(--bone);
+  }
+  .plan-cta-secondary:hover { background: var(--ink-soft); transform: translateY(-1px); }
+  .plan-featured .plan-cta-secondary {
+    background: var(--bone);
+    color: var(--ink);
+  }
+  .plan-featured .plan-cta-secondary:hover { background: var(--bone-warm); }
+
+  /* ============ FAQ ============ */
+  .faq-section {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 120px 0;
+  }
+  .faq-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    gap: 80px;
+  }
+  .faq-section .section-label { color: var(--amber-soft); }
+  .faq-section .section-label::before { background: var(--amber-soft); }
+  .faq-section .section-title { color: var(--bone); }
+  .faq-section .section-title em { color: var(--amber-soft); }
+
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 24px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.15); }
+  .faq-q {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    color: var(--bone);
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--amber-soft);
+    transition: transform 0.3s;
+  }
+  details[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(245, 241, 232, 0.75);
+    padding-top: 16px;
+    max-width: 680px;
+  }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 140px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .final-cta-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    max-width: 900px;
+    margin: 0 auto 32px;
+  }
+  .final-cta-title em { font-style: italic; color: var(--amber-deep); }
+  .final-cta-sub {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 auto 44px;
+  }
+  .final-cta .app-badge {
+    transform: scale(1.1);
+  }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px 32px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-disclaimer {
+    font-size: 11px;
+    max-width: 620px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  /* ============ FADE IN ============ */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  @keyframes fadeUp { to { opacity: 1; transform: none; } }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.25s; }
+  .d3 { animation-delay: 0.4s; }
+  .d4 { animation-delay: 0.55s; }
+
+  /* ============ PARAMETERS GRID ============ */
+  .params-section {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--bone) 100%);
+    border-bottom: 1px solid var(--rule);
+  }
+  .params-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+    margin-top: 60px;
+  }
+  .param-cell {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+    transition: background 0.25s;
+  }
+  .param-cell:hover { background: var(--bone); }
+  .param-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .param-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid var(--rule);
+    box-shadow: inset 0 -2px 3px rgba(0,0,0,0.08);
+  }
+  .param-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .param-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--amber-deep);
+    margin-top: 2px;
+  }
+  .param-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  /* Go-deeper strip callout */
+  .deeper-callout {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 40px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+  }
+  .deeper-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bone);
+    border-radius: 14px;
+    border: 1px solid var(--rule);
+  }
+  .deeper-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    width: 100%;
+    transform: rotate(-4deg);
+  }
+  .deeper-pad {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    box-shadow: inset 0 -1px 2px rgba(0,0,0,0.1);
+  }
+  .deeper-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 10px;
+  }
+  .deeper-title {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .deeper-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============ PRODUCT VALUE BAND ============ */
+  .product-band {
+    padding: 120px 0;
+    background: var(--paper);
+  }
+  .product-band-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .product-band-visual {
+    aspect-ratio: 1/1;
+    background: var(--bone);
+    border-radius: 28px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .strip-hero {
+    width: 80%;
+    max-width: 360px;
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 30px 60px -20px rgba(15, 20, 25, 0.25);
+    transform: rotate(-8deg);
+    border: 1px solid var(--rule);
+  }
+  .strip-hero-pads {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+  .strip-hero-pad {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    box-shadow: inset 0 -2px 3px rgba(0,0,0,0.1);
+  }
+  .strip-hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  /* Color chart card for product band */
+  .color-chart-card {
+    width: 85%;
+    max-width: 380px;
+    background: var(--paper);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 30px 60px -20px rgba(15, 20, 25, 0.25);
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+  .color-chart-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .color-chart-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .color-swatch {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .color-swatch span {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0;
+    white-space: nowrap;
+  }
+  .color-swatch.active {
+    transform: scale(1.12);
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15), 0 0 0 3px var(--ink);
+  }
+  .color-swatch.active span { opacity: 0.9; font-weight: 600; }
+  .scan-pointer {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--bone);
+    border-radius: 10px;
+    font-size: 12px;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .scan-pointer-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 6px solid var(--amber-soft);
+  }
+  .scan-pointer-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .scan-beam {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    box-shadow: 0 0 20px var(--amber-soft);
+    animation: scan 2.8s ease-in-out infinite;
+  }
+  @keyframes scan {
+    0%, 100% { transform: translateY(0); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translateY(180px); opacity: 1; }
+    80% { opacity: 0; }
+  }
+
+
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 60px;
+      padding: 56px 24px 72px;
+    }
+    .hero-visual { justify-self: center; max-width: 380px; }
+    .floating-strip { right: -20px; }
+
+    .section { padding: 80px 24px; }
+    .stat-strip-inner { grid-template-columns: 1fr; gap: 32px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .pillar { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; }
+    .pillars-inner { padding: 0 24px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .how-step { padding: 32px 0; border-right: none; border-bottom: 1px solid var(--rule); }
+    .how-step:not(:first-child) { padding-left: 0; }
+    .faq-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+    .final-cta { padding: 80px 24px; }
+    .nav-inner { padding: 14px 20px; }
+    .nav-tag { display: none; }
+    .params-grid { grid-template-columns: 1fr; }
+    .product-band { padding: 60px 0; }
+    .product-band-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+    .deeper-callout { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+    .deeper-mark { max-width: 160px; margin: 0 auto; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .plan { border-right: none; border-bottom: 1px solid var(--rule); padding: 36px 28px; }
+    .plan:last-child { border-bottom: none; }
+    .plan-desc { min-height: auto; }
+    .beta-grid { grid-template-columns: 1fr; }
+    .beta-header-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+      <span class="nav-tag">Private Beta</span>
+    </a>
+    <a href="#waitlist" class="nav-cta">Join waitlist</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div>
+    <div class="eyebrow fade-in d1">Daily urine color screening · Diabetes · Kidneys · Blood pressure · Hydration</div>
+    <h1 class="hero-title serif fade-in d2">
+      The urine color app <em>doctors wish existed.</em>
+    </h1>
+    <p class="hero-sub fade-in d3">
+      Your urine has been telling you things about your kidneys, diabetes risk, and hydration for your entire life. UriVia Health turns that daily signal into a 30-second scan with your phone camera — no test strips required. Currently in private beta. Join the waitlist to become a founding member.
+    </p>
+    <div class="cta-row fade-in d4">
+      <a href="#waitlist" class="app-badge">
+        <div class="app-badge-text" style="margin-left: 4px;">
+          <span>Save your spot · Private beta</span>
+          <span>Join the waitlist</span>
+        </div>
+      </a>
+      <span class="trust-line">First 1,000 founding members get 50% off Year 1 · No credit card required</span>
+    </div>
+  </div>
+
+  <div class="hero-visual fade-in d3">
+    <div class="floating-strip">
+      <div class="strip-grid">
+        <div class="strip-pad"></div>
+        <div class="strip-pad"></div>
+        <div class="strip-pad"></div>
+        <div class="strip-pad"></div>
+        <div class="strip-pad"></div>
+      </div>
+      <div class="strip-label">Strip · optional</div>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="screen-header">
+          <span>9:41</span>
+          <span>UriVia Health</span>
+        </div>
+        <div class="screen-greeting serif">Morning, Sarah.</div>
+        <div class="screen-sub">Day 14 on Mounjaro · 2.5 mg</div>
+
+        <div class="glp1-badge">
+          <span class="glp1-badge-dot"></span>
+          <span class="glp1-badge-label">GLP-1 tracking on</span>
+          <span class="glp1-badge-meta">Wk 2</span>
+        </div>
+
+        <div class="color-result">
+          <div class="color-sample" style="background: linear-gradient(145deg, #f5e89a, #e8c56a);"></div>
+          <div class="color-meta">
+            <div class="color-name serif">Pale straw</div>
+            <div class="color-sub">Today · 8:14 AM</div>
+          </div>
+          <div class="color-badge">Looking good</div>
+        </div>
+
+        <div class="color-history">
+          <div class="history-row">
+            <span class="history-dot" style="background: #d4a94e;"></span>
+            <span class="history-lbl">Dark yellow · Yesterday</span>
+            <span class="history-tag warn">Stay hydrated</span>
+          </div>
+          <div class="history-row">
+            <span class="history-dot" style="background: #e8c56a;"></span>
+            <span class="history-lbl">Pale straw · 2d ago</span>
+            <span class="history-tag ok">Looking good</span>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <div class="metric-chip">
+            <div class="metric-chip-label">Scans</div>
+            <div class="metric-chip-value serif">14</div>
+          </div>
+          <div class="metric-chip">
+            <div class="metric-chip-label">Hydration</div>
+            <div class="metric-chip-value serif">74%</div>
+          </div>
+          <div class="metric-chip">
+            <div class="metric-chip-label">Trend</div>
+            <div class="metric-chip-value serif">↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <div class="stat-num serif">30s</div>
+      <div class="stat-label">Average scan time. Point your camera at a sample in a cup, or upload a photo — UriVia reads the color instantly.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num serif">10+</div>
+      <div class="stat-label">Urine colors identified, each mapped to plain-English guidance: Looking good, Stay hydrated, Worth checking, or See a doctor soon.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num serif">0</div>
+      <div class="stat-label">Data leaves your phone. No account required. All analysis runs on-device.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT VALUE BAND ============ -->
+<section class="product-band">
+  <div class="product-band-inner">
+    <div>
+      <div class="section-label">The product</div>
+      <h2 class="section-title serif">
+        A daily urine check you <em>already know how to do</em> — done right by your phone.
+      </h2>
+      <p class="section-lead">
+        Looking at the color of your urine is the oldest at-home health check there is. Doctors have been doing it for thousands of years. The only thing that's ever been missing is consistency — what counts as "pale yellow" at 6 a.m. in a bathroom with fluorescent light is not the same at 3 p.m. by a window.
+      </p>
+      <p class="section-lead" style="margin-bottom: 0;">
+        UriVia Health takes the guesswork out. Scan a sample in a cup with your phone camera, or upload a photo, and our on-device color engine matches it against a calibrated palette in about 30 seconds. Every scan is saved to your private history — so you can show your doctor the trend, not just a memory.
+      </p>
+    </div>
+    <div class="product-band-visual">
+      <div class="color-chart-card">
+        <div class="color-chart-label">Daily urine color</div>
+        <div class="color-chart-grid">
+          <div class="color-swatch" style="background: #F5F5DC;"><span>Clear</span></div>
+          <div class="color-swatch" style="background: #FFFACD;"><span>Pale</span></div>
+          <div class="color-swatch active" style="background: #FFD700;"><span>Yellow</span></div>
+          <div class="color-swatch" style="background: #DAA520;"><span>Amber</span></div>
+          <div class="color-swatch" style="background: #FF8C00;"><span>Orange</span></div>
+          <div class="color-swatch" style="background: #B22222;"><span>Red</span></div>
+          <div class="color-swatch" style="background: #4A3728;"><span>Brown</span></div>
+        </div>
+        <div class="scan-pointer">
+          <div class="scan-pointer-arrow"></div>
+          <div class="scan-pointer-label">Today · Pale straw</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLOR GUIDANCE GRID ============ -->
+<section class="section params-section">
+  <div class="section-label">The guidance system</div>
+  <h2 class="section-title serif">
+    Every color gets <em>a plain-English answer.</em>
+  </h2>
+  <p class="section-lead">
+    No medical jargon. No charts you have to interpret. Each scan returns one of four clear readings, so you know what to do next in two seconds — whether that's drinking more water, checking in with yourself, or picking up the phone to call your doctor.
+  </p>
+
+  <div class="params-grid">
+    <div class="param-cell">
+      <div class="param-header">
+        <div class="param-swatch" style="background: linear-gradient(135deg, #FFFACD, #FFD700);"></div>
+        <div>
+          <div class="param-name serif">Looking good</div>
+          <div class="param-code">Pale · light yellow</div>
+        </div>
+      </div>
+      <div class="param-desc">Pale straw to light yellow is the sweet spot. Hydration is on track, nothing unusual showing. Log it, move on with your day, scan again tomorrow.</div>
+    </div>
+
+    <div class="param-cell">
+      <div class="param-header">
+        <div class="param-swatch" style="background: linear-gradient(135deg, #FFD700, #DAA520);"></div>
+        <div>
+          <div class="param-name serif">Stay hydrated</div>
+          <div class="param-code">Darker yellow · amber</div>
+        </div>
+      </div>
+      <div class="param-desc">A common mid-day reading on a GLP-1, especially when appetite is down. A glass or two of water and a re-check later usually brings you back to pale.</div>
+    </div>
+
+    <div class="param-cell">
+      <div class="param-header">
+        <div class="param-swatch" style="background: linear-gradient(135deg, #DAA520, #FF8C00);"></div>
+        <div>
+          <div class="param-name serif">Worth checking</div>
+          <div class="param-code">Deep amber · orange</div>
+        </div>
+      </div>
+      <div class="param-desc">Deep amber or orange suggests real dehydration — or a reaction to something you ate, supplements, or a medication. Time to pay attention and rehydrate.</div>
+    </div>
+
+    <div class="param-cell">
+      <div class="param-header">
+        <div class="param-swatch" style="background: linear-gradient(135deg, #B22222, #4A3728);"></div>
+        <div>
+          <div class="param-name serif">See a doctor soon</div>
+          <div class="param-code">Red · brown · cloudy</div>
+        </div>
+      </div>
+      <div class="param-desc">Unusual colors — red, pink, brown, tea-colored — shouldn't be ignored. UriVia flags them, saves the scan, and encourages you to contact your physician.</div>
+    </div>
+  </div>
+
+  <div class="deeper-callout">
+    <div class="deeper-mark">
+      <div class="deeper-strip">
+        <div class="deeper-pad" style="background: #f0e8b8;"></div>
+        <div class="deeper-pad" style="background: #d4c878;"></div>
+        <div class="deeper-pad" style="background: #e8b87a;"></div>
+        <div class="deeper-pad" style="background: #c8761f;"></div>
+        <div class="deeper-pad" style="background: #8c4a78;"></div>
+        <div class="deeper-pad" style="background: #6b4a7a;"></div>
+        <div class="deeper-pad" style="background: #4a5a8c;"></div>
+      </div>
+    </div>
+    <div class="deeper-body">
+      <div class="deeper-tag">Optional · Go deeper</div>
+      <h3 class="deeper-title serif">Add a 10-parameter dipstick strip when you want more detail.</h3>
+      <p class="deeper-desc">For days you want a fuller picture — hydration, pH, ketones, glucose, protein, blood, leukocytes, nitrites, and more — UriVia Health reads any standard OTC urinalysis strip. Useful during dose changes, illness, or whenever something feels off. Never required.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY GLP-1 USERS ============ -->
+<section class="section">
+  <div class="section-label">Why GLP-1 users, specifically</div>
+  <h2 class="section-title serif">
+    GLP-1s change the signals your body gives you. <em>Urine tells the truth.</em>
+  </h2>
+  <p class="section-lead">
+    If you're on Ozempic, Wegovy, Mounjaro, or Zepbound, you already know the drugs suppress thirst and shrink meals. That's the point. The side effect nobody talks about enough: you stop being able to feel when something's off. A daily urinalysis is the cheapest, most objective way to see through the fog.
+  </p>
+
+  <div class="why-grid">
+    <div class="why-cell">
+      <div class="why-cell-num">01 / Thirst signal</div>
+      <div class="why-cell-title serif">Your thirst cue is muted.</div>
+      <div class="why-cell-body">GLP-1s reduce the drive to drink. You can be meaningfully dehydrated and feel nothing — which is why relying on thirst, or on a water-glass counter, misses the problem entirely.</div>
+    </div>
+    <div class="why-cell">
+      <div class="why-cell-num">02 / Intake</div>
+      <div class="why-cell-title serif">Smaller meals mean less food-water.</div>
+      <div class="why-cell-body">A large share of daily hydration comes from food. When appetite drops and portion sizes shrink, the deficit shows up quietly — in sleep quality, energy, and how you feel at 3 p.m.</div>
+    </div>
+    <div class="why-cell">
+      <div class="why-cell-num">03 / Side effects</div>
+      <div class="why-cell-title serif">Nausea and GI changes compound.</div>
+      <div class="why-cell-body">The most common GLP-1 side effects are exactly the ones that make you drink less and lose more. UriVia Health tracks them alongside your hydration so the picture stays honest.</div>
+    </div>
+    <div class="why-cell">
+      <div class="why-cell-num">04 / The blind spot</div>
+      <div class="why-cell-title serif">Fatigue is usually blamed on the drug.</div>
+      <div class="why-cell-body">The "GLP-1 fatigue" you hear about is often garden-variety dehydration wearing a costume. A ten-second reading tells you which one it is before you write off a whole afternoon.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THREE PILLARS ============ -->
+<section class="pillars">
+  <div class="pillars-inner">
+    <div class="section-label">What makes UriVia different for GLP-1 users</div>
+    <h2 class="section-title serif">
+      Three Pro features that actually earn their keep.
+    </h2>
+
+    <!-- Pillar 1 -->
+    <div class="pillar">
+      <div>
+        <div class="pillar-num">Pillar 01</div>
+        <h3 class="pillar-title serif">An <em>AI health advisor</em> that understands GLP-1 context.</h3>
+        <p class="pillar-body">UriVia Pro includes an AI health advisor, powered by Claude, that you can ask plain-English questions about your scans and symptoms. "Why was my urine darker this morning?" "Is it normal to feel this tired on week two?" It answers in context — your medication, your history, your readings.</p>
+        <p class="pillar-body">It won't diagnose you. It won't replace your doctor. But it's the calm, informed second opinion most people don't have access to at 11 p.m. on a Tuesday.</p>
+      </div>
+      <div class="pillar-visual">
+        <div class="advisor-card">
+          <div class="advisor-header">
+            <div class="advisor-dot"></div>
+            <span class="advisor-label">AI Advisor · Powered by Claude</span>
+          </div>
+          <div class="advisor-question">Why was my urine darker this morning than yesterday?</div>
+          <div class="advisor-response">
+            <span class="advisor-response-dot"></span>
+            Overnight urine is usually more concentrated, and your scan shows a one-step shift toward amber — common after 8+ hours without fluids. Your last three afternoons have all been in the pale-yellow range, so this looks routine. A glass of water with breakfast will likely bring you back.
+          </div>
+          <div class="advisor-question">Is this related to starting Mounjaro last week?</div>
+          <div class="advisor-response">
+            GLP-1s do mute thirst, so mild morning concentration is more common in the first few weeks. Nothing in your current pattern is unusual, but I'd flag it if mornings keep trending toward amber for three days in a row — that's worth mentioning at your next appointment.
+          </div>
+          <div class="advisor-followup">
+            <button class="advisor-followup-chip">What should my target be?</button>
+            <button class="advisor-followup-chip">Is ketones normal on a GLP-1?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2 -->
+    <div class="pillar">
+      <div class="pillar-visual">
+        <div class="pdf-card">
+          <div class="pdf-brand-row">
+            <div>
+              <div class="pdf-brand-name">UriVia Health</div>
+              <div class="pdf-brand-sub">Urine Colour Screening · Personal Health Report</div>
+            </div>
+            <div class="pdf-meta">
+              Generated: <strong>Apr 16, 2026</strong><br>
+              Total scans: <strong>28</strong><br>
+              Period: <strong>Last 30 days</strong>
+            </div>
+          </div>
+
+          <div>
+            <div class="pdf-section-label">Health Scores</div>
+            <div class="pdf-scores">
+              <div class="pdf-score">
+                <div class="pdf-score-value">82</div>
+                <div class="pdf-score-tag">Good</div>
+                <div class="pdf-score-label">7-day hydration</div>
+              </div>
+              <div class="pdf-score">
+                <div class="pdf-score-value">75</div>
+                <div class="pdf-score-tag">Good</div>
+                <div class="pdf-score-label">30-day hydration</div>
+              </div>
+              <div class="pdf-score">
+                <div class="pdf-score-value amber">1.4L</div>
+                <div class="pdf-score-tag" style="color: var(--amber-deep);">Water</div>
+                <div class="pdf-score-label">Avg 200ml / day</div>
+              </div>
+            </div>
+
+            <div class="pdf-metrics">
+              <div class="pdf-metric"><div class="pdf-metric-num">7</div><div class="pdf-metric-lbl">7d scans</div></div>
+              <div class="pdf-metric"><div class="pdf-metric-num good">5</div><div class="pdf-metric-lbl">Normal</div></div>
+              <div class="pdf-metric"><div class="pdf-metric-num flagged">2</div><div class="pdf-metric-lbl">Flagged</div></div>
+              <div class="pdf-metric"><div class="pdf-metric-num">28</div><div class="pdf-metric-lbl">30d scans</div></div>
+              <div class="pdf-metric"><div class="pdf-metric-num flagged">3</div><div class="pdf-metric-lbl">Flagged</div></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="pdf-section-label">14-day Trend</div>
+            <div class="pdf-trend">
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 70%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 80%;"></div>
+              <div class="pdf-trend-bar" style="background: #c8a958; height: 60%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 75%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 82%;"></div>
+              <div class="pdf-trend-bar" style="background: #c8a958; height: 55%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 78%;"></div>
+              <div class="pdf-trend-bar" style="background: #c8761f; height: 45%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 72%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 85%;"></div>
+              <div class="pdf-trend-bar" style="background: #c8a958; height: 58%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 80%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 75%;"></div>
+              <div class="pdf-trend-bar" style="background: #6b7a5a; height: 82%;"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="pdf-section-label">⚠ Flagged Scans</div>
+            <div class="pdf-flag-row">
+              <span class="pdf-flag-date">Apr 12</span>
+              <span class="pdf-flag-desc">Amber · foamy urine reported</span>
+              <span class="pdf-flag-tag">Worth checking</span>
+            </div>
+            <div class="pdf-flag-row">
+              <span class="pdf-flag-date">Apr 08</span>
+              <span class="pdf-flag-desc">Dark yellow · low intake</span>
+              <span class="pdf-flag-tag">Stay hydrated</span>
+            </div>
+          </div>
+
+          <div class="pdf-disclaimer">
+            <strong>Important:</strong> UriVia Health is a personal wellness tool. Not a medical device. Not a diagnosis. Always consult a qualified healthcare provider.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="pillar-num">Pillar 02</div>
+        <h3 class="pillar-title serif">A doctor-ready PDF your <em>physician will actually read.</em></h3>
+        <p class="pillar-body">One tap in Settings. A clean export lands in your email or files: 7-day and 30-day hydration scores, a 14-day color trend chart, a flagged-scans table with dates and indicators, and a complete scan history with symptom notes. No login for your doctor. No app to download.</p>
+        <p class="pillar-body">It's the difference between "I think I've been feeling kind of dehydrated" and handing them a one-page record. Your provider will actually skim it. Your seven-minute appointment just got a lot more useful.</p>
+      </div>
+    </div>
+
+    <!-- Pillar 3 -->
+    <div class="pillar">
+      <div>
+        <div class="pillar-num">Pillar 03</div>
+        <h3 class="pillar-title serif">Symptom tracking for <em>the symptoms you actually have.</em></h3>
+        <p class="pillar-body">Most wellness apps give you "mood" and "energy" and call it a day. UriVia lets you log the things GLP-1 users actually deal with — nausea, appetite changes, fatigue, constipation, injection-day effects — and charts them alongside your color scans so you can see what's connected to what.</p>
+        <p class="pillar-body">It's a private record of your own body on the medication. Not uploaded anywhere. Not sold. Just yours.</p>
+      </div>
+      <div class="pillar-visual">
+        <div class="symptom-list">
+          <div class="symptom-chip selected">
+            <span class="symptom-chip-lbl">Nausea</span>
+            <span class="symptom-chip-val">3 · AM</span>
+          </div>
+          <div class="symptom-chip selected">
+            <span class="symptom-chip-lbl">Low appetite</span>
+            <span class="symptom-chip-val">4</span>
+          </div>
+          <div class="symptom-chip">
+            <span class="symptom-chip-lbl">Fatigue</span>
+            <span class="symptom-chip-val">—</span>
+          </div>
+          <div class="symptom-chip selected">
+            <span class="symptom-chip-lbl">Constipation</span>
+            <span class="symptom-chip-val">2</span>
+          </div>
+          <div class="symptom-chip">
+            <span class="symptom-chip-lbl">Injection fog</span>
+            <span class="symptom-chip-val">—</span>
+          </div>
+          <div class="symptom-chip">
+            <span class="symptom-chip-lbl">Heartburn</span>
+            <span class="symptom-chip-val">—</span>
+          </div>
+          <div class="symptom-chip selected">
+            <span class="symptom-chip-lbl">Food aversion</span>
+            <span class="symptom-chip-val">Mild</span>
+          </div>
+          <div class="symptom-chip">
+            <span class="symptom-chip-lbl">Headache</span>
+            <span class="symptom-chip-val">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section">
+  <div class="section-label">How it works</div>
+  <h2 class="section-title serif">
+    Dip, scan, done.
+  </h2>
+  <p class="section-lead">
+    No finger-pricks. No wearables to buy. No subscription to start. UriVia Health reads a standard over-the-counter urinalysis strip using your phone's camera — the same test kits used in most clinics, for about thirty cents each.
+  </p>
+
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-step-num serif">01</div>
+      <div class="how-step-title serif">Dip a strip.</div>
+      <div class="how-step-body">Any standard 9-parameter urinalysis strip works. We'll recommend a brand in the app — expect around $12 for 100 strips.</div>
+      <div class="how-step-time">≈ 3 seconds</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num serif">02</div>
+      <div class="how-step-title serif">Scan with your camera.</div>
+      <div class="how-step-body">UriVia Health reads the color pads using an HSV analysis engine calibrated for phone cameras. On-device. No upload.</div>
+      <div class="how-step-time">≈ 6 seconds</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num serif">03</div>
+      <div class="how-step-title serif">Log how you feel.</div>
+      <div class="how-step-body">Tap the GLP-1 symptoms that apply. One screen. Ten seconds at most. Skip if you don't want to.</div>
+      <div class="how-step-time">≈ 10 seconds</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BETA TESTERS ============ -->
+<!--
+=================================================================
+STATUS: Quotes from 4 real beta testers inserted. Waiting for each
+tester's approval before publishing. Delete this comment once all
+four testers have confirmed their quote.
+
+APPROVAL CHECKLIST:
+[ ] Linda confirmed (42, General wellness)
+[ ] Sam confirmed (48, Hypertension)
+[ ] Jerry confirmed (53, Prediabetes)
+[ ] Susan confirmed (50, Type 2 diabetes)
+
+Once all 4 are checked, delete this entire comment block and ship.
+=================================================================
+-->
+<section class="section beta-section">
+  <div class="beta-header-row">
+    <div>
+      <div class="section-label">Early feedback</div>
+      <h2 class="section-title serif">
+        What our <em>first beta testers</em> are telling us.
+      </h2>
+    </div>
+    <div class="beta-framing">
+      <span class="beta-framing-dot"></span>
+      <span>From our early testers · In their own words</span>
+    </div>
+  </div>
+
+  <p class="section-lead">
+    UriVia Health is new. These aren't polished testimonials from paid users — they're observations from our first beta testers managing hypertension, prediabetes, type 2 diabetes, and daily wellness tracking. We kept their own words because honest feedback tells a new audience more than five-star graphics ever could.
+  </p>
+
+  <div class="beta-grid">
+
+    <!-- CARD 1 — Linda · General wellness -->
+    <div class="beta-card">
+      <span class="beta-quote-mark">&ldquo;</span>
+      <p class="beta-quote">
+        UriVia just feels effortless. The urine scan makes sense right away, and the gentle reminders don't nag. It honestly makes tracking my health feel less overwhelming.
+      </p>
+      <div class="beta-attribution">
+        <div class="beta-avatar">L</div>
+        <div class="beta-meta">
+          <div class="beta-name">Linda, 42</div>
+          <div class="beta-context">General wellness</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 — Sam · Hypertension -->
+    <div class="beta-card">
+      <span class="beta-quote-mark">&ldquo;</span>
+      <p class="beta-quote">
+        I'm impressed by how accurate the readings feel and how clearly the app explains each result. Notifications nudge me at the right time, with no complicated setup.
+      </p>
+      <div class="beta-attribution">
+        <div class="beta-avatar">S</div>
+        <div class="beta-meta">
+          <div class="beta-name">Sam, 48</div>
+          <div class="beta-context">Hypertension</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 — Jerry · Prediabetes -->
+    <div class="beta-card">
+      <span class="beta-quote-mark">&ldquo;</span>
+      <p class="beta-quote">
+        The design is super straightforward. I didn't need a tutorial. Logging takes under a minute, and I like how the app keeps things calm and focused on what matters.
+      </p>
+      <div class="beta-attribution">
+        <div class="beta-avatar">J</div>
+        <div class="beta-meta">
+          <div class="beta-name">Jerry, 53</div>
+          <div class="beta-context">Prediabetes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 — Susan · Type 2 diabetes -->
+    <div class="beta-card">
+      <span class="beta-quote-mark">&ldquo;</span>
+      <p class="beta-quote">
+        The PDF feature is my favorite part. I walk into my appointment with a clear history instead of guessing. My doctor can see my color patterns, and the reminders help me take readings.
+      </p>
+      <div class="beta-attribution">
+        <div class="beta-avatar">S</div>
+        <div class="beta-meta">
+          <div class="beta-name">Susan, 50</div>
+          <div class="beta-context">Type 2 diabetes</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="beta-footer-note">
+    Quotes shared with permission. Names and specifics verified. We'll add more as our beta community grows.
+  </p>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section pricing-section">
+  <div class="section-label">Pricing · At launch</div>
+  <h2 class="section-title serif">
+    Start free. <em>Founding members save 50%.</em>
+  </h2>
+  <p class="section-lead">
+    The core urine scan will be free forever — ten lifetime scans, no account required, so you can actually try it before deciding anything. UriVia Pro unlocks unlimited scans, the AI health advisor powered by Claude, full history, and the doctor-ready PDF export. <strong>The first 1,000 waitlist members lock in 50% off Year 1 — $12.49 instead of $24.99.</strong>
+  </p>
+
+  <div class="pricing-grid">
+    <div class="plan">
+      <div class="plan-tag">Free</div>
+      <div class="plan-price serif"><span class="plan-price-num">$0</span></div>
+      <div class="plan-desc">For trying the product. No pressure, no upsell, no account to create.</div>
+      <ul class="plan-features">
+        <li>10 lifetime free scans</li>
+        <li>Color analysis &amp; plain-English results</li>
+        <li>On-device privacy</li>
+        <li>No account required</li>
+      </ul>
+      <a href="#waitlist" class="plan-cta plan-cta-secondary">Join waitlist</a>
+    </div>
+
+    <div class="plan plan-featured">
+      <div class="plan-badge">Founding member · 50% off</div>
+      <div class="plan-tag">Pro Annual</div>
+      <div class="plan-price serif">
+        <span class="plan-price-num">$12.49</span>
+        <span class="plan-price-unit">Year 1</span>
+      </div>
+      <div class="plan-desc"><strong>$12.49 your first year</strong> (normally $24.99), then $24.99/year. Founding member pricing for the first 1,000 on the waitlist. Renews at standard price.</div>
+      <ul class="plan-features">
+        <li>Everything in Pro Monthly</li>
+        <li>50% off Year 1 — founding perk</li>
+        <li>Locked in for first 1,000 only</li>
+        <li>7-day free trial · cancel anytime</li>
+      </ul>
+      <a href="#waitlist" class="plan-cta plan-cta-primary">Save my spot</a>
+    </div>
+
+    <div class="plan">
+      <div class="plan-tag">Pro Monthly</div>
+      <div class="plan-price serif">
+        <span class="plan-price-num">$2.99</span>
+        <span class="plan-price-unit">/ mo</span>
+      </div>
+      <div class="plan-desc">Pay month to month. Perfect if you want to try Pro before committing to a year.</div>
+      <ul class="plan-features">
+        <li>Unlimited scans</li>
+        <li>AI health advisor (powered by Claude)</li>
+        <li>Full scan history &amp; trend charts</li>
+        <li>Doctor-ready PDF export</li>
+        <li>Smart reminders</li>
+        <li>7-day free trial · cancel anytime</li>
+      </ul>
+      <a href="#waitlist" class="plan-cta plan-cta-secondary">Join waitlist</a>
+    </div>
+  </div>
+</section>
+<section class="faq-section">
+  <div class="faq-inner">
+    <div>
+      <div class="section-label">Frequently asked</div>
+      <h2 class="section-title serif">
+        The questions we get <em>most.</em>
+      </h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">How does the AI health advisor work?</summary>
+        <div class="faq-a">UriVia Pro includes an AI health advisor powered by Claude that answers plain-English questions about your scans and how you're feeling. It sees the context of your recent readings and whatever you've logged, and responds with calm, non-diagnostic guidance. It never prescribes, never replaces your doctor, and you control when and whether to use it.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is this a medical device?</summary>
+        <div class="faq-a">No. UriVia Health is a consumer wellness app. We don't diagnose, treat, or prescribe. We give you a clear reading of your urine color and let you track how you feel — the same information you'd get looking at a sample yourself, just faster and more consistent. If something looks off, talk to your doctor.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does it work with Ozempic, Wegovy, Mounjaro, and Zepbound?</summary>
+        <div class="faq-a">Yes — UriVia works alongside any of the GLP-1 medications. You can note which one you're on so your scan history and PDF export carry that context, and the AI health advisor factors it in when you ask questions. Switching meds later is one screen in settings.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Where does my data go?</summary>
+        <div class="faq-a">Onto your phone. All scan analysis runs on-device. We don't send your photos, readings, or symptom logs to a server unless you explicitly opt into a cloud backup. Your data is yours.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to subscribe?</summary>
+        <div class="faq-a">No. The Free plan will include 10 lifetime scans with no account required. UriVia Pro ($2.99/month or $24.99/year — $12.49 Year 1 for founding members) unlocks unlimited scans, the AI health advisor powered by Claude, full scan history, and the doctor-ready PDF export. Every Pro plan will start with a 7-day free trial — cancel anytime.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to buy strips?</summary>
+        <div class="faq-a">No — strips are completely optional. The core urine color scan uses just your phone camera and a clear cup. If you ever want a deeper reading (hydration, pH, ketones, glucose, protein, etc.), you can enter results from any standard 10-parameter urinalysis strip. A pack of 100 typically costs around $12 at most pharmacies or on Amazon.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is it available on Android?</summary>
+        <div class="faq-a">iOS is launching soon and you can join the waitlist now to be notified the moment it's live. Android is on the roadmap and will follow. Waitlist members get notified first on both platforms.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAITLIST (FINAL CTA) ============ -->
+<section class="final-cta" id="waitlist">
+  <div style="display: inline-block; padding: 6px 14px; background: rgba(200, 118, 31, 0.15); border: 1px solid var(--amber); color: var(--amber-deep); border-radius: 100px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;">Founding member access</div>
+  <h2 class="final-cta-title serif">
+    Be first to scan. <em>Save 50% for Year 1.</em>
+  </h2>
+  <p class="final-cta-sub">
+    UriVia Health is in private beta. Join the first 1,000 founding members — lock in 50% off Year 1 ($12.49 instead of $24.99), get notified the moment we launch on the App Store, and help shape what comes next.
+  </p>
+  <div style="max-width: 560px; margin: 40px auto 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 8px; box-shadow: 0 20px 60px rgba(15,20,25,0.15); min-height: 560px; position: relative;">
+    <iframe
+      data-tally-src="https://tally.so/embed/ODBg7p?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Join the Urivia waitlist"
+      style="border-radius: 10px; background: transparent; position: relative; z-index: 2;"></iframe>
+    <!-- Fallback shown if Tally iframe fails to render -->
+    <noscript>
+      <div style="padding: 40px 20px; text-align: center;">
+        <a href="https://tally.so/r/ODBg7p" style="display: inline-block; padding: 16px 32px; background: var(--ink); color: var(--paper); border-radius: 100px; text-decoration: none; font-weight: 500;">Open the waitlist form →</a>
+      </div>
+    </noscript>
+  </div>
+  <p style="margin-top: 16px; font-size: 13px; color: var(--ink); opacity: 0.55; text-align: center;">
+    Form not loading? <a href="https://tally.so/r/ODBg7p" style="color: var(--amber-deep); text-decoration: underline;">Open it directly →</a>
+  </p>
+  <p style="margin-top: 28px; font-size: 13px; color: var(--ink); opacity: 0.6;">
+    No credit card required · We email you one short insight per week · Your email stays private
+  </p>
+</section>
+
+<script>
+  // Tally embed loader
+  var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+    "undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))
+  };
+  if("undefined"!=typeof Tally)v();
+  else if(d.querySelector('script[src="'+w+'"]')==null){
+    var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
+  }
+</script>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Currently in private beta. Always consult your physician about any changes to your health routine or medication.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

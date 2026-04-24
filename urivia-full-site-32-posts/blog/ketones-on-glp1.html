@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketones in Urine on a GLP-1: What It Means (and What to Do) — UriVia Health</title>
+<meta name="description" content="Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.">
+<meta property="og:title" content="Ketones in Urine on a GLP-1: What It Means (and What to Do)">
+<meta property="og:description" content="Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://uriviahealth.com/blog/ketones-on-glp1",
+  "url": "https://uriviahealth.com/blog/ketones-on-glp1",
+  "name": "Ketones in Urine on a GLP-1: What It Means (and What to Do)",
+  "headline": "Ketones in Urine on a GLP-1: What It Means (and What to Do)",
+  "description": "Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Ben Spanier",
+    "jobTitle": "Founder",
+    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
+  },
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "lastReviewed": "2026-05-26",
+  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+  "specialty": { "@type": "MedicalSpecialty", "name": "Endocrinology" },
+  "mainEntity": { "@type": "MedicalCondition", "name": "Ketoacidosis" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UriVia Health",
+    "url": "https://uriviahealth.com"
+  }
+}
+</script>
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+
+  <div class="post-meta">
+    <span>GLP-1</span><span class="dot"></span><span class="read-time">5 min read</span>
+  </div>
+  <h1 class="post-title serif">Ketones in Urine on a GLP-1: What It Means (and What to Do)</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>Low to moderate ketones in urine on a GLP-1 medication (Ozempic, Wegovy, Mounjaro, Zepbound) is often normal — driven by smaller meals, lower carb intake, and caloric deficit during weight loss. Trace or small positive ketones without high glucose, and without nausea or other symptoms, is usually not dangerous. However, high ketones combined with high glucose is a medical emergency (diabetic ketoacidosis) for anyone with diabetes — even on a GLP-1. Call your doctor the same day if you have moderate to high ketones, and seek urgent care if ketones are high <em>and</em> glucose is high, <em>or</em> if you have nausea, vomiting, abdominal pain, or unusual breathing on top of positive ketones.</p>
+<p>This guide covers what ketones mean on a GLP-1, how to distinguish between "normal GLP-1 ketosis" and "something's wrong," and when to escalate.</p>
+<h2 class="serif">What ketones are and why they appear</h2>
+<p>When your body runs low on glucose for energy, it starts breaking down stored fat. A byproduct of that fat breakdown is ketones — small molecules that can be used for energy by most tissues, including the brain.</p>
+<p>Ketones appear in urine (and blood) in several normal situations:</p>
+<ul>
+<li><strong>Fasting or long gaps between meals</strong></li>
+<li><strong>Low-carb or ketogenic diets</strong> where glucose intake is intentionally low</li>
+<li><strong>Prolonged exercise</strong> that depletes glucose stores</li>
+<li><strong>Caloric deficit</strong> — eating fewer calories than you're burning</li>
+<li><strong>During illness</strong> when appetite is reduced</li>
+</ul>
+<p>GLP-1 medications create conditions that produce all of these, which is why ketones are common on Ozempic, Wegovy, Mounjaro, and Zepbound. You're eating smaller meals, sometimes skipping meals from low appetite, running a deliberate caloric deficit for weight loss, and your body is burning more fat than usual. Ketones are the expected byproduct.</p>
+<h2 class="serif">The "normal GLP-1 ketosis" pattern</h2>
+<p>Most GLP-1 users who test with home dipsticks will eventually see positive ketones — often trace or small (+ or ++ on most strips). This pattern usually looks like:</p>
+<ul>
+<li><strong>Trace to small ketones</strong> on dipstick</li>
+<li><strong>Normal or slightly elevated urine color</strong> (concentrated morning urine often amplifies ketone readings)</li>
+<li><strong>Normal glucose</strong> (if you're testing)</li>
+<li><strong>No significant symptoms</strong> — you feel fine, just maybe slightly tired</li>
+<li><strong>Resolves with eating</strong> — especially after a carb-containing meal</li>
+</ul>
+<p>This pattern is generally not dangerous for non-diabetic GLP-1 users. It's a sign your body is in fat-burning mode, which is part of how the medication produces weight loss.</p>
+<h2 class="serif">When ketones on a GLP-1 become a problem</h2>
+<p>The situation changes significantly if you have diabetes (Type 1 or Type 2) alongside your GLP-1. In that population, ketones can be a warning of diabetic ketoacidosis (DKA) — a dangerous complication where acid builds up in the blood.</p>
+<p>The classic DKA pattern:</p>
+<ul>
+<li><strong>High ketones</strong> (moderate to large positive on dipstick)</li>
+<li><strong>High glucose</strong> (usually over 250 mg/dL)</li>
+<li><strong>Nausea, vomiting, abdominal pain</strong></li>
+<li><strong>Fruity breath odor</strong> (from acetone — one of the ketone bodies)</li>
+<li><strong>Rapid, deep breathing</strong></li>
+<li><strong>Confusion, weakness, dehydration</strong></li>
+</ul>
+<p>Any combination of high ketones <em>and</em> high glucose in someone with diabetes is a medical emergency, regardless of whether they're on a GLP-1.</p>
+<h2 class="serif">The "euglycemic DKA" risk (important for some users)</h2>
+<p>A specific and under-recognized risk: <strong>euglycemic DKA</strong> — DKA with <em>near-normal</em> glucose levels.</p>
+<p>This can occur in:</p>
+<ul>
+<li>People with Type 1 diabetes on GLP-1 medications</li>
+<li>People on SGLT2 inhibitors (like Jardiance, Farxiga) — a different diabetes drug class</li>
+<li>People with Type 2 diabetes during illness or after surgery</li>
+</ul>
+<p>In euglycemic DKA, glucose looks fine on a test, but ketones are very high and the person feels seriously ill. The classic warning sign of high glucose is missing.</p>
+<p><strong>If you have any type of diabetes, or you're on both a GLP-1 and an SGLT2 inhibitor, and you see high ketones combined with feeling genuinely sick — nausea, vomiting, confusion, abdominal pain — go to urgent care even if your glucose looks fine.</strong> Euglycemic DKA is dangerous specifically because people ignore it.</p>
+<h2 class="serif">How to interpret your dipstick</h2>
+<p>Most home ketone dipstick scales use:</p>
+<ul>
+<li><strong>Negative (0)</strong> — no ketones detected</li>
+<li><strong>Trace (~5 mg/dL)</strong> — very low, almost always benign</li>
+<li><strong>Small (+, ~15 mg/dL)</strong> — mild ketosis, common on GLP-1s or low-carb diets</li>
+<li><strong>Moderate (++, ~40 mg/dL)</strong> — meaningful ketosis, worth attention</li>
+<li><strong>Large (+++, ~80-160 mg/dL)</strong> — significant ketosis, call your doctor</li>
+</ul>
+<p>For GLP-1 users without diabetes: trace and small readings without symptoms are usually fine. Moderate readings warrant a call. Large readings warrant a same-day call.</p>
+<p>For GLP-1 users with diabetes: any positive ketones above trace should be correlated with your glucose reading. Small ketones plus normal glucose = probably fine. Moderate or large ketones plus any elevated glucose = call your doctor immediately.</p>
+<p>% showed at least one trace/small ketone reading over their first 30 days of use — with [Y]% of those readings resolving spontaneously by the next morning's test."]`</p>
+<h2 class="serif">What to do when you see ketones</h2>
+<p>The practical protocol:</p>
+<p><strong>Trace or small ketones, no symptoms, no diabetes:</strong> Hydrate. Eat a balanced meal including some carbs. Re-check in 12-24 hours. Usually resolves.</p>
+<p><strong>Trace or small ketones with diabetes:</strong> Check glucose. If normal, monitor. If elevated, call your endocrinologist. Do not assume it's "just the GLP-1."</p>
+<p><strong>Moderate to large ketones regardless of diabetes status:</strong> Same-day call to your doctor. Hydrate. Avoid exercise. Eat if you can tolerate it.</p>
+<p><strong>Any ketones with nausea, vomiting, abdominal pain, confusion, or rapid breathing:</strong> Urgent care or ER. Do not wait.</p>
+<h2 class="serif">Why the GLP-1 context matters</h2>
+<p>The reason this needs its own explainer is that pre-GLP-1 advice on ketones was built around two populations: low-carb dieters (where ketones are desired) and people with Type 1 diabetes (where ketones are often dangerous).</p>
+<p>GLP-1 users are neither. You're running a caloric deficit with reduced thirst and often reduced carb intake, but you're not on a ketogenic diet. If you have diabetes on top of that, the interaction with your insulin or other diabetes medications becomes more complex.</p>
+<p>When in doubt, err on the side of the call. Your endocrinologist or primary care doctor would rather hear from you early than late.</p>
+<h2 class="serif">Where UriVia Health fits in</h2>
+<p>UriVia Health supports full 10-parameter urinalysis strip logging, including ketones. The app runs combination-rule logic — for example, if you log high ketones + high glucose, UriVia Health flags a DKA-risk pattern and recommends calling your doctor rather than just logging the result.</p>
+<p>For GLP-1 users managing diabetes alongside their weight loss, this kind of automated cross-checking catches combinations that might be easy to miss looking at readings individually.</p>
+<p>The scan is free with no account required. Pro adds unlimited strip logging, the AI health advisor, and the doctor-ready PDF export.</p>
+<h2 class="serif">Final thoughts</h2>
+<p>Ketones on a GLP-1 are usually normal — a byproduct of how the medication works. But "usually" isn't "always," and the distinction between benign ketosis and dangerous DKA matters significantly for anyone with diabetes. The dipstick tells you one thing. Your glucose, symptoms, and medication list tell you the rest.</p>
+<p>When the readings are ambiguous, the cheap move is to call. Nobody gets in trouble for checking.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="/blog/glp1-urine-color">What GLP-1 Medications Do to Your Urine Color</a></li>
+<li><a href="/blog/dehydration-on-ozempic">Dehydration on Ozempic: Signs Most People Miss</a></li>
+<li><a href="/blog/home-urine-tests-dipsticks">Home Urine Tests — What Dipsticks Actually Tell You</a></li>
+</ul>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. Ketone interpretation depends on your full medical context including diabetes status, medications, and symptoms. Always consult your prescribing physician for questions about your GLP-1 medication, diabetes management, or positive ketone readings.</strong></p>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./glp1-urine-color.html" class="related-card">
+      <div class="rc-topic">GLP-1</div>
+      <div class="rc-title">What GLP-1 Medications Do to Your Urine Color (Ozempic, Wegovy, Mounjaro, Zepbound)</div>
+    </a>
+    <a href="./dehydration-on-ozempic.html" class="related-card">
+      <div class="rc-topic">GLP-1</div>
+      <div class="rc-title">Dehydration on Ozempic: The Silent Signs Most People Miss</div>
+    </a>
+    <a href="./urine-color-chart.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

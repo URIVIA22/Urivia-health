@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGM Users: Why You Should Also Track Hydration — UriVia Health</title>
+<meta name="description" content="Your CGM captures glucose data in real time. It misses the hydration story that shapes your glucose patterns. Here's why hydration matters for CGM users and how to track it simply.">
+<meta property="og:title" content="CGM Users: Why You Should Also Track Hydration">
+<meta property="og:description" content="Your CGM captures glucose data in real time. It misses the hydration story that shapes your glucose patterns. Here's why hydration matters for CGM users and how to track it simply.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "CGM Users: Why You Should Also Track Hydration",
+  "description": "Your CGM captures glucose data in real time. It misses the hydration story that shapes your glucose patterns. Here's why hydration matters for CGM users and how to track it simply.",
+  "url": "https://urivia.health/blog/cgm-hydration",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+:root{
+  --teal:#0D7A5F;--tl:#1D9E75;--tp:#E8F8F2;--tm:#9FE1CB;
+  --amber:#B87A08;--ap:#FFF8EB;
+  --red:#B83030;--rp:#FFF1F1;
+  --blue:#1A5FA8;--bp:#EEF5FF;
+  --ink:#0B1612;--im:#374840;--il:#637068;
+  --rule:#D2E8DC;--rl:#EAF4EF;
+  --bg:#F6FAF7;--w:#FFFFFF;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--w);color:var(--ink);line-height:1.6;overflow-x:hidden}
+.serif{font-family:var(--serif)}
+
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule);
+  height:64px;
+  padding:0 clamp(1.25rem,4vw,3.5rem);
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+}
+.nl{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nl-logo{width:32px;height:32px;border-radius:8px;background:var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nl-logo-inner{width:16px;height:16px;border-radius:50%;background:#fff}
+.nl-name{font-family:var(--serif);font-size:1.125rem;color:var(--ink);font-weight:400}
+.nlinks{display:flex;align-items:center;gap:1.75rem}
+.nlinks a{font-size:.875rem;color:var(--im);text-decoration:none;font-weight:400}
+.nlinks a:hover{color:var(--teal)}
+.nlinks a.active{color:var(--teal);font-weight:500}
+.ncta{
+  background:var(--teal);color:#fff;
+  border-radius:100px;padding:.5rem 1.25rem;
+  font-size:.875rem;font-weight:500;
+  text-decoration:none;white-space:nowrap;
+}
+.ncta:hover{background:var(--tl)}
+@media(max-width:720px){
+  .nlinks{gap:1.15rem}
+  .nlinks a:not(.active){display:none}
+}
+
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:3rem clamp(1.25rem,4vw,3.5rem) 2.5rem;font-size:.875rem;margin-top:5rem}
+footer .f-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+footer .f-name{font-family:var(--serif);color:#fff;font-size:1.25rem;margin-bottom:.4rem}
+footer .f-tag{color:rgba(255,255,255,.55);font-size:.8125rem}
+footer .f-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+footer .f-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.8125rem}
+footer .f-links a:hover{color:#fff}
+footer .disclaimer{max-width:720px;margin:2.5rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65;text-align:center}
+
+.post-wrap{
+  max-width:720px;margin:0 auto;
+  padding:3rem clamp(1.25rem,4vw,2rem) 4rem;
+}
+.post-back{
+  display:inline-block;font-size:.875rem;color:var(--teal);
+  text-decoration:none;margin-bottom:2rem;
+}
+.post-back:hover{color:var(--tl)}
+.post-meta{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.75rem;color:var(--il);margin-bottom:1rem;
+  text-transform:uppercase;letter-spacing:.05em;font-weight:500;
+}
+.post-title{
+  font-size:clamp(1.75rem,4vw,2.75rem);font-weight:600;
+  line-height:1.2;color:var(--ink);margin-bottom:1.5rem;
+}
+.post-byline{
+  display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;
+  padding-bottom:2rem;border-bottom:1px solid var(--rule);
+  margin-bottom:2.5rem;font-size:.875rem;color:var(--il);
+}
+.post-byline em{font-style:italic}
+.post-body{font-size:1.0625rem;line-height:1.8;color:var(--im)}
+.post-body p{margin-bottom:1.25rem}
+.post-body h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:1.625rem;line-height:1.25;color:var(--ink);
+  margin:2.5rem 0 1rem;
+}
+.post-body h3{
+  font-family:var(--serif);font-weight:600;
+  font-size:1.25rem;line-height:1.3;color:var(--ink);
+  margin:2rem 0 .75rem;
+}
+.post-body h4{
+  font-weight:600;font-size:1.0625rem;color:var(--ink);
+  margin:1.5rem 0 .5rem;
+}
+.post-body a{color:var(--teal);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.post-body a:hover{color:var(--tl)}
+.post-body strong{color:var(--ink);font-weight:600}
+.post-body em{font-style:italic}
+.post-body ul,.post-body ol{margin:1rem 0 1.5rem 1.5rem}
+.post-body li{margin-bottom:.5rem}
+.post-body blockquote{
+  border-left:3px solid var(--teal);padding-left:1.25rem;
+  margin:1.5rem 0;font-style:italic;color:var(--il);
+}
+.post-body code{
+  background:var(--bg);padding:2px 6px;border-radius:4px;
+  font-size:.9em;font-family:ui-monospace,monospace;
+}
+.post-body hr{
+  border:none;border-top:1px solid var(--rule);
+  margin:2.5rem 0;
+}
+
+.post-cta{
+  background:var(--tp);border-radius:16px;padding:2rem;
+  margin:3rem 0 2.5rem;display:flex;gap:1.5rem;align-items:center;
+  flex-wrap:wrap;
+}
+.post-cta-text{flex:1;min-width:220px}
+.post-cta-text h3{
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;
+  color:var(--ink);margin-bottom:.5rem;line-height:1.3;
+}
+.post-cta-text p{font-size:.9375rem;color:var(--im);line-height:1.6}
+.post-cta-btn{
+  background:var(--teal);color:#fff;
+  border-radius:100px;padding:.75rem 1.5rem;
+  font-size:.9375rem;font-weight:500;
+  text-decoration:none;white-space:nowrap;
+}
+.post-cta-btn:hover{background:var(--tl)}
+
+.related-wrap{
+  border-top:1px solid var(--rule);padding-top:2.5rem;margin-top:2.5rem;
+}
+.related-wrap h3{
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;
+  color:var(--ink);margin-bottom:1.25rem;
+}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.related-card{
+  background:var(--w);border:1px solid var(--rule);border-radius:10px;
+  padding:1.25rem;text-decoration:none;transition:all .2s ease;
+}
+.related-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.rc-topic{
+  font-size:.7rem;color:var(--teal);text-transform:uppercase;
+  letter-spacing:.06em;font-weight:600;margin-bottom:.5rem;
+}
+.rc-title{font-size:.9375rem;font-weight:600;color:var(--ink);line-height:1.35}
+
+.post-disclaimer{
+  font-size:.8125rem;color:var(--il);
+  line-height:1.65;font-style:italic;
+  padding:1.5rem;background:var(--bg);border-radius:10px;
+  margin-top:2rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">
+    <div class="nl-logo"><div class="nl-logo-inner"></div></div>
+    <span class="nl-name">Urivia</span>
+  </a>
+  <div class="nlinks">
+    <a href="/">Home</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="/" class="ncta">Download free</a>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+  <div class="post-meta">
+    <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+  </div>
+  <h1 class="post-title serif">CGM Users: Why You Should Also Track Hydration</h1>
+  <div class="post-byline">
+    <span>By the UriVia Health team</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p>Continuous glucose monitors changed diabetes management. The minute-by-minute visibility into blood sugar has enabled tighter control and better understanding of patterns that fingersticks couldn't capture. What CGMs don't show is the hydration context shaping those patterns. Dehydration affects glucose readings in specific ways. Hydration affects insulin sensitivity. Fluid shifts after exercise, during illness, and during insulin changes all influence what your CGM shows. This post covers why hydration tracking complements CGM data, how dehydration specifically affects CGM accuracy and glucose patterns, what to track, and why the combination gives you a more complete metabolic picture.</p>
+<p>If you've been wondering why your CGM data doesn't always match your subjective sense of how your day went, hydration may be part of the answer.</p>
+<h2>Why hydration matters alongside CGM data</h2>
+<p>Hydration affects diabetes management in several specific ways that CGMs don't measure directly.</p>
+<p>First, dehydration can cause apparent highs. When you're dehydrated, blood glucose is less diluted, so the same absolute amount of glucose produces a higher concentration reading. Your CGM reads the elevated glucose but doesn't tell you that dehydration is the cause. Drinking fluids in this situation can bring numbers down without any other intervention.</p>
+<p>Second, hydration affects insulin sensitivity. Well-hydrated cells respond to insulin more efficiently than dehydrated ones. Chronically dehydrated patients often have higher insulin needs than well-hydrated ones with the same underlying diabetes control.</p>
+<p>Third, CGM sensor accuracy can drift with hydration changes. The interstitial fluid that CGM sensors read is affected by overall fluid status. Rapid hydration changes (rehydrating after a long flight, recovering from intense exercise, pushing fluids after a sick day) can cause transient discrepancies between CGM readings and fingerstick glucose.</p>
+<p>Fourth, dehydration increases diabetes complication risks. Chronic mild dehydration stresses kidneys, increases UTI risk, and is associated with worse long-term outcomes. CGMs don't capture this dimension directly.</p>
+<p>According to the Juvenile Diabetes Research Foundation, comprehensive diabetes management includes attention to hydration as part of the broader metabolic picture, particularly for patients using intensive insulin therapy.</p>
+<h2>How dehydration affects glucose readings</h2>
+<p>The specific mechanisms by which dehydration affects what your CGM shows:</p>
+<p>Blood concentration effect. Dehydration reduces plasma volume. Glucose concentration per volume of blood rises even without changes in total glucose. Rough rule: moderate dehydration can elevate glucose readings by 10–30 mg/dL without any dietary or medication change.</p>
+<p>Sluggish absorption and delivery. Dehydration slows the normal equilibration between blood glucose and interstitial fluid. Your CGM may lag behind your actual blood glucose more than usual during dehydration, producing either delayed responses to food or exaggerated readings.</p>
+<p>Kidney handling. Dehydrated kidneys reabsorb more glucose at the renal threshold level. This usually has minimal CGM impact directly, but can affect the trends you see after high blood sugar episodes.</p>
+<p>Counter-regulatory hormone effects. Significant dehydration triggers stress hormones (cortisol, adrenaline), which raise blood sugar independently. This is particularly relevant during illness or heat exposure.</p>
+<p>The practical upshot: if your CGM is showing elevated readings and you can't explain them from food or insulin, consider hydration status. Dark urine, thirst, fatigue, or less urination than usual all suggest hydration is part of the picture. Drinking 16–24 ounces over an hour and checking again often clarifies things.</p>
+<h2>What to track beyond glucose</h2>
+<p>A minimal hydration tracking approach for CGM users:</p>
+<p>Morning urine color. 10 seconds. Pale to medium yellow is the target. Darker readings suggest you're starting the day dehydrated, which will affect glucose patterns and likely insulin needs.</p>
+<p>Afternoon urine color check. A quick glance confirms whether your morning hydration held up through the day or whether you need to catch up before evening.</p>
+<p>General sense of thirst. Is it normal, or unusually present? Chronic subtle thirst is a sign of dehydration or high blood sugar driving fluid loss.</p>
+<p>Urination frequency. Roughly normal, more than usual, or less than usual? Both directions can indicate something worth noticing.</p>
+<p>Apps like Urivia let you log urine color, hydration, and symptoms alongside your CGM data, which makes it easier to see how hydration patterns correlate with glucose patterns over days and weeks.</p>
+<p><a href="/blog/t1d-urine-monitoring">The post on T1D urine monitoring beyond glucose</a> covers the broader tracking picture for type 1 patients; much of it applies to type 2 CGM users.</p>
+<h2>Specific situations where hydration matters most</h2>
+<p>Some specific scenarios where hydration tracking is especially useful alongside CGM data:</p>
+<p>Exercise. Dehydration during exercise can cause both transient glucose elevation (from counter-regulatory stress response) and CGM sensor accuracy drift. Pre-exercise hydration and post-exercise rehydration affect both the glucose response and CGM data quality.</p>
+<p>Illness. Sick days combine reduced intake, increased fluid loss (fever, vomiting, diarrhea), metabolic stress, and often reduced insulin efficacy. Hydration tracking helps separate hydration-driven CGM readings from true hyperglycemia needing more insulin.</p>
+<p>Heat or travel. Hot weather, long flights, and travel to dry climates all increase fluid loss. Jet lag and changed sleep patterns compound the metabolic effects. CGM patterns during travel often reveal hydration issues more than dietary ones.</p>
+<p>After high blood sugar episodes. A few hours of high sugars produces meaningful fluid loss through osmotic diuresis. Recovery from highs benefits from deliberate rehydration, not just insulin correction.</p>
+<p>Starting or changing medications. Insulin starts and dose changes affect fluid balance. <a href="/blog/insulin-hydration">The post on insulin and hydration</a> covers this specifically. GLP-1 starts often cause transient dehydration that affects CGM patterns.</p>
+<p>During illness or fasting. Low carbohydrate intake combined with reduced fluid intake during sickness can produce both glucose fluctuations and dehydration. Ketones may appear. <a href="/blog/ketones-in-urine-meaning">The post on ketones in urine meaning</a> covers when this warrants attention.</p>
+<h2>The combined picture</h2>
+<p>CGM plus hydration tracking gives a more complete metabolic view than either alone.</p>
+<p>A few patterns you might notice with combined tracking:</p>
+<p>Unexplained glucose elevations that correlate with dark urine or reduced fluid intake. Hydration, not food, may be the lever.</p>
+<p>Stable hydration but drifting glucose — food, medication, or other factors are at work, not fluid balance.</p>
+<p>Dehydration patterns that correlate with specific activities (travel, heat, exercise) and the glucose changes that go with them.</p>
+<p>Periods where hydration is good but fatigue persists — worth discussing with your doctor, as other factors may be contributing.</p>
+<p>Over weeks, the combined picture reveals what your typical metabolic state looks like and where the main drivers of variability are.</p>
+<h2>How to track this yourself</h2>
+<p>Apps like Urivia let you log urine color and hydration alongside your CGM data, which builds the integrated picture without requiring separate tracking systems. A paper journal or phone notes work just as well if that's your preference.</p>
+<p>What you're looking for is a habit that takes less than a minute a day and produces enough data to spot patterns across weeks. <a href="/blog/blood-sugar-urine-color">The post on blood sugar and urine color</a> covers the connection between glucose and urine observations in more detail.</p>
+<h2>When to see a doctor</h2>
+<p>Most hydration issues for CGM users are self-manageable with better intake. Clinical evaluation is warranted for: persistent dehydration despite adequate fluid intake; dehydration combined with rapid changes in CGM accuracy; unexplained glucose patterns that don't respond to usual management; any symptoms suggesting more serious issues (confusion, severe fatigue, blood pressure changes, urination changes).</p>
+<p>Go to urgent care or the ER for: severe dehydration with confusion or fainting; suspected DKA (nausea, vomiting, abdominal pain with high sugars); hypoglycemia that's hard to treat; any severe metabolic picture.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does dehydration make my CGM read high?</h3>
+<p>Often, yes. Dehydration concentrates blood, which can elevate glucose readings by 10–30 mg/dL or more without any actual change in your diabetes state. Drinking fluids and waiting 30–60 minutes often brings the reading back down. If dehydration is part of the picture, your insulin correction should be smaller than the apparent reading would suggest.</p>
+<h3>How much water should CGM users drink daily?</h3>
+<p>General adult hydration applies — roughly half your body weight in ounces per day, with adjustments for exercise, heat, and blood sugar patterns. Tracking urine color (target pale to medium yellow) is usually more useful than counting ounces. Repeated high blood sugar episodes require extra fluid to compensate for osmotic diuresis.</p>
+<h3>Can over-hydration mess with CGM readings?</h3>
+<p>Mildly, yes. Rapid over-hydration can temporarily dilute blood glucose and make CGM readings appear lower than true values. This is usually minor and self-correcting. Normal drinking patterns, even on the higher end of adequate, don't cause clinically significant CGM artifacts.</p>
+<h3>Should I drink more water when my CGM shows high?</h3>
+<p>Often yes, especially if sugars have been elevated for an hour or more. Drinking 16–24 ounces helps dilute blood glucose mildly and replaces fluid lost through osmotic diuresis. Water doesn't lower blood sugar meaningfully on its own, but it supports the glucose-normalization process and helps kidneys flush excess.</p>
+<h3>Do CGMs work the same when I'm dehydrated?</h3>
+<p>CGM accuracy can drift with rapid hydration changes. Steady dehydration or steady hydration usually produces reasonably accurate readings, though absolute values may shift slightly with fluid status. The bigger issue is that dehydration changes what "normal" glucose looks like for your current state, making pattern interpretation harder.</p>
+<h3>What's the best hydration signal to watch alongside CGM?</h3>
+<p>Urine color, observed once or twice a day. It's free, immediate, and captures the effective hydration status your body is experiencing. Pale to medium yellow consistently means your intake is keeping up with your needs. Darker readings suggest intake needs to increase.</p>
+<h3>Can dehydration cause false lows on a CGM?</h3>
+<p>Less commonly. Dehydration more often produces apparent highs than apparent lows. But dehydration-related sensor errors can occasionally cause readings that don't match fingerstick values in either direction. If a reading doesn't match how you feel, confirm with a fingerstick.</p>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Private. Fast. Built for this.</p>
+    </div>
+    <a href="/" class="post-cta-btn">Try Urivia free</a>
+  </div>
+
+  <div class="related-wrap">
+    <h3>Related reading</h3>
+    <div class="related-grid">
+    <a href="./type-2-diabetes-kidney-function.html" class="related-card">
+      <div class="rc-topic">Diabetes</div>
+      <div class="rc-title">Type 2 Diabetes and Kidney Function: What Happens Over 10+ Years</div>
+    </a>
+    <a href="./blood-sugar-urine-color.html" class="related-card">
+      <div class="rc-topic">Diabetes</div>
+      <div class="rc-title">Blood Sugar and Urine Color: How They're Connected</div>
+    </a>
+    <a href="./t1d-urine-monitoring.html" class="related-card">
+      <div class="rc-topic">Diabetes</div>
+      <div class="rc-title">T1D Urine Monitoring Beyond Glucose: What Else to Watch</div>
+    </a>
+    </div>
+  </div>
+
+  <p class="post-disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+
+</article>
+
+<footer>
+  <div class="f-inner">
+    <div>
+      <div class="f-name">Urivia</div>
+      <div class="f-tag">A CGM for your pee.</div>
+    </div>
+    <div class="f-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+  <p class="disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+</footer>
+
+</body>
+</html>

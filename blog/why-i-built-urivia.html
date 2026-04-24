@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Built Urivia — UriVia Health</title>
+<meta name="description" content="The founder's story behind UriVia: why a morning of bubbles in the toilet and zero real answers online led to building a calmer way to track urine color.">
+<meta property="og:title" content="Why I Built Urivia">
+<meta property="og:description" content="The founder's story behind UriVia: why a morning of bubbles in the toilet and zero real answers online led to building a calmer way to track urine color.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Why I Built Urivia",
+  "description": "The founder's story behind UriVia: why a morning of bubbles in the toilet and zero real answers online led to building a calmer way to track urine color.",
+  "url": "https://urivia.health/blog/why-i-built-urivia",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+:root{
+  --teal:#0D7A5F;--tl:#1D9E75;--tp:#E8F8F2;--tm:#9FE1CB;
+  --amber:#B87A08;--ap:#FFF8EB;
+  --red:#B83030;--rp:#FFF1F1;
+  --blue:#1A5FA8;--bp:#EEF5FF;
+  --ink:#0B1612;--im:#374840;--il:#637068;
+  --rule:#D2E8DC;--rl:#EAF4EF;
+  --bg:#F6FAF7;--w:#FFFFFF;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--w);color:var(--ink);line-height:1.6;overflow-x:hidden}
+.serif{font-family:var(--serif)}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);height:64px;padding:0 clamp(1.25rem,4vw,3.5rem);display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nl{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nl-logo{width:32px;height:32px;border-radius:8px;background:var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nl-logo-inner{width:16px;height:16px;border-radius:50%;background:#fff}
+.nl-name{font-family:var(--serif);font-size:1.125rem;color:var(--ink);font-weight:400}
+.nlinks{display:flex;align-items:center;gap:1.75rem}
+.nlinks a{font-size:.875rem;color:var(--im);text-decoration:none;font-weight:400}
+.nlinks a:hover{color:var(--teal)}
+.nlinks a.active{color:var(--teal);font-weight:500}
+.ncta{background:var(--teal);color:#fff;border-radius:100px;padding:.5rem 1.25rem;font-size:.875rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.ncta:hover{background:var(--tl)}
+@media(max-width:720px){.nlinks{gap:1.15rem} .nlinks a:not(.active){display:none}}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:3rem clamp(1.25rem,4vw,3.5rem) 2.5rem;font-size:.875rem;margin-top:5rem}
+footer .f-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+footer .f-name{font-family:var(--serif);color:#fff;font-size:1.25rem;margin-bottom:.4rem}
+footer .f-tag{color:rgba(255,255,255,.55);font-size:.8125rem}
+footer .f-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+footer .f-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.8125rem}
+footer .f-links a:hover{color:#fff}
+footer .disclaimer{max-width:720px;margin:2.5rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65;text-align:center}
+.post-wrap{max-width:720px;margin:0 auto;padding:2.5rem clamp(1.25rem,4vw,2rem) 2rem}
+.post-back{display:inline-block;color:var(--il);font-size:.8125rem;text-decoration:none;margin-bottom:2rem}
+.post-back:hover{color:var(--teal)}
+.post-meta{display:flex;align-items:center;gap:.75rem;font-size:.75rem;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:1rem}
+.post-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--tm)}
+.post-meta .read-time{color:var(--il);font-weight:400}
+.post-title{font-size:clamp(1.75rem,4.5vw,2.375rem);line-height:1.2;margin-bottom:1.25rem;color:var(--ink)}
+.post-byline{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.25rem;font-size:.875rem;color:var(--il)}
+.post-byline em{font-style:italic;font-size:.8125rem}
+.post-body{font-size:1.0625rem;color:var(--im);line-height:1.72}
+.post-body p{margin-bottom:1.35rem}
+.post-body h2{font-family:var(--serif);font-size:1.625rem;font-weight:600;color:var(--ink);margin-top:2.5rem;margin-bottom:1rem;line-height:1.3}
+.post-body h3{font-size:1.1875rem;font-weight:600;color:var(--ink);margin-top:1.75rem;margin-bottom:.65rem}
+.post-body a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+.post-body a:hover{color:var(--tl)}
+.post-body strong{color:var(--ink);font-weight:600}
+.post-cta{margin-top:3rem;background:var(--tp);border-radius:14px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.post-cta-text h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:.35rem}
+.post-cta-text p{font-size:.9375rem;color:var(--im);margin:0}
+.post-cta-btn{background:var(--teal);color:#fff;text-decoration:none;padding:.75rem 1.5rem;border-radius:100px;font-size:.9375rem;font-weight:500;white-space:nowrap}
+.post-cta-btn:hover{background:var(--tl)}
+.related-wrap{margin-top:3.5rem}
+.related-wrap h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:1.25rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.related-card{background:var(--w);border:1px solid var(--rule);border-radius:10px;padding:1.25rem;text-decoration:none;transition:all .2s ease}
+.related-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.rc-topic{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.5rem}
+.rc-title{font-size:.9375rem;font-weight:600;color:var(--ink);line-height:1.35}
+.post-disclaimer{font-size:.8125rem;color:var(--il);line-height:1.65;font-style:italic;padding:1.5rem;background:var(--bg);border-radius:10px;margin-top:2rem}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">
+    <div class="nl-logo"><div class="nl-logo-inner"></div></div>
+    <span class="nl-name">Urivia</span>
+  </a>
+  <div class="nlinks">
+    <a href="/">Home</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="/" class="ncta">Download free</a>
+</nav>
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+  <div class="post-meta">
+    <span>Founder</span><span class="dot"></span><span class="read-time">8 min read</span>
+  </div>
+  <h1 class="post-title serif">Why I Built Urivia</h1>
+  <div class="post-byline">
+    <span>By the UriVia Health team</span>
+    <em>Last updated April 2026</em>
+  </div>
+  <div class="post-body">
+<p>I built Urivia because I noticed something strange in my own urine one morning, and the hour I spent online trying to figure out what it meant was infuriating. There was no good way to get a calm, informed answer on my phone. So I built one. This is the story of why, and what we've committed to never do.</p>
+<p>I'm Ben, the founder, and I'm writing this as the person who built the app — not as a marketer. If you're here trying to decide whether to trust this app with anything personal, I want you to understand who's behind it and what the rules are.</p>
+<h2>The problem I kept seeing</h2>
+<p>It started with my own bathroom one morning. I noticed a lot of foam in my urine that didn't flush away, and I didn't know what it meant. Was it normal, the kind of foam anyone would see from a strong stream? Was it protein, which can be a kidney signal? Was it something I should worry about or something I'd forget about by lunch?</p>
+<p>So I did what most people do. I pulled out my phone and started Googling. Then I started image-searching, scrolling through forum photos and stock images, squinting at my bathroom and squinting at my screen, trying to decide whether any of the pictures online actually matched what I was looking at. Twenty minutes later I wasn't closer to an answer. I was just more anxious.</p>
+<p>That was the moment the app clicked in my head. What if I could just take a photo of what I was actually seeing, get some calm feedback based on that photo, and track it over time so I could tell whether it was a one-morning thing or a pattern worth bringing to a doctor? Not a diagnosis. Just a clearer signal than I could get from scrolling.</p>
+<p>What I kept noticing afterward was that the information people needed wasn't hidden. Mayo Clinic, the National Kidney Foundation, the NIDDK — they all publish clear guidance on what urine color can and can't tell you. The problem was packaging. A one-time Google search is a terrible interface for a signal that only matters as a pattern. One dark morning doesn't mean anything. A week of consistently amber readings is a story.</p>
+<p>The other thing I kept noticing: most of the people who would benefit most from paying attention (people with diabetes, CKD, on GLP-1 medications, on diuretics) were the ones least likely to do it. They saw their care team twice a year. Between visits there was a 90-day gap in the data their doctor had. Urine color changes daily. That gap was full of information nobody was capturing.</p>
+<h2>Why existing tools fall short</h2>
+<p>There are a handful of urine tracking apps out there. I've used most of them. The typical shape of the competition has three problems.</p>
+<p>Most require you to create an account before you can do anything. That's a friction wall on the first interaction, and it means your health data now lives on someone else's server whether you wanted that or not. For the kind of person who's going to check their urine color regularly, the account requirement is often the reason they never open the app a second time.</p>
+<p>Most rely on physical test strips. Dipsticks measure chemistry the eye can't see (leukocytes, nitrites, glucose, protein), and they're useful for specific clinical questions, but they're also expensive, awkward, and they expire. A dipstick-dependent app is a recurring-purchase app. That's not the shape I wanted.</p>
+<p>Most use language that tips toward diagnosis. "Detect," "screen for," "identify" — words that imply the app is doing something it legally and technically isn't. That overpromise is how health apps lose trust. It's also how they end up in FDA territory without meaning to.</p>
+<p>I wanted something simpler. A daily 30-second check. No account. No strips. Clear, honest language about what the app is and isn't. Privacy as an architectural choice, not a marketing line.</p>
+<h2>What we built</h2>
+<p>Urivia is a phone-camera-based urine color tracker. You open the app, pick a color (or take a photo), log any symptoms you're noticing, and get a plain-English signal: Normal, Monitor, Seek care, or Urgent. Every scan saves locally. Nothing leaves your device unless you explicitly turn on a feature that needs it.</p>
+<p>The color matching is built around a library of reference shades tuned for the hydration spectrum and common outliers (B vitamins, blood in urine, medication effects). It's not deep-learning AI in the dramatic sense. It's careful color-space math (HSV matching), paired with rule-based symptom logic, both of which are established approaches in clinical imaging and decision support. <a href="./how-urivia-ai-reads-urine-color.html">how Urivia's AI reads urine color</a> covers how all of this works under the hood.</p>
+<p>The history is the feature I care most about. One scan is noise. Thirty scans over a month is a pattern. The part that surprised me most in beta: users were bringing their scan histories to nephrology and endocrinology appointments, and their doctors were actually using them. "I know I had two amber readings in the week before my appointment" is a very different conversation than "I think it was mostly fine?" <a href="./what-urivia-measures.html">what Urivia measures</a> walks through what the app tracks and, importantly, what it doesn't.</p>
+<p>There's a Pro tier with weekly AI-generated pattern summaries, Apple Health integration, and unlimited scans. The free tier works fully; Pro is for people who want the deeper view. Money is honestly not the driver here; it's how we keep the lights on without selling data.</p>
+<h2>What we'll never do</h2>
+<p>I want to be specific about a few commitments, because "we take privacy seriously" is meaningless and everyone says it.</p>
+<p>Your scan photos will never leave your device. This is an architectural choice, not a policy that could be quietly changed. The color analysis happens locally, and the photo itself is discarded after the scan is logged.</p>
+<p>We will never sell your data. Not to advertisers, not to insurance companies, not to data brokers, not to anyone. There's nothing to sell because we don't collect it in the first place.</p>
+<p>We will never require an account. You can use the app indefinitely without providing an email, phone number, or any identifying information. <a href="./urine-data-privacy.html">urine data privacy</a> covers the full architecture.</p>
+<p>We will never claim the app can diagnose, detect, or prevent disease. It can't. It helps you notice patterns in urine color over time, which is information you can take to your doctor. That's the line, and we hold it. When you read our marketing, our app copy, and our support materials, the language will always match what the app actually does.</p>
+<p>We will never add features that change the privacy model without telling you very loudly. If we ever build cloud sync (which some users have asked for), it will be opt-in, and it will be explained clearly.</p>
+<h2>What's next</h2>
+<p>The thing I want to build toward is a version of the app that people in the diabetes and CKD communities genuinely rely on. That means better color accuracy across lighting conditions (we have a calibration card in development for this), clearer integration with labs people actually get done (A1C, eGFR, ACR), and more useful pattern detection over longer time frames.</p>
+<p>There's a lot I still want to do. Apple Watch scanning. Better support for people with color vision deficiencies. A companion tool for caregivers helping a parent or partner track hydration. These are all in the roadmap.</p>
+<p>For now, the app does one thing well: 30-second daily urine color tracking, with history, on a device that's already in your pocket. That's the foundation. Everything else is iteration from here.</p>
+<p>If you have diabetes, CKD, are on a GLP-1 medication, or just want to pay more attention to a signal your body has been sending you all along, I'd be honored if you tried it. And if you have feedback — things that confused you, features that didn't work the way you expected, ideas for what the app should do next — the support email reaches me directly. I read every message.</p>
+<h2>Frequently asked questions</h2>
+<h3>Who built Urivia?</h3>
+<p>I'm Ben, the sole founder and developer. Urivia is a one-person operation right now, built on top of a small set of contractors and the good advice of a few friends in healthcare. When you email support, you're emailing me.</p>
+<h3>Is Urivia a medical device?</h3>
+<p>No. Urivia is a general wellness app. It does not diagnose, detect, or treat any medical condition. It helps you track and notice patterns in urine color over time, which is information you can discuss with your doctor.</p>
+<h3>Do I need a subscription to use Urivia?</h3>
+<p>No. The free tier includes daily scanning, history, symptom logging, and the core signal categorization. Pro adds unlimited scans, weekly AI-generated insights, Apple Health integration, and a few quality-of-life features. Most users don't need Pro to get real value.</p>
+<h3>Why not go through FDA clearance?</h3>
+<p>Class II medical device clearance is expensive ($500K-$2M) and slow (3-5 years), and it would fundamentally change what the app is allowed to say and do. We made a deliberate choice to build Urivia as a wellness app, with careful language about what it tracks versus what it doesn't. This keeps the tool accessible and honest about its scope.</p>
+<h3>How do I know my data is actually staying on my device?</h3>
+<p>The app doesn't require an account, doesn't require internet for scanning, and stores data in your phone's local storage. You can verify this in a few ways: the app works in airplane mode for core features, the dev panel (tap the version footer five times on the settings screen) shows the raw local storage, and the privacy policy explicitly states the data flow. <a href="./urine-data-privacy.html">urine data privacy</a> goes into the technical details.</p>
+<h3>What's on the roadmap?</h3>
+<p>Better color accuracy in tough lighting (the calibration card), direct lab integration, Apple Watch support, caregiver tools, and more language support. Longer-term, I'd like to explore how urine pattern data could contribute to research on early kidney disease and hydration in chronic conditions — but only with explicit consent, never by default.</p>
+<h3>How can I give feedback?</h3>
+<p>Email support@urivia.health. It's me. I read everything. The single most useful thing for the app's direction is hearing from people actually using it — what confused you, what surprised you, what you wish it did. That's what shapes what gets built next.</p>
+<p>---</p>
+<p>If any of the above makes sense to you, try the app. If it doesn't, at least you know where we stand. Either way, thanks for reading this far. It's a weird, specific tool, and I'm grateful anyone pays attention at all.</p>
+  </div>
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Private. Fast. Built for this.</p>
+    </div>
+    <a href="/" class="post-cta-btn">Try Urivia free</a>
+  </div>
+  <div class="related-wrap">
+    <h3>Related reading</h3>
+    <div class="related-grid">
+    <a href="./how-urivia-ai-reads-urine-color.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">How Urivia's AI Reads Your Urine Color</div>
+    </a>
+    <a href="./what-urivia-measures.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">What Urivia Measures</div>
+    </a>
+    <a href="./urine-data-privacy.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">Privacy and Urine Data</div>
+    </a>
+    </div>
+  </div>
+  <p class="post-disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+</article>
+<footer>
+  <div class="f-inner">
+    <div>
+      <div class="f-name">Urivia</div>
+      <div class="f-tag">A CGM for your pee.</div>
+    </div>
+    <div class="f-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+  <p class="disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+</footer>
+</body>
+</html>

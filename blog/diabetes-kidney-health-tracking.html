@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diabetes and Kidney Health: What to Track Between Lab Visits — UriVia Health</title>
+<meta name="description" content="If you have diabetes, your kidneys work overtime. Here's what you can track at home between visits — and what only labs can answer.">
+<meta property="og:title" content="Diabetes and Kidney Health: What to Track Between Lab Visits">
+<meta property="og:description" content="If you have diabetes, your kidneys work overtime. Here's what you can track at home between visits — and what only labs can answer.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://uriviahealth.com/blog/diabetes-kidney-health-tracking",
+  "url": "https://uriviahealth.com/blog/diabetes-kidney-health-tracking",
+  "name": "Diabetes and Kidney Health: What to Track Between Lab Visits",
+  "headline": "Diabetes and Kidney Health: What to Track Between Lab Visits",
+  "description": "If you have diabetes, your kidneys work overtime. Here's what you can track at home between visits — and what only labs can answer.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Ben Spanier",
+    "jobTitle": "Founder",
+    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
+  },
+  "datePublished": "2026-04-29",
+  "dateModified": "2026-04-29",
+  "lastReviewed": "2026-04-29",
+  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+  "specialty": { "@type": "MedicalSpecialty", "name": "Endocrinology" },
+  "mainEntity": { "@type": "MedicalCondition", "name": "Diabetic Nephropathy" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UriVia Health",
+    "url": "https://uriviahealth.com"
+  }
+}
+</script>
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+
+  <div class="post-meta">
+    <span>Diabetes</span><span class="dot"></span><span class="read-time">6 min read</span>
+  </div>
+  <h1 class="post-title serif">Diabetes and Kidney Health: What to Track Between Lab Visits</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>If you have diabetes, the most important things to track between lab visits are blood glucose (or time-in-range on a CGM), blood pressure, weight, urine color, any dipstick findings, and symptoms like swelling, fatigue, or changes in urination. You don't need to log everything daily — the goal is catching patterns that would otherwise go unnoticed until your next appointment. Home tracking never replaces formal labs; it adds context that makes labs more useful.</p>
+<p>Diabetes and kidney disease are deeply linked. About 1 in 3 adults with diabetes has some degree of kidney disease, and high blood sugar combined with high blood pressure is the leading cause of kidney failure in the US. The catch is that early kidney damage usually has no symptoms — which is exactly why tracking between visits matters.</p>
+<h2 class="serif">Why kidneys take the hit when you have diabetes</h2>
+<p>Your kidneys filter blood through roughly one million tiny filters called nephrons. High blood glucose forces those filters to work harder than they were designed to. Over years, that extra work damages the delicate blood vessels inside each nephron.</p>
+<p>Three mechanisms drive most of the damage:</p>
+<ol>
+<li><strong>High glucose</strong> directly stresses the filter membranes</li>
+<li><strong>High blood pressure</strong> — which often comes with diabetes — accelerates the damage</li>
+<li><strong>Dehydration</strong> from frequent urination (a classic diabetes symptom) thickens the blood and reduces kidney blood flow</li>
+</ol>
+<p>Any one of these alone is manageable. All three together is why diabetic nephropathy happens.</p>
+<h2 class="serif">What your care team already checks</h2>
+<p>Your endocrinologist or nephrologist monitors kidney function through specific tests:</p>
+<ul>
+<li><strong>eGFR</strong> (estimated glomerular filtration rate) — calculated from a blood creatinine test, this is the main measure of how well your kidneys are filtering</li>
+<li><strong>Urine albumin-to-creatinine ratio (ACR)</strong> — a urine test that detects small amounts of protein, often the earliest sign of kidney damage</li>
+<li><strong>Standard urinalysis</strong> — looks for blood, protein, glucose, ketones, and infection markers</li>
+<li><strong>Blood pressure</strong> — high BP both causes and results from kidney disease</li>
+</ul>
+<p>These labs happen every 3-12 months depending on your stage and risk level. They're the foundation of kidney care. Everything else is supplemental.</p>
+<h2 class="serif">What you can reasonably track at home</h2>
+<p>You don't need a lab. You can track the following without any special equipment beyond what you probably already have:</p>
+<p><strong>Glucose</strong> — whether you use a CGM, a meter, or both, you already have this data. The pattern that matters for kidneys: fasting glucose and time-in-range over 70%.</p>
+<p><strong>Blood pressure</strong> — an at-home cuff costs under $50. Measure at the same time each day, seated, after 5 minutes of rest. Target is usually below 130/80 for people with diabetes.</p>
+<p><strong>Weight</strong> — sudden weight gain (not from food) can mean fluid retention, an early kidney warning. Weigh yourself at the same time each day, ideally in the morning before breakfast.</p>
+<p><strong>Urine color</strong> — dark yellow for multiple days, especially in the morning, may mean dehydration or concentrated urine that's harder on your kidneys.</p>
+<p><strong>Urine dipstick findings</strong> — if you use a home 10-parameter urinalysis strip, track protein, glucose, and blood results over time. A single abnormal reading isn't usually meaningful. A repeating pattern is.</p>
+<p><strong>Symptoms</strong> — new swelling in the ankles or around the eyes, persistent fatigue, foamy urine, nausea, or breathlessness after mild activity all warrant attention.</p>
+<h2 class="serif">How urine fits into the bigger picture</h2>
+<p>Urine has been part of kidney medicine for 2,000 years for a reason — it's the direct output of the organ you're monitoring. Color, clarity, and foam are visible proxies for what's happening at the filter level.</p>
+<p>For diabetes specifically, urine can show:</p>
+<ul>
+<li><strong>Dehydration patterns</strong> through color — especially if your glucose is running high and pulling extra water out</li>
+<li><strong>Glucose spillover</strong> — when blood sugar exceeds the kidney threshold (usually around 180 mg/dL), glucose appears in urine. A home dipstick catches this.</li>
+<li><strong>Early protein leakage</strong> — foam that doesn't clear, or a dipstick showing "trace" or "+" protein, is worth a conversation with your doctor.</li>
+<li><strong>Ketones</strong> — a marker of under-insulinization (for T1) or extreme low-carb eating (for T2). High ketones with high glucose is a medical emergency warning.</li>
+</ul>
+<p>None of this diagnoses anything. All of it adds context.</p>
+<h2 class="serif">Building a kidney-aware tracking routine</h2>
+<p>The biggest risk with home tracking is burnout. If you try to log 15 things per day, you'll stop in a week. The working rhythm for most people:</p>
+<p><strong>Daily:</strong> one glance at urine color, plus whatever glucose and BP data you already collect.</p>
+<p><strong>Weekly:</strong> a quick review — any days stand out? Any patterns?</p>
+<p><strong>Monthly:</strong> a one-page summary of trends to bring to your next appointment.</p>
+<p>That's it. If something unusual happens, you add detail. Otherwise, keep it light.</p>
+<p>% logged at least one 'Stay Hydrated' flag per week, consistent with the dehydration load that high glucose adds to kidney function."]`</p>
+<h2 class="serif">Using UriVia Health alongside your diabetes tools</h2>
+<p>You probably already use a glucose app, a CGM, or a BP tracker. UriVia Health sits alongside those as the urine piece nobody else covers well. It's a free iPhone app that scans urine color in about 30 seconds, logs the result, and optionally tracks dipstick readings if you use them.</p>
+<p>The Pro plan adds a doctor-ready PDF export — a one-page summary of your last 30 days of color, hydration, flagged readings, and symptoms. Walking into your next endocrinology or nephrology appointment with that document changes the quality of the conversation.</p>
+<h2 class="serif">When to stop tracking and call your doctor</h2>
+<p>Some signs shouldn't wait for your next appointment:</p>
+<ul>
+<li>Visible blood in urine</li>
+<li>Severe flank or back pain, especially with fever</li>
+<li>Sudden swelling in ankles, legs, or around the eyes</li>
+<li>Shortness of breath at rest or with mild activity</li>
+<li>Chest pain</li>
+<li>Marked drop in urine output</li>
+<li>Persistent vomiting or confusion</li>
+</ul>
+<p>Any of these should trigger a same-day call to your clinician, or urgent care if your clinician is unreachable. Home tracking is meant to support earlier action, not delay it.</p>
+<h2 class="serif">Final thoughts</h2>
+<p>Diabetes and kidney disease are linked, but you're not helpless between lab visits. A few simple habits — glance at color, check weight, track BP, notice symptoms — give you weeks of context that would otherwise be invisible. When labs come, you have data. When symptoms show up, you catch them earlier.</p>
+<p>The hard part isn't tracking. It's keeping tracking light enough to sustain. Pick the habits that fit your actual life, and let the rest go.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="/blog/urine-color-chart">Urine Color Chart — A Complete Guide</a></li>
+<li><a href="/blog/early-signs-kidney-trouble">Early Signs of Kidney Trouble</a></li>
+<li><a href="/blog/preparing-diabetes-kidney-appointment">Preparing for Your Diabetes or Kidney Appointment</a></li>
+</ul>
+<h2 class="serif">About the author</h2>
+<p>Ben Spanier is the founder of UriVia Health, built to give people with chronic conditions a simple way to track what their urine is telling them between lab visits.</p>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. It does not diagnose or treat any condition. If you have concerns about your diabetes or kidney health, consult a qualified healthcare provider.</strong></p>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./preparing-diabetes-kidney-appointment.html" class="related-card">
+      <div class="rc-topic">Diabetes</div>
+      <div class="rc-title">How to Prepare for a Kidney or Diabetes Appointment (What to Bring)</div>
+    </a>
+    <a href="./urine-color-chart.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</div>
+    </a>
+    <a href="./home-urine-tests-dipsticks.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Home Urine Tests: What Dipsticks Actually Tell You</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

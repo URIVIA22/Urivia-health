@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Urivia's AI Reads Your Urine Color — UriVia Health</title>
+<meta name="description" content="How Urivia uses your phone camera to analyze urine color, what the AI actually does, what it can't do, and how your data stays on your device.">
+<meta property="og:title" content="How Urivia's AI Reads Your Urine Color">
+<meta property="og:description" content="How Urivia uses your phone camera to analyze urine color, what the AI actually does, what it can't do, and how your data stays on your device.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "How Urivia's AI Reads Your Urine Color",
+  "description": "How Urivia uses your phone camera to analyze urine color, what the AI actually does, what it can't do, and how your data stays on your device.",
+  "url": "https://urivia.health/blog/how-urivia-ai-reads-urine-color",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+:root{
+  --teal:#0D7A5F;--tl:#1D9E75;--tp:#E8F8F2;--tm:#9FE1CB;
+  --amber:#B87A08;--ap:#FFF8EB;
+  --red:#B83030;--rp:#FFF1F1;
+  --blue:#1A5FA8;--bp:#EEF5FF;
+  --ink:#0B1612;--im:#374840;--il:#637068;
+  --rule:#D2E8DC;--rl:#EAF4EF;
+  --bg:#F6FAF7;--w:#FFFFFF;
+  --serif:'Lora',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--w);color:var(--ink);line-height:1.6;overflow-x:hidden}
+.serif{font-family:var(--serif)}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);height:64px;padding:0 clamp(1.25rem,4vw,3.5rem);display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nl{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nl-logo{width:32px;height:32px;border-radius:8px;background:var(--tl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nl-logo-inner{width:16px;height:16px;border-radius:50%;background:#fff}
+.nl-name{font-family:var(--serif);font-size:1.125rem;color:var(--ink);font-weight:400}
+.nlinks{display:flex;align-items:center;gap:1.75rem}
+.nlinks a{font-size:.875rem;color:var(--im);text-decoration:none;font-weight:400}
+.nlinks a:hover{color:var(--teal)}
+.nlinks a.active{color:var(--teal);font-weight:500}
+.ncta{background:var(--teal);color:#fff;border-radius:100px;padding:.5rem 1.25rem;font-size:.875rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.ncta:hover{background:var(--tl)}
+@media(max-width:720px){.nlinks{gap:1.15rem} .nlinks a:not(.active){display:none}}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:3rem clamp(1.25rem,4vw,3.5rem) 2.5rem;font-size:.875rem;margin-top:5rem}
+footer .f-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+footer .f-name{font-family:var(--serif);color:#fff;font-size:1.25rem;margin-bottom:.4rem}
+footer .f-tag{color:rgba(255,255,255,.55);font-size:.8125rem}
+footer .f-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+footer .f-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.8125rem}
+footer .f-links a:hover{color:#fff}
+footer .disclaimer{max-width:720px;margin:2.5rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.65;text-align:center}
+.post-wrap{max-width:720px;margin:0 auto;padding:2.5rem clamp(1.25rem,4vw,2rem) 2rem}
+.post-back{display:inline-block;color:var(--il);font-size:.8125rem;text-decoration:none;margin-bottom:2rem}
+.post-back:hover{color:var(--teal)}
+.post-meta{display:flex;align-items:center;gap:.75rem;font-size:.75rem;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:1rem}
+.post-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--tm)}
+.post-meta .read-time{color:var(--il);font-weight:400}
+.post-title{font-size:clamp(1.75rem,4.5vw,2.375rem);line-height:1.2;margin-bottom:1.25rem;color:var(--ink)}
+.post-byline{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2.25rem;font-size:.875rem;color:var(--il)}
+.post-byline em{font-style:italic;font-size:.8125rem}
+.post-body{font-size:1.0625rem;color:var(--im);line-height:1.72}
+.post-body p{margin-bottom:1.35rem}
+.post-body h2{font-family:var(--serif);font-size:1.625rem;font-weight:600;color:var(--ink);margin-top:2.5rem;margin-bottom:1rem;line-height:1.3}
+.post-body h3{font-size:1.1875rem;font-weight:600;color:var(--ink);margin-top:1.75rem;margin-bottom:.65rem}
+.post-body a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+.post-body a:hover{color:var(--tl)}
+.post-body strong{color:var(--ink);font-weight:600}
+.post-cta{margin-top:3rem;background:var(--tp);border-radius:14px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.post-cta-text h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:.35rem}
+.post-cta-text p{font-size:.9375rem;color:var(--im);margin:0}
+.post-cta-btn{background:var(--teal);color:#fff;text-decoration:none;padding:.75rem 1.5rem;border-radius:100px;font-size:.9375rem;font-weight:500;white-space:nowrap}
+.post-cta-btn:hover{background:var(--tl)}
+.related-wrap{margin-top:3.5rem}
+.related-wrap h3{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:1.25rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.related-card{background:var(--w);border:1px solid var(--rule);border-radius:10px;padding:1.25rem;text-decoration:none;transition:all .2s ease}
+.related-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.rc-topic{font-size:.7rem;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.5rem}
+.rc-title{font-size:.9375rem;font-weight:600;color:var(--ink);line-height:1.35}
+.post-disclaimer{font-size:.8125rem;color:var(--il);line-height:1.65;font-style:italic;padding:1.5rem;background:var(--bg);border-radius:10px;margin-top:2rem}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">
+    <div class="nl-logo"><div class="nl-logo-inner"></div></div>
+    <span class="nl-name">Urivia</span>
+  </a>
+  <div class="nlinks">
+    <a href="/">Home</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/#how">How it works</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="/" class="ncta">Download free</a>
+</nav>
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+  <div class="post-meta">
+    <span>Founder</span><span class="dot"></span><span class="read-time">8 min read</span>
+  </div>
+  <h1 class="post-title serif">How Urivia's AI Reads Your Urine Color</h1>
+  <div class="post-byline">
+    <span>By the UriVia Health team</span>
+    <em>Last updated April 2026</em>
+  </div>
+  <div class="post-body">
+<p>Urivia uses your phone's camera to analyze a photo of your urine, compare the color to a library of reference shades, and translate what it sees into a hydration and wellness signal. The analysis happens on your phone. No photo is uploaded. What the AI is really doing is sophisticated color matching across the visible spectrum, paired with symptom context you provide. Here's what that actually looks like, and what it can't do.</p>
+<h2>The color science</h2>
+<p>Urine color comes from a pigment called urobilin, a byproduct of red blood cell breakdown. The more concentrated the urine, the more intense the color. This is why dehydration darkens urine: same amount of pigment, less water to dilute it.</p>
+<p>Different conditions and foods can also shift urine toward different parts of the color spectrum. Beets can push it toward pink. Rifampin can push it orange. B vitamins produce fluorescent yellow. Blood can turn it red or brown. Each of these shows up as a measurable shift in the color values a camera captures.</p>
+<p>Color itself is mathematically describable. In digital imaging, every pixel has red, green, and blue values, and that RGB information can be converted to other color spaces like HSV (hue, saturation, value) or LAB, which better match how human eyes perceive color. Medical color research, including dermatology, ophthalmology, and urinalysis, has used these color spaces for decades to distinguish meaningful shifts from background variation.</p>
+<p>Urivia's color library contains reference profiles for the major hydration spectrum shades: colorless, pale straw, yellow, dark yellow, amber, orange, plus outliers like bright neon yellow (from B vitamins), pink or red (blood, beets), and brown (severe dehydration, rhabdomyolysis, or liver issues). Each reference has HSV coordinates. Your scan gets compared against those coordinates to find the closest match, along with a confidence score.</p>
+<p>None of this is unique to Urivia. The underlying approach has been used in scientific imaging for decades. What's new is putting it in an app with calibration logic tuned for urine analysis on consumer phone cameras.</p>
+<h2>Lighting and calibration challenges</h2>
+<p>The biggest technical challenge with phone-based urine color analysis isn't reading the color. It's reading the color accurately across wildly different lighting conditions.</p>
+<p>Your bathroom lighting affects how your phone camera captures any color. Yellow-tinted incandescent bulbs shift everything warm. Cool white LEDs can shift things blue. Natural window light varies by time of day. Phone cameras also apply automatic white balance corrections that can exaggerate or mask real color differences.</p>
+<p>Urivia addresses this with a multi-step pipeline. The app asks you to photograph your urine in neutral light (daylight-balanced is best, either outdoors or under 5000K LED bulbs). It extracts pixel-level color across multiple sampling points and averages them to reduce noise. The resulting color gets matched to the reference library using HSV, which handles lighting variation better than raw RGB.</p>
+<p>The confidence matching function is what tells you whether the app is confident about the reading or not. A clearly dark yellow sample under good lighting gets a high-confidence match. A photo taken in a dim bathroom with yellow-tinted bulbs might still get a reading, but with lower confidence, and the app flags that. Low confidence doesn't mean the reading is wrong. It means it's worth redoing under better conditions if you can.</p>
+<p>A physical calibration card, sold separately, improves accuracy further by giving the camera a reference white, gray, and black in the same photo as the urine sample. This lets the algorithm correct for lighting and camera-specific biases. It's optional. The app works without it, just with slightly more variance.</p>
+<h2>What the AI actually does</h2>
+<p>The term "AI" gets used loosely in health apps. In Urivia, it refers to several distinct components doing different jobs.</p>
+<p><strong>Color analysis.</strong> This is mathematical, not AI in the deep-learning sense. It's algorithmic color matching using established color-space math. The result is a match between your scan and a reference color, with a confidence score.</p>
+<p><strong>Symptom-adjusted signals.</strong> After the color match, the app factors in symptoms you log (burning, back pain, fever, blood seen in urine, medications, recent exercise, etc.) to determine the signal category: normal, monitor, seek care, or urgent. This uses rule-based logic derived from clinical guidelines, not a neural network.</p>
+<p><strong>Weekly insights (Pro feature).</strong> This uses a large language model (Claude Haiku) to generate personalized summaries of your scan history. You'll see patterns over the week described in natural language rather than having to interpret raw data yourself. This is the one place where content is generated by an AI in the modern sense.</p>
+<p>None of these components are trying to diagnose disease. The color match tells you what the color is. The symptom logic tells you what the combination typically indicates. The weekly insight tells you what patterns look like over time. The interpretation of all of it, in any medical context, comes from a clinician looking at the same information.</p>
+<h2>What the AI cannot do</h2>
+<p>This is where honesty matters more than marketing, and where Urivia draws a hard line.</p>
+<p>Urivia cannot diagnose disease. It cannot detect specific conditions. It cannot tell you whether you have a UTI, kidney stones, diabetes, or kidney disease. It cannot replace a urinalysis at your doctor's office, a blood test, or an imaging study. The app tracks patterns in urine color and helps you notice when something is out of your normal range. It does not interpret those patterns medically.</p>
+<p>Urivia also cannot distinguish between all possible causes of a color change. A dark yellow urine sample could be dehydration, or it could be early morning first-void urine, or it could be medication, or it could be something else. The app flags what it sees; you and your doctor figure out what it means.</p>
+<p>The app cannot detect microscopic blood, protein, ketones, glucose, or other chemical markers that appear on a urinalysis dipstick. Those require actual urine test strips and chemistry, not a photo. A color reading tells you about what your eye can see. A dipstick tells you about what's in the urine at the molecular level. They're different tools for different jobs.</p>
+<p>Low-confidence readings, unusual lighting, and sample variation all introduce uncertainty. A single reading is never definitive of anything. Patterns over time tell a clearer story than any single scan.</p>
+<h2>Privacy and how your data is handled</h2>
+<p>Your scan photos stay on your device. They are not uploaded to our servers, shared with third parties, or stored anywhere outside your phone. Analysis happens locally.</p>
+<p>Your scan history (the color readings and timestamps) is stored in your phone's local storage and is accessible only to you and the Urivia app on your device. If you use the Pro weekly insights feature, anonymized pattern data (not photos, not personally identifying information) gets sent to our AI provider for summarization. You can opt out of this feature and still use all other app functions.</p>
+<p>We don't create accounts that link your data to an identity. There's no sign-up, no email required. Your data is yours, and if you delete the app, the data goes with it.</p>
+<p>This architecture is deliberate. Health data about your body is some of the most personal information you can generate, and we think it should stay with you by default. <a href="./urine-data-privacy.html">urine data privacy</a> covers this in more depth.</p>
+<h2>When to see a doctor</h2>
+<p>The app's purpose is to help you notice patterns, not to replace your doctor. Any persistent color change that doesn't resolve with normal hydration, any red or brown urine, any color change accompanied by symptoms like fever, back pain, burning with urination, or dizziness, or any concern you have about what you're seeing, warrants a conversation with a clinician.</p>
+<p>For people managing diabetes, chronic kidney disease, hypertension, or taking medications that affect kidney function, regular medical monitoring isn't optional, and no app replaces that. Apps like Urivia can supplement the information you bring to appointments; they don't substitute for the appointments themselves.</p>
+<p>If the app flags a reading as "seek care" or "urgent," take that seriously. The signal thresholds are calibrated toward caution, and while they're not diagnostic, they're worth acting on.</p>
+<h2>How to track this yourself</h2>
+<p>The best way to use Urivia, or any tracking app, is consistently and without expectation that any single reading tells you much. One scan is one data point. Ten scans over two weeks is a pattern. A hundred scans over three months is a trend.</p>
+<p>When you see a change from your normal pattern (an outlier scan, a string of readings trending darker, a new color you haven't seen before), that's when the data earns its keep. Bring patterns, not single scans, to your doctor. A trend is more useful than a snapshot.</p>
+<p>Apps like Urivia let you track these patterns in a way that's hard to do mentally. Most people can't remember what their urine looked like six weeks ago. An app can.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is Urivia a medical device?</h3>
+<p>No. Urivia is a wellness and tracking app, not an FDA-regulated medical device. It does not diagnose, detect, or treat any medical condition. It helps you notice patterns in urine color over time, which is information you can discuss with your doctor.</p>
+<h3>How accurate is the color matching?</h3>
+<p>Under good lighting conditions, color matching is highly reliable for distinguishing the major spectrum categories (pale, yellow, dark yellow, amber, etc.). Accuracy drops under poor lighting, with unusual bathroom fixtures, or for samples that fall between categories. Low-confidence readings are flagged.</p>
+<h3>Does the app need internet?</h3>
+<p>The core scan and analysis features work offline because processing happens on your phone. The weekly insights feature (Pro only) requires internet because it queries an AI model. Everything else works without a connection.</p>
+<h3>What if the app reads my color wrong?</h3>
+<p>Retry in better light. First-morning urine under bathroom fluorescent bulbs is the worst-case scenario for accuracy. Daylight or neutral white LED bulbs give much cleaner results. If repeated scans under good lighting still seem off, check the dev panel for the detailed confidence scores.</p>
+<h3>Can I see the raw color values from my scans?</h3>
+<p>Yes, through the hidden dev panel (tap the version footer on the settings screen five times). This exports a ring buffer of your last 30 scans with their raw color data, confidence scores, and matching details. Useful for debugging or for users who want to verify the analysis.</p>
+<h3>What happens if I take a blurry or bad photo?</h3>
+<p>The app's quality detection flags low-quality photos before analysis, asking you to retake. If a photo passes the quality check but produces an unusual color reading, the confidence score will typically reflect that, and the app errs toward suggesting a retake.</p>
+<p>---</p>
+<p>Urivia's AI is deliberately less dramatic than the term "AI" suggests. It's color matching, symptom logic, and occasional natural-language summarization, done carefully with privacy in mind. The app helps you see patterns; it doesn't pretend to see diseases. That honesty matters, and it's the reason I built the app the way I did.</p>
+  </div>
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Private. Fast. Built for this.</p>
+    </div>
+    <a href="/" class="post-cta-btn">Try Urivia free</a>
+  </div>
+  <div class="related-wrap">
+    <h3>Related reading</h3>
+    <div class="related-grid">
+    <a href="./why-i-built-urivia.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">Why I Built Urivia</div>
+    </a>
+    <a href="./what-urivia-measures.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">What Urivia Measures</div>
+    </a>
+    <a href="./science-behind-color-hydration.html" class="related-card">
+      <div class="rc-topic">Founder</div>
+      <div class="rc-title">The Science Behind Color-Based Hydration</div>
+    </a>
+    </div>
+  </div>
+  <p class="post-disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+</article>
+<footer>
+  <div class="f-inner">
+    <div>
+      <div class="f-name">Urivia</div>
+      <div class="f-tag">A CGM for your pee.</div>
+    </div>
+    <div class="f-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+  <p class="disclaimer">Urivia is a general wellness app. It does not diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional for medical concerns.</p>
+</footer>
+</body>
+</html>

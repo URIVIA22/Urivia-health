@@ -11,34 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "@id": "https://uriviahealth.com/blog/hydration-kidney-health",
-  "url": "https://uriviahealth.com/blog/hydration-kidney-health",
-  "name": "Hydration and Kidney Health: How Much Does Your Urine Really Tell You?",
-  "headline": "Hydration and Kidney Health: How Much Does Your Urine Really Tell You?",
-  "description": "Drink more water is not the whole hydration story — especially if you have kidney risk. Here's how your urine color gives you honest feedback.",
-  "inLanguage": "en",
-  "author": {
-    "@type": "Person",
-    "name": "Ben Spanier",
-    "jobTitle": "Founder",
-    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
-  },
-  "datePublished": "2026-05-04",
-  "dateModified": "2026-05-04",
-  "lastReviewed": "2026-05-04",
-  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
-  "specialty": { "@type": "MedicalSpecialty", "name": "PrimaryCare" },
-  "publisher": {
-    "@type": "Organization",
-    "name": "UriVia Health",
-    "url": "https://uriviahealth.com"
-  }
-}
-</script>
 <style>
 :root {
   --ink: #0f1419;
@@ -436,7 +408,6 @@ body::before {
 <article class="post-wrap">
   <a href="./index.html" class="post-back">← Back to the journal</a>
 
-
   <div class="post-meta">
     <span>Hydration</span><span class="dot"></span><span class="read-time">5 min read</span>
   </div>
@@ -473,7 +444,7 @@ body::before {
 <h2 class="serif">Why GLP-1 medications change the equation</h2>
 <p>If you're on Ozempic, Wegovy, Mounjaro, or Zepbound, your hydration math is different. GLP-1 medications suppress appetite — including thirst. Many users report they've stopped noticing when they need water.</p>
 <p>Combined with smaller meals (which means less food-water intake), this creates a hydration debt most people don't feel. Urine color often darkens progressively during the first weeks on a GLP-1 even as users feel fine.</p>
-<p>UriVia Health users reporting GLP-1 medications in their onboarding, [X]% logged at least one amber reading in week 2 of their prescription — compared to [Y]% in the general user base."]`</p>
+<p><code>[INFORMATION GAIN — once UriVia Health has real data: "Across the first [N] UriVia Health users reporting GLP-1 medications in their onboarding, [X]% logged at least one amber reading in week 2 of their prescription — compared to [Y]% in the general user base."]</code></p>
 <p>For GLP-1 users, urine color replaces thirst as the reliable daily signal.</p>
 <h2 class="serif">How hydration shows up in urine</h2>
 <p>The hydration-to-color relationship is straightforward:</p>
@@ -530,6 +501,53 @@ body::before {
 </ul>
 <hr>
 <p><strong>UriVia Health is a consumer wellness app and is not a medical device. Fluid intake recommendations should be personalized with your healthcare provider, especially if you have kidney or heart conditions.</strong></p>
+<h2 class="serif">SCHEMA</h2>
+<p>``<code>json { "@context": "https://schema.org", "@type": "MedicalWebPage", "@id": "https://uriviahealth.com/blog/hydration-kidney-health", "url": "https://uriviahealth.com/blog/hydration-kidney-health", "name": "Hydration and Kidney Health: How Much Does Your Urine Really Tell You?", "headline": "Hydration and Kidney Health: How Much Does Your Urine Really Tell You?", "description": "Drink more water is not the whole hydration story — especially if you have kidney risk. Here's how your urine color gives you honest feedback.", "inLanguage": "en", "author": { "@type": "Person", "name": "Ben Spanier", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "UriVia Health" } }, "datePublished": "2026-05-04", "dateModified": "2026-05-04", "lastReviewed": "2026-05-04", "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" }, "specialty": { "@type": "MedicalSpecialty", "name": "PrimaryCare" }, "publisher": { "@type": "Organization", "name": "UriVia Health", "url": "https://uriviahealth.com" } } </code>``</p>
+<h2 class="serif">EDITOR NOTES</h2>
+<ul>
+<li>This blog naturally bridges to your GLP-1 cluster with the thirst-suppression angle — good cross-cluster content</li>
+<li>The "8 glasses a day" debunk is factually correct but some readers may push back; verify the 1945 NRC citation before publishing</li>
+<li>Internal link to "What GLP-1 Medications Do to Your Urine Color" will be fulfilled by batch 4</li>
+</ul>
+<hr>
+<hr>
+<p><strong>4 blogs polished. Total words: ~5,200.</strong></p>
+<p>Each blog now has:</p>
+<ul>
+<li><strong>UriVia Health</strong> brand used consistently (first-mention and major mentions use full name; later informal mentions use UriVia)</li>
+<li><strong>Byline:</strong> "By Ben Spanier, founder of UriVia Health" — no reviewer line</li>
+<li><strong>Direct 60-word answer opener</strong> (AI Overview-extractable)</li>
+<li>Proper meta title / description / slug</li>
+<li><strong>MedicalWebPage schema</strong> (JSON-LD) ready to paste into <code><head></code></li>
+<li><strong>Internal links in final HTML syntax</strong> — <code><a href="/blog/..."></code> ready to paste into your CMS</li>
+<li>Information Gain placeholders flagged where real UriVia Health data will go</li>
+<li>Soft UriVia Health CTA paragraph</li>
+<li>Medical disclaimer boilerplate</li>
+<li>Editor notes flagging anything that needs your attention</li>
+</ul>
+<p><strong>Cannibalization handling:</strong></p>
+<ul>
+<li>Blog 3 reframed to focus on <em>dipstick parameters</em> (the "what each test means" angle)</li>
+<li>Blog 9 will be reframed in batch 3 to focus on <em>workflow</em> (when to use home vs clinic)</li>
+</ul>
+<p><strong>URL slugs locked in for cross-blog linking:</strong></p>
+<ul>
+<li><code>/blog/urine-color-chart</code></li>
+<li><code>/blog/diabetes-kidney-health-tracking</code></li>
+<li><code>/blog/home-urine-tests-dipsticks</code></li>
+<li><code>/blog/hydration-kidney-health</code></li>
+<li><code>/blog/preparing-diabetes-kidney-appointment</code> <em>(blog 5 — batch 2)</em></li>
+<li><code>/blog/early-signs-kidney-trouble</code> <em>(blog 6 — batch 2)</em></li>
+<li><code>/blog/apps-for-kidney-bladder-tracking</code> <em>(blog 7 — batch 2)</em></li>
+<li><code>/blog/urine-diary-guide</code> <em>(blog 8 — batch 3)</em></li>
+<li><code>/blog/home-vs-clinic-kidney-checks</code> <em>(blog 9 — batch 3)</em></li>
+<li><code>/blog/ai-urine-tracking</code> <em>(blog 10 — batch 3)</em></li>
+<li><code>/blog/glp1-urine-color</code> <em>(new — batch 4 cornerstone)</em></li>
+<li><code>/blog/dehydration-on-ozempic</code> <em>(new — batch 4)</em></li>
+<li><code>/blog/ketones-on-glp1</code> <em>(new — batch 4)</em></li>
+</ul>
+<p><strong>Next batch (Batch 2) covers:</strong> Blogs 5-7 (Appointment prep, Early kidney signs, Apps comparison)</p>
+<p>Ready when you are. Tell me if anything in batch 1 needs adjusting before I move on.</p>
   </div>
 
   <div class="post-cta">

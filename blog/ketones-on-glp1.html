@@ -11,35 +11,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "@id": "https://uriviahealth.com/blog/ketones-on-glp1",
-  "url": "https://uriviahealth.com/blog/ketones-on-glp1",
-  "name": "Ketones in Urine on a GLP-1: What It Means (and What to Do)",
-  "headline": "Ketones in Urine on a GLP-1: What It Means (and What to Do)",
-  "description": "Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.",
-  "inLanguage": "en",
-  "author": {
-    "@type": "Person",
-    "name": "Ben Spanier",
-    "jobTitle": "Founder",
-    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
-  },
-  "datePublished": "2026-05-26",
-  "dateModified": "2026-05-26",
-  "lastReviewed": "2026-05-26",
-  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
-  "specialty": { "@type": "MedicalSpecialty", "name": "Endocrinology" },
-  "mainEntity": { "@type": "MedicalCondition", "name": "Ketoacidosis" },
-  "publisher": {
-    "@type": "Organization",
-    "name": "UriVia Health",
-    "url": "https://uriviahealth.com"
-  }
-}
-</script>
 <style>
 :root {
   --ink: #0f1419;
@@ -437,7 +408,6 @@ body::before {
 <article class="post-wrap">
   <a href="./index.html" class="post-back">← Back to the journal</a>
 
-
   <div class="post-meta">
     <span>GLP-1</span><span class="dot"></span><span class="read-time">5 min read</span>
   </div>
@@ -505,7 +475,7 @@ body::before {
 </ul>
 <p>For GLP-1 users without diabetes: trace and small readings without symptoms are usually fine. Moderate readings warrant a call. Large readings warrant a same-day call.</p>
 <p>For GLP-1 users with diabetes: any positive ketones above trace should be correlated with your glucose reading. Small ketones plus normal glucose = probably fine. Moderate or large ketones plus any elevated glucose = call your doctor immediately.</p>
-<p>% showed at least one trace/small ketone reading over their first 30 days of use — with [Y]% of those readings resolving spontaneously by the next morning's test."]`</p>
+<p><code>[INFORMATION GAIN — once UriVia Health has real data: "Across UriVia Health users who logged dipstick data while on GLP-1 medications, [X]% showed at least one trace/small ketone reading over their first 30 days of use — with [Y]% of those readings resolving spontaneously by the next morning's test."]</code></p>
 <h2 class="serif">What to do when you see ketones</h2>
 <p>The practical protocol:</p>
 <p><strong>Trace or small ketones, no symptoms, no diabetes:</strong> Hydrate. Eat a balanced meal including some carbs. Re-check in 12-24 hours. Usually resolves.</p>
@@ -531,6 +501,66 @@ body::before {
 </ul>
 <hr>
 <p><strong>UriVia Health is a consumer wellness app and is not a medical device. Ketone interpretation depends on your full medical context including diabetes status, medications, and symptoms. Always consult your prescribing physician for questions about your GLP-1 medication, diabetes management, or positive ketone readings.</strong></p>
+<h2 class="serif">SCHEMA</h2>
+<p>``<code>json { "@context": "https://schema.org", "@type": "MedicalWebPage", "@id": "https://uriviahealth.com/blog/ketones-on-glp1", "url": "https://uriviahealth.com/blog/ketones-on-glp1", "name": "Ketones in Urine on a GLP-1: What It Means (and What to Do)", "headline": "Ketones in Urine on a GLP-1: What It Means (and What to Do)", "description": "Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.", "inLanguage": "en", "author": { "@type": "Person", "name": "Ben Spanier", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "UriVia Health" } }, "datePublished": "2026-05-26", "dateModified": "2026-05-26", "lastReviewed": "2026-05-26", "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" }, "specialty": { "@type": "MedicalSpecialty", "name": "Endocrinology" }, "mainEntity": { "@type": "MedicalCondition", "name": "Ketoacidosis" }, "publisher": { "@type": "Organization", "name": "UriVia Health", "url": "https://uriviahealth.com" } } </code>``</p>
+<h2 class="serif">EDITOR NOTES</h2>
+<ul>
+<li><strong>This is a medically sensitive blog.</strong> Strong recommendation to have a medical reviewer (endocrinologist preferably) verify before publishing.</li>
+<li>The euglycemic DKA section is especially important and is genuinely under-discussed in consumer health content. Don't cut it.</li>
+<li>The ketone dipstick scale numbers (5/15/40/80-160 mg/dL) are from standard Bayer/Siemens strip protocols — verify with the specific brand your medical reviewer recommends.</li>
+<li>This blog ranks for high-intent medical queries. Good faith expertise required — if you're unsure about any claim, mark it <code>[VERIFY WITH REVIEWER]</code> rather than publish uncertain.</li>
+<li>Consider a simple decision flowchart graphic (trace/small → moderate → large → emergency) for AI Overview extraction.</li>
+</ul>
+<hr>
+<hr>
+<p><strong>3 GLP-1 blogs polished. Total words: ~3,850.</strong></p>
+<p>Each blog follows the same standards as batches 1-3:</p>
+<ul>
+<li>UriVia Health brand consistency</li>
+<li>Ben Spanier byline only</li>
+<li>Direct 60-word answer opener (AI Overview-extractable)</li>
+<li>Meta title / description / slug locked in</li>
+<li>MedicalWebPage JSON-LD schema</li>
+<li>Internal links in final <code><a href></code> HTML syntax</li>
+<li>Information Gain placeholders flagged</li>
+<li>UriVia Health CTA paragraph</li>
+<li>Medical disclaimer (strengthened for medically sensitive content)</li>
+<li>Editor notes</li>
+</ul>
+<h2 class="serif">Full blog pack now complete: 13 of 13</h2>
+<p>| # | Title | Slug | Cluster | Type | Words | |---|---|---|---|---|---| | 1 | Urine Color Chart — A Complete Guide | <code>/blog/urine-color-chart</code> | D | Cornerstone | 1,420 | | 2 | Diabetes and Kidney Health Tracking | <code>/blog/diabetes-kidney-health-tracking</code> | B | Cornerstone | 1,380 | | 3 | Home Urine Tests — Dipsticks | <code>/blog/home-urine-tests-dipsticks</code> | D/C | Supporting | 1,210 | | 4 | Hydration and Kidney Health | <code>/blog/hydration-kidney-health</code> | D | Supporting | 1,180 | | 5 | Preparing for Diabetes or Kidney Appointment | <code>/blog/preparing-diabetes-kidney-appointment</code> | B/C | Supporting | 1,310 | | 6 | Early Signs of Kidney Trouble | <code>/blog/early-signs-kidney-trouble</code> | C | Cornerstone | 1,390 | | 7 | Apps for Kidney and Bladder Tracking | <code>/blog/apps-for-kidney-bladder-tracking</code> | C | Supporting | 1,180 | | 8 | Urine Diary Guide | <code>/blog/urine-diary-guide</code> | D | Supporting | 1,250 | | 9 | Home vs Clinic Kidney Checks | <code>/blog/home-vs-clinic-kidney-checks</code> | C | Supporting | 1,180 | | 10 | AI Urine Tracking | <code>/blog/ai-urine-tracking</code> | C | Supporting | 1,220 | | 11 | <strong>What GLP-1s Do to Your Urine Color</strong> | <code>/blog/glp1-urine-color</code> | <strong>A</strong> | <strong>Cornerstone</strong> | 1,430 | | 12 | Dehydration on Ozempic | <code>/blog/dehydration-on-ozempic</code> | A | Supporting | 1,220 | | 13 | Ketones on GLP-1 | <code>/blog/ketones-on-glp1</code> | A | Supporting | 1,200 |</p>
+<p><strong>Total words across all 13 blogs: ~16,570</strong> <strong>Target cluster coverage:</strong></p>
+<ul>
+<li><strong>Cluster A (GLP-1):</strong> 3 blogs — wedge audience content, your hybrid plan ad destination</li>
+<li><strong>Cluster B (Diabetes):</strong> 2 blogs (1, 2, 5 touch the cluster)</li>
+<li><strong>Cluster C (Kidney):</strong> 5 blogs</li>
+<li><strong>Cluster D (General hydration):</strong> 3 blogs</li>
+</ul>
+<p><strong>4 cornerstones, 9 supporting articles.</strong> Good ratio — one cornerstone for each cluster, plus strong supporting content around each.</p>
+<h2 class="serif">Cross-linking verified</h2>
+<p>Every blog links to at least 2-3 other blogs in the pack using final <code><a href></code> HTML. No broken links — all slugs match the master list. When you build the /blog section, internal linking is live from day one.</p>
+<h2 class="serif">Next steps</h2>
+<p><strong>1. Review the full pack across all 4 batches.</strong> If anything needs voice tweaks, topic adjustments, or factual corrections, flag specific blogs and I'll revise.</p>
+<p><strong>2. Consider retaining a medical reviewer</strong> — especially for blogs 6 (kidney signs), 11 (GLP-1), 12 (dehydration), and 13 (ketones/DKA). These touch medically sensitive content where review adds real credibility and reduces risk. Options: an endocrinologist or nephrologist on a retainer, a medical writer with clinical background, or a licensed nurse practitioner. Rough budget: $200-400 per blog, one-time.</p>
+<p><strong>3. Build the /blog section on uriviahealth.com.</strong> This is next session's work. I'll build:</p>
+<ul>
+<li>Blog landing page at <code>/blog</code> (card grid with search/filter by cluster)</li>
+<li>Blog post template at <code>/blog/[slug]</code> matching your site's warm amber/bone aesthetic</li>
+<li>Schema injected in <code><head></code> of each post</li>
+<li>Breadcrumbs for SEO</li>
+<li>Related posts section auto-pulling from the same cluster</li>
+<li>Email signup CTA in the post footer</li>
+</ul>
+<p><strong>4. Start publishing on your hybrid plan schedule.</strong> 3 blogs per week, starting April 27. The order I'd recommend:</p>
+<ul>
+<li>Week 1 (Apr 27): Blog 1 (color chart), Blog 2 (diabetes/kidney), Blog 11 (GLP-1 urine color cornerstone)</li>
+<li>Week 2 (May 4): Blog 4 (hydration), Blog 6 (kidney signs), Blog 12 (dehydration on Ozempic)</li>
+<li>Week 3 (May 11): Blog 10 (AI), Blog 13 (ketones), Blog 5 (appointment prep)</li>
+<li>Week 4 (May 18): Blog 3 (dipsticks), Blog 9 (home vs clinic), Blog 7 (apps)</li>
+<li>Week 5 (May 25): Blog 8 (urine diary)</li>
+</ul>
+<p>That's the full pack. 13 blogs polished and ready to ship.</p>
+<p><strong>Say "build the blog section" when you're ready for step 3.</strong></p>
   </div>
 
   <div class="post-cta">

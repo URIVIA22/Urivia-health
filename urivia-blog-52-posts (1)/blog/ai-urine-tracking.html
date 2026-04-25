@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Can Help You Understand Urine Test Patterns (And What It Shouldn't Do) — UriVia Health</title>
+<meta name="description" content="AI is good at spotting patterns in scattered health data. It's bad at diagnosing. Here's what AI urine tracking can and can't do — and how to use it wisely.">
+<meta property="og:title" content="How AI Can Help You Understand Urine Test Patterns (And What It Shouldn't Do)">
+<meta property="og:description" content="AI is good at spotting patterns in scattered health data. It's bad at diagnosing. Here's what AI urine tracking can and can't do — and how to use it wisely.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://uriviahealth.com/blog/ai-urine-tracking",
+  "url": "https://uriviahealth.com/blog/ai-urine-tracking",
+  "name": "How AI Can Help You Understand Urine Test Patterns (And What It Shouldn't Do)",
+  "headline": "How AI Can Help You Understand Urine Test Patterns (And What It Shouldn't Do)",
+  "description": "AI is good at spotting patterns in scattered health data. It's bad at diagnosing. Here's what AI urine tracking can and can't do — and how to use it wisely.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Ben Spanier",
+    "jobTitle": "Founder",
+    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
+  },
+  "datePublished": "2026-05-18",
+  "dateModified": "2026-05-18",
+  "lastReviewed": "2026-05-18",
+  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+  "specialty": { "@type": "MedicalSpecialty", "name": "PrimaryCare" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UriVia Health",
+    "url": "https://uriviahealth.com"
+  }
+}
+</script>
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+
+  <div class="post-meta">
+    <span>Kidney</span><span class="dot"></span><span class="read-time">5 min read</span>
+  </div>
+  <h1 class="post-title serif">How AI Can Help You Understand Urine Test Patterns (And What It Shouldn't Do)</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>AI is genuinely useful for three things in urine health tracking: spotting patterns across weeks of scattered data, explaining what you're seeing in plain language, and surfacing observations worth mentioning to your doctor. It is not useful — and should not be trusted — for diagnosing diseases, interpreting single readings with clinical authority, or replacing labs. The responsible role for AI in home health is as a translator and organizer, not a clinician. This guide walks through where AI genuinely helps, where it shouldn't be trusted, and how to tell the difference.</p>
+<p>In 2026, every health app claims to use AI. Most are using it as a marketing label. The honest question isn't "is this app AI-powered?" It's "what specifically is the AI doing, and should I trust it with that?"</p>
+<h2 class="serif">What AI is actually good at in health tracking</h2>
+<p>Large language models and pattern-recognition systems are genuinely strong at specific tasks:</p>
+<p><strong>Pattern surfacing across scattered data.</strong> If you've logged 45 urine scans over 6 weeks, AI can quickly tell you that amber readings cluster on Mondays and Thursdays — which you'd probably miss scrolling through a list.</p>
+<p><strong>Plain-English explanation.</strong> Dipstick findings combined with symptoms produce interpretations that are confusing in isolation. AI can translate "positive nitrites, positive leukocytes, with burning" into "this pattern is consistent with a UTI — worth a same-day call to your doctor."</p>
+<p><strong>Contextual recall.</strong> If you told the AI in onboarding that you're on Ozempic, it can factor that into explanations about reduced thirst and darker urine without you re-explaining every time.</p>
+<p><strong>Combination rule application.</strong> Single readings are often meaningless. Two positive dipstick results plus a specific symptom is often significant. AI is good at catching those combinations that a single-reading view misses.</p>
+<p>These are the four tasks worth using AI for. They're also the tasks you'd otherwise have to do yourself, manually, by reviewing your own data — which most people don't do.</p>
+<h2 class="serif">What AI should not pretend to do</h2>
+<p>Equally important: what AI should not do, even when it seems capable.</p>
+<p><strong>AI should not diagnose conditions.</strong> Even when it has enough context to make a reasonable guess, diagnosing kidney disease, UTIs, or diabetes from urine data is outside its role. It should always frame findings as "consistent with" or "worth discussing" rather than "you have."</p>
+<p><strong>AI should not replace labs.</strong> A negative AI assessment is not a substitute for an eGFR or albumin-to-creatinine test. The most sophisticated AI in the world cannot see your kidney function the way a blood creatinine test can.</p>
+<p><strong>AI should not make treatment recommendations.</strong> Suggesting medications, dosages, or treatment plans is clinical practice. AI tools that step into that role are dangerous, regardless of how confidently they phrase it.</p>
+<p><strong>AI should not be overconfident.</strong> Good medical AI hedges appropriately. If you're using a tool that speaks with absolute certainty about ambiguous findings, that's a red flag — not a feature.</p>
+<h2 class="serif">The best role for AI in urine and kidney tracking</h2>
+<p>Think of AI as a translator and organizer. Its job isn't to tell you what's wrong. Its job is to turn scattered observations into something clear enough that you and your doctor can decide what to do about it.</p>
+<p>The useful AI outputs look like:</p>
+<ul>
+<li>"You've had 3 amber readings in the last 7 days, clustered on days following lower hydration scores."</li>
+<li>"This pattern — nitrites + leukocytes + burning — is commonly associated with UTI. Worth calling your doctor today."</li>
+<li>"Your urine has trended darker over the past 10 days. If this continues, it's worth mentioning at your next appointment."</li>
+</ul>
+<p>The unhelpful (and dangerous) AI outputs look like:</p>
+<ul>
+<li>"You have a UTI." (Too strong — AI can't diagnose)</li>
+<li>"No cause for concern." (False reassurance — AI can't clear you of kidney disease)</li>
+<li>"Increase your dose." (Treatment advice — not AI's job)</li>
+</ul>
+<p>The line between useful and dangerous isn't always obvious. If the AI is telling you what to do medically, it's crossed the line.</p>
+<h2 class="serif">Why this matters for patients</h2>
+<p>Most people aren't medical professionals and don't want to become them. They just want help answering: is today's reading something to worry about, or is it normal?</p>
+<p>Without AI, you're left staring at raw entries trying to interpret them yourself. That produces either false alarms (panic over normal variation) or false reassurance (dismissing real patterns). Neither helps.</p>
+<p>With <em>responsible</em> AI, home tracking becomes useful — not because the AI makes decisions for you, but because it surfaces the information you'd otherwise miss and explains it in language you can act on. You still make the decisions. The AI just makes sure you have the information to make them well.</p>
+<h2 class="serif">The guardrails that matter</h2>
+<p>If you're evaluating an AI-powered health tool, these are the guardrails worth looking for:</p>
+<p><strong>Clear limits.</strong> The app should tell you when something is outside its role. If it never says "you should talk to your doctor about this," it's either lying about its capability or willing to overreach.</p>
+<p><strong>Calibrated confidence.</strong> The AI should use hedging language ("consistent with," "worth checking") rather than absolutes ("you have," "this is").</p>
+<p><strong>No treatment recommendations.</strong> It should never tell you to start, stop, or adjust medications.</p>
+<p><strong>Context-aware routing.</strong> Serious symptoms should trigger "call your doctor now" or "seek urgent care" language, not extended AI chat.</p>
+<p><strong>Privacy by design.</strong> Health data is sensitive. Look for apps that process locally where possible and disclose data handling clearly.</p>
+<p>If any of these are missing, be skeptical.</p>
+<h2 class="serif">How UriVia Health uses AI</h2>
+<p>In UriVia Health Pro, AI operates specifically as a translator and organizer, not a clinician. Built on Claude (Anthropic's large language model) with explicit clinical guardrails:</p>
+<ul>
+<li>Every response is informed by the user's onboarding condition (T1, T2, CKD, hypertension, prediabetes, or general wellness)</li>
+<li>The user's last scan result is injected into every conversation, so the AI has context</li>
+<li>The AI is instructed never to diagnose, never to recommend medications, and to route serious symptoms to a doctor</li>
+<li>Six quick-prompt questions surface common concerns without requiring users to phrase their own queries</li>
+</ul>
+<p>The value isn't "AI diagnoses my kidneys." It's "AI helps me make sense of what I've been seeing and decide whether it's worth mentioning at my next appointment."</p>
+<p>questions per month. Of those, [Y]% result in the AI recommending the user mention something to their doctor — not diagnose anything themselves."]`</p>
+<h2 class="serif">When to ignore the AI and seek care anyway</h2>
+<p>Even the best AI-supported tracker is not the right tool in a crisis. These situations call for human care immediately:</p>
+<ul>
+<li>Visible blood in urine</li>
+<li>Severe pain, especially with fever</li>
+<li>Very low urine output for 12+ hours</li>
+<li>Sudden swelling or shortness of breath</li>
+<li>Chest pain</li>
+<li>Confusion or severe weakness</li>
+</ul>
+<p>In those moments, don't open the app. Call your doctor or go to urgent care. AI can help with patterns. Emergency symptoms need human judgment.</p>
+<h2 class="serif">Final thoughts</h2>
+<p>AI has a real place in urine and kidney tracking — but it's narrower and more practical than the marketing suggests. The responsible role is translator and organizer, not clinician. The tools that follow that rule are genuinely useful. The tools that don't are risks dressed up as features.</p>
+<p>Used well, AI makes chronic health tracking less overwhelming and more actionable. Used badly, it replaces clinical judgment with algorithmic confidence — which is exactly the outcome responsible health AI is supposed to avoid.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="./urine-color-chart.html">Urine Color Chart — A Complete Guide</a></li>
+<li><a href="./home-vs-clinic-kidney-checks.html">Home Kidney Checks vs Clinic Tests</a></li>
+<li><a href="./apps-for-kidney-bladder-tracking.html">Apps for Kidney and Bladder Tracking</a></li>
+</ul>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. The AI health advisor does not diagnose conditions or recommend treatments. All medical decisions should be made with a qualified healthcare provider.</strong></p>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./early-signs-kidney-trouble.html" class="related-card">
+      <div class="rc-topic">Kidney</div>
+      <div class="rc-title">Early Signs of Kidney Trouble: Symptoms, Urine Changes, and When to Act</div>
+    </a>
+    <a href="./apps-for-kidney-bladder-tracking.html" class="related-card">
+      <div class="rc-topic">Kidney</div>
+      <div class="rc-title">Apps for Kidney and Bladder Tracking: What to Look For</div>
+    </a>
+    <a href="./home-vs-clinic-kidney-checks.html" class="related-card">
+      <div class="rc-topic">Kidney</div>
+      <div class="rc-title">Home Kidney Checks and Clinic Tests: How to Use Both (A Working System)</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

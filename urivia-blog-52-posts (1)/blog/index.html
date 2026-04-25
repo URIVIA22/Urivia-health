@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — UriVia Health</title>
+<meta name="description" content="Plain-English writing on urine health, GLP-1 medications, kidney health, diabetes, and hydration. 32 articles from UriVia Health.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #0f1419; --ink-soft: #1e2530; --bone: #f5f1e8; --bone-warm: #ebe4d2; --paper: #faf7ef; --amber: #c8761f; --amber-deep: #a85c14; --amber-soft: #e8b87a; --sage: #6b7a5a; --rule: rgba(15, 20, 25, 0.12); --rule-strong: rgba(15, 20, 25, 0.25); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Instrument Sans', -apple-system, sans-serif; background: var(--paper); color: var(--ink); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"); opacity: 0.035; pointer-events: none; z-index: 100; mix-blend-mode: multiply; }
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 247, 239, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--rule); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep)); box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-link { font-size: 14px; color: var(--ink); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; letter-spacing: -0.005em; }
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta { display: inline-flex; align-items: center; padding: 10px 20px; background: var(--ink); color: var(--paper); border-radius: 100px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.25s; letter-spacing: -0.005em; }
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.footer { background: var(--ink); color: rgba(245, 241, 232, 0.7); padding: 48px 32px; border-top: 1px solid var(--rule); position: relative; z-index: 2; }
+.footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; font-size: 13px; }
+.footer-disclaimer { max-width: 520px; line-height: 1.6; opacity: 0.7; }
+@media (max-width: 768px) { .nav-inner { padding: 16px 20px; } .nav-links { gap: 16px; } .nav-link { font-size: 13px; } .footer-inner { flex-direction: column; } }
+
+.blog-hero { max-width: 1100px; margin: 0 auto; padding: 88px 32px 56px; text-align: left; position: relative; }
+.blog-eyebrow { display: inline-block; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber-deep); margin-bottom: 20px; font-weight: 500; }
+.blog-hero-title { font-size: clamp(44px, 6vw, 76px); font-weight: 400; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 24px; color: var(--ink); }
+.blog-hero-title em { font-style: italic; color: var(--amber-deep); font-weight: 300; }
+.blog-hero-sub { font-size: 19px; max-width: 640px; line-height: 1.55; color: var(--ink-soft); opacity: 0.85; }
+.blog-count { display: inline-block; margin-top: 24px; font-size: 13px; color: var(--ink-soft); opacity: 0.6; letter-spacing: 0.02em; font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.filter-bar { max-width: 1100px; margin: 0 auto; padding: 0 32px 40px; display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid var(--rule); }
+.filter-chip { font-size: 13px; padding: 8px 16px; border-radius: 100px; border: 1px solid var(--rule-strong); background: transparent; color: var(--ink); cursor: pointer; font-family: inherit; letter-spacing: -0.005em; transition: all 0.2s; }
+.filter-chip:hover { border-color: var(--amber); color: var(--amber-deep); }
+.filter-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.blog-grid-wrap { max-width: 1100px; margin: 0 auto; padding: 56px 32px 120px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px 32px; }
+.blog-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; padding: 40px; background: var(--bone); border-radius: 4px; border: 1px solid var(--rule); align-items: center; }
+.blog-card.featured .card-visual { aspect-ratio: 4/3; }
+.blog-card.featured .card-title { font-size: 36px; line-height: 1.08; }
+.blog-card.featured .card-excerpt { font-size: 17px; -webkit-line-clamp: 4; }
+.blog-card { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+.blog-card:hover { transform: translateY(-4px); }
+.card-visual { aspect-ratio: 5/3; border-radius: 3px; margin-bottom: 20px; position: relative; overflow: hidden; border: 1px solid var(--rule); }
+.card-visual svg { display: block; width: 100%; height: 100%; }
+.card-meta { display: flex; gap: 14px; align-items: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-deep); margin-bottom: 12px; font-weight: 500; }
+.card-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--amber); opacity: 0.6; }
+.card-meta .read-time { color: var(--ink-soft); opacity: 0.55; letter-spacing: 0.1em; }
+.card-title { font-family: 'Fraunces', serif; font-size: 24px; line-height: 1.15; font-weight: 400; letter-spacing: -0.022em; margin-bottom: 12px; color: var(--ink); }
+.card-excerpt { font-size: 15px; line-height: 1.55; color: var(--ink-soft); opacity: 0.78; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card-arrow { margin-top: 16px; font-size: 13px; color: var(--amber-deep); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; letter-spacing: -0.005em; }
+.card-arrow::after { content: '→'; transition: transform 0.25s; }
+.blog-card:hover .card-arrow::after { transform: translateX(3px); }
+.blog-card.hidden { display: none; }
+@media (max-width: 780px) { .blog-hero { padding: 64px 20px 40px; } .filter-bar { padding: 0 20px 28px; } .blog-grid-wrap { padding: 40px 20px 80px; } .blog-grid { grid-template-columns: 1fr; gap: 40px; } .blog-card.featured { grid-template-columns: 1fr; padding: 24px; gap: 24px; } .blog-card.featured .card-title { font-size: 28px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <div class="blog-eyebrow">The UriVia Journal</div>
+  <h1 class="blog-hero-title serif">Plain-English writing on <em>what your body is telling you.</em></h1>
+  <p class="blog-hero-sub">
+    GLP-1 medications, kidney health, diabetes, and hydration. Written for people who want a clear signal between appointments — not hype, not a WebMD rabbit hole.
+  </p>
+  <div class="blog-count">32 articles</div>
+</section>
+
+<div class="filter-bar">
+    <button class="filter-chip active" data-filter="all">All posts</button>
+    <button class="filter-chip" data-filter="Founder">Founder</button>
+    <button class="filter-chip" data-filter="GLP-1">GLP-1</button>
+    <button class="filter-chip" data-filter="Kidney">Kidney</button>
+    <button class="filter-chip" data-filter="Diabetes">Diabetes</button>
+    <button class="filter-chip" data-filter="Hydration">Hydration</button>
+</div>
+
+<section class="blog-grid-wrap">
+  <div class="blog-grid">
+    <a href="./why-i-built-urivia.html" class="blog-card featured" data-topic="Founder">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g transform="translate(200,120)">
+<circle r="60" fill="none" stroke="#c8761f" stroke-width="1.5" opacity="0.5"/>
+<circle r="38" fill="#c8761f"/>
+<text y="8" text-anchor="middle" font-family="Fraunces" font-size="40" fill="#faf7ef" font-weight="300" font-style="italic">B</text>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">A letter from the founder</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Founder</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Why I Built Urivia</h2>
+        <p class="card-excerpt">The founder's story behind UriVia: why a morning of bubbles in the toilet, twenty minutes of Google, and zero real answers led to building a calmer, more private way to track urine color.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ozempic-urine-color.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Why Your Pee Changes Color on Ozempic</h2>
+        <p class="card-excerpt">Just noticed your urine looks different since starting Ozempic? Most color changes are dehydration from GLP-1 side effects. Here's what's normal, what isn't, and when to call your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ozempic-dehydration.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Dehydration on Ozempic: Why It Happens and What to Do</h2>
+        <p class="card-excerpt">Dehydration is one of the most common side effects of Ozempic, caused by blunted thirst and GI symptoms. Here's how to spot it, how much water you need, and when it becomes serious.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./dark-urine-mounjaro.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Dark Urine on Mounjaro: Causes and What to Do</h2>
+        <p class="card-excerpt">Dark urine on Mounjaro is usually a sign of dehydration from GI side effects. Here's why tirzepatide affects hydration differently than semaglutide, what colors matter, and when to call your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./wegovy-water-intake.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">How Much Water Do You Need on Wegovy?</h2>
+        <p class="card-excerpt">A realistic Wegovy water target is about half your body weight in ounces per day, adjusted for exercise, heat, and GI side effects. Here's the full formula and how to tell if you're hitting it.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ozempic-kidney-side-effects.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Ozempic Kidney Side Effects: What the Research Actually Shows</h2>
+        <p class="card-excerpt">Does Ozempic hurt or help kidneys? The honest answer: long-term data suggests kidney protection in type 2 diabetes, but severe dehydration can cause acute injury. Here's both sides, clearly.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./glp-1-concentrated-urine.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">GLP-1 Medications and Concentrated Urine: What It Means</h2>
+        <p class="card-excerpt">Concentrated urine on GLP-1 medications usually reflects dehydration from blunted thirst and reduced food intake. Here's the mechanism, the color scale, and how to reverse it.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./is-my-pee-supposed-to-look-like-this-on-ozempic.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Is My Pee Supposed to Look Like This on Ozempic?</h2>
+        <p class="card-excerpt">If your pee looks different on Ozempic and you're worried, take a breath. Most color changes are dehydration and resolve with water. Here's what's normal, what isn't, and when to call your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./electrolytes-on-glp-1.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Electrolytes on GLP-1 Medications: What You Need and Why</h2>
+        <p class="card-excerpt">If plain water isn't cutting it on Ozempic or Wegovy, electrolytes are often the missing piece. Here are the four that matter, how to replenish without sugar, and how to track your own needs.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./glp-1-uti-risk.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">GLP-1 Medications and UTI Risk: What the Evidence Shows</h2>
+        <p class="card-excerpt">There's no established research showing GLP-1 medications directly cause UTIs, but concentrated urine from dehydration can raise infection risk. Here's the real picture and what you can do.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ozempic-nausea-hydration.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Managing Ozempic Nausea Without Getting Dehydrated</h2>
+        <p class="card-excerpt">When Ozempic nausea makes drinking water feel impossible, small sips of cold, low-acid fluids every 20–30 minutes work. Here's what stays down, what doesn't, and when to call your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./mounjaro-hydration-guide.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Your First 4 Weeks on Mounjaro: A Hydration Guide</h2>
+        <p class="card-excerpt">Mounjaro hydration matters most in your first four weeks, when GI side effects peak. Here's what to expect each week and how to hydrate through titration without falling behind.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./yellow-urine-wegovy.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">Is Yellow Urine Bad on Wegovy?</h2>
+        <p class="card-excerpt">Yellow urine on Wegovy is almost always normal. Pale to medium yellow means your hydration is fine. Here's the full yellow spectrum, when it means dehydration, and when to call your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./glp-1-kidney-labs.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">GLP-1 and Kidney Labs: How to Read Your Results</h2>
+        <p class="card-excerpt">Kidney labs can shift on GLP-1 medications, often because of dehydration rather than damage. Here's which numbers matter, how Ozempic and Wegovy affect them, and what to ask your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./hydration-tracking-glp-1.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">Hydration Tracking for GLP-1 Users: Why Ounces Aren't Enough</h2>
+        <p class="card-excerpt">Regular water trackers count ounces in, but GLP-1 users need a three-signal approach. Here's why intake, output color, and symptoms together tell a more accurate hydration story.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./glp-1-side-effect-guide.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">10 min read</span>
+        </div>
+        <h2 class="card-title">The Complete GLP-1 Side Effect Guide: What to Expect and When to Worry</h2>
+        <p class="card-excerpt">A complete, honest guide to GLP-1 side effects for Ozempic, Wegovy, and Mounjaro users. What to expect in the first month, which symptoms resolve, which warrant attention, and what to track.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./dehydration-on-ozempic.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Dehydration on Ozempic: The Silent Signs Most People Miss</h2>
+        <p class="card-excerpt">Ozempic mutes thirst — so most dehydration on GLP-1s is silent. Here are the non-thirst signals that tell you to drink more water.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ketones-on-glp1.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Ketones in Urine on a GLP-1: What It Means (and What to Do)</h2>
+        <p class="card-excerpt">Seeing ketones on a urine strip while on Ozempic or Mounjaro? Here's when it's normal, when it's worth a call, and when it's an emergency.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./glp1-urine-color.html" class="blog-card" data-topic="GLP-1">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(80,40)">
+<rect x="0" y="0" width="240" height="40" rx="20" fill="#f5f1e8" stroke="#0f1419" stroke-opacity="0.15"/>
+<rect x="2" y="2" width="60" height="36" rx="18" fill="#f2e9c8"/>
+<rect x="64" y="2" width="56" height="36" rx="4" fill="#e8d090"/>
+<rect x="122" y="2" width="56" height="36" rx="4" fill="#d8a94a"/>
+<rect x="180" y="2" width="58" height="36" rx="18" fill="#c8761f"/>
+</g>
+<g transform="translate(80,120)" font-family="Instrument Sans" font-size="11" fill="#0f1419">
+<text>Ozempic · Wegovy · Mounjaro · Zepbound</text>
+<text y="25" font-size="9" opacity="0.55" letter-spacing="1" style="text-transform:uppercase">How colour shifts as dose escalates</text>
+</g>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>GLP-1</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">What GLP-1 Medications Do to Your Urine Color</h2>
+        <p class="card-excerpt">GLP-1 meds change hydration more than anyone warns you about. Here's what happens to your urine color — and when darker readings actually matter.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./early-signs-kidney-problems.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Early Signs of Kidney Problems Most People Miss</h2>
+        <p class="card-excerpt">Kidney disease is often silent until late stages. These are the early signs worth noticing — foamy urine, subtle swelling, fatigue, and changes in urination — and when to ask for labs.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ckd-stages-plain-english.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">9 min read</span>
+        </div>
+        <h2 class="card-title">CKD Stages Explained in Plain English</h2>
+        <p class="card-excerpt">The five stages of chronic kidney disease explained without jargon. What eGFR numbers mean, what each stage feels like, what treatment looks like, and questions to ask your doctor.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./urine-color-kidney-health.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">7 min read</span>
+        </div>
+        <h2 class="card-title">What Your Urine Color Says About Your Kidneys</h2>
+        <p class="card-excerpt">Urine color reflects hydration more than kidney function, but some colors and patterns do point to kidney issues. Here's how to tell the difference and when color warrants a doctor visit.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./early-signs-kidney-trouble.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">Early Signs of Kidney Trouble: Symptoms, Urine Changes, and When to Act</h2>
+        <p class="card-excerpt">Kidney problems develop quietly. These are the specific urine and body-wide symptoms worth watching — and the ones that need a same-day call.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./apps-for-kidney-bladder-tracking.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Apps for Kidney and Bladder Tracking: What to Look For</h2>
+        <p class="card-excerpt">Most health apps skip urine entirely. Here's how to evaluate kidney and bladder tracking tools — and what features actually matter.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./home-vs-clinic-kidney-checks.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Home Kidney Checks and Clinic Tests: How to Use Both</h2>
+        <p class="card-excerpt">Home urine tests don't replace lab work — but used right, they make clinic visits dramatically more useful. Here's the workflow that actually works.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./ai-urine-tracking.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#faf7ef"/>
+<g transform="translate(200,120)">
+<circle r="80" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+<circle r="50" fill="none" stroke="#c8761f" stroke-width="1" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M 0 -45 C 22 -15, 38 8, 38 22 C 38 43, 21 55, 0 55 C -21 55, -38 43, -38 22 C -38 8, -22 -15, 0 -45 Z" fill="#c8761f" opacity="0.85"/>
+</g>
+<text x="200" y="220" text-anchor="middle" font-family="Fraunces" font-size="13" font-style="italic" fill="#0f1419" opacity="0.55">180 litres filtered daily</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">How AI Can Help You Understand Urine Test Patterns</h2>
+        <p class="card-excerpt">AI is good at spotting patterns in scattered health data. It's bad at diagnosing. Here's what AI urine tracking can and can't do — and how to use it wisely.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./diabetes-kidney-health-tracking.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g stroke="#0f1419" stroke-width="1.2" fill="none" opacity="0.35">
+<path d="M 40 180 Q 100 60, 160 120 T 280 100 T 360 140"/>
+<path d="M 40 200 Q 100 150, 160 170 T 280 150 T 360 180" stroke="#c8761f" opacity="0.7"/>
+</g>
+<g fill="#c8761f">
+<circle cx="40" cy="180" r="4"/><circle cx="100" cy="100" r="4"/>
+<circle cx="160" cy="120" r="4"/><circle cx="220" cy="95" r="4"/>
+<circle cx="280" cy="100" r="4"/><circle cx="340" cy="125" r="4"/>
+</g>
+<rect x="30" y="40" width="3" height="170" fill="#0f1419" opacity="0.2"/>
+<rect x="30" y="207" width="340" height="3" fill="#0f1419" opacity="0.2"/>
+<text x="200" y="40" text-anchor="middle" font-family="Instrument Sans" font-size="10" letter-spacing="2" fill="#a85c14">A1C · eGFR · ACR</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">Diabetes and Kidney Health: What to Track Between Lab Visits</h2>
+        <p class="card-excerpt">If you have diabetes, your kidneys work overtime. Here's what you can track at home between visits — and what only labs can answer.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./preparing-diabetes-kidney-appointment.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g stroke="#0f1419" stroke-width="1.2" fill="none" opacity="0.35">
+<path d="M 40 180 Q 100 60, 160 120 T 280 100 T 360 140"/>
+<path d="M 40 200 Q 100 150, 160 170 T 280 150 T 360 180" stroke="#c8761f" opacity="0.7"/>
+</g>
+<g fill="#c8761f">
+<circle cx="40" cy="180" r="4"/><circle cx="100" cy="100" r="4"/>
+<circle cx="160" cy="120" r="4"/><circle cx="220" cy="95" r="4"/>
+<circle cx="280" cy="100" r="4"/><circle cx="340" cy="125" r="4"/>
+</g>
+<rect x="30" y="40" width="3" height="170" fill="#0f1419" opacity="0.2"/>
+<rect x="30" y="207" width="340" height="3" fill="#0f1419" opacity="0.2"/>
+<text x="200" y="40" text-anchor="middle" font-family="Instrument Sans" font-size="10" letter-spacing="2" fill="#a85c14">A1C · eGFR · ACR</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">How to Prepare for a Kidney or Diabetes Appointment</h2>
+        <p class="card-excerpt">Your doctor has 7 minutes. Here's exactly what to bring, how to present it, and the questions that make the visit worth the wait.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./urine-color-chart.html" class="blog-card" data-topic="Hydration">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g transform="translate(40,50)">
+<rect x="0" y="0" width="40" height="140" rx="4" fill="#f5f1e8"/>
+<rect x="50" y="0" width="40" height="140" rx="4" fill="#f2e9c8"/>
+<rect x="100" y="0" width="40" height="140" rx="4" fill="#e8d090"/>
+<rect x="150" y="0" width="40" height="140" rx="4" fill="#d8a94a"/>
+<rect x="200" y="0" width="40" height="140" rx="4" fill="#c8761f"/>
+<rect x="250" y="0" width="40" height="140" rx="4" fill="#a85c14"/>
+<rect x="300" y="0" width="40" height="140" rx="4" fill="#7d3810"/>
+</g>
+<text x="200" y="215" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#0f1419" opacity="0.55">Seven shades, seven signals</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Hydration</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</h2>
+        <p class="card-excerpt">Your urine color is a daily signal most people ignore. Here's what each shade means, when it's normal, and when it's worth a doctor visit.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./hydration-kidney-health.html" class="blog-card" data-topic="Hydration">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g transform="translate(40,50)">
+<rect x="0" y="0" width="40" height="140" rx="4" fill="#f5f1e8"/>
+<rect x="50" y="0" width="40" height="140" rx="4" fill="#f2e9c8"/>
+<rect x="100" y="0" width="40" height="140" rx="4" fill="#e8d090"/>
+<rect x="150" y="0" width="40" height="140" rx="4" fill="#d8a94a"/>
+<rect x="200" y="0" width="40" height="140" rx="4" fill="#c8761f"/>
+<rect x="250" y="0" width="40" height="140" rx="4" fill="#a85c14"/>
+<rect x="300" y="0" width="40" height="140" rx="4" fill="#7d3810"/>
+</g>
+<text x="200" y="215" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#0f1419" opacity="0.55">Seven shades, seven signals</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Hydration</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Hydration and Kidney Health: How Much Does Your Urine Really Tell You?</h2>
+        <p class="card-excerpt">"Drink more water" is not the whole hydration story — especially if you have kidney risk. Here's how your urine color gives you honest feedback.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./home-urine-tests-dipsticks.html" class="blog-card" data-topic="Hydration">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g transform="translate(40,50)">
+<rect x="0" y="0" width="40" height="140" rx="4" fill="#f5f1e8"/>
+<rect x="50" y="0" width="40" height="140" rx="4" fill="#f2e9c8"/>
+<rect x="100" y="0" width="40" height="140" rx="4" fill="#e8d090"/>
+<rect x="150" y="0" width="40" height="140" rx="4" fill="#d8a94a"/>
+<rect x="200" y="0" width="40" height="140" rx="4" fill="#c8761f"/>
+<rect x="250" y="0" width="40" height="140" rx="4" fill="#a85c14"/>
+<rect x="300" y="0" width="40" height="140" rx="4" fill="#7d3810"/>
+</g>
+<text x="200" y="215" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#0f1419" opacity="0.55">Seven shades, seven signals</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Hydration</span><span class="dot"></span><span class="read-time">5 min read</span>
+        </div>
+        <h2 class="card-title">Home Urine Tests: What Dipsticks Actually Tell You</h2>
+        <p class="card-excerpt">Home urine dipsticks detect 10 different markers. Here's what each one means, what they miss, and when to trust the result.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./urine-diary-guide.html" class="blog-card" data-topic="Hydration">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#ebe4d2"/>
+<g transform="translate(40,50)">
+<rect x="0" y="0" width="40" height="140" rx="4" fill="#f5f1e8"/>
+<rect x="50" y="0" width="40" height="140" rx="4" fill="#f2e9c8"/>
+<rect x="100" y="0" width="40" height="140" rx="4" fill="#e8d090"/>
+<rect x="150" y="0" width="40" height="140" rx="4" fill="#d8a94a"/>
+<rect x="200" y="0" width="40" height="140" rx="4" fill="#c8761f"/>
+<rect x="250" y="0" width="40" height="140" rx="4" fill="#a85c14"/>
+<rect x="300" y="0" width="40" height="140" rx="4" fill="#7d3810"/>
+</g>
+<text x="200" y="215" text-anchor="middle" font-family="Fraunces" font-size="14" font-style="italic" fill="#0f1419" opacity="0.55">Seven shades, seven signals</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Hydration</span><span class="dot"></span><span class="read-time">6 min read</span>
+        </div>
+        <h2 class="card-title">How to Keep a Urine Diary Without Losing Your Mind</h2>
+        <p class="card-excerpt">Most people quit urine diaries by day 3. Here's a sustainable 2-week system that actually reveals useful patterns without taking over your life.</p>
+        <span class="card-arrow">Read more</span>
+      </div>
+    </a>
+    <a href="./foamy-urine-when-to-worry.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Foamy Urine: When to Worry and When It's Nothing</h2>
+        <p class="card-excerpt">Most foamy urine is completely normal and caused by a strong stream or how the water hits the toilet. Here's when foam does matter, what protein in urine looks like, and when to call a doctor.</p>
+      </div>
+    </a>
+    <a href="./daily-kidney-health-checklist.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">The Daily Kidney Health Checklist (A Realistic Routine)</h2>
+        <p class="card-excerpt">A practical, stage-agnostic daily routine for kidney health: morning checks, daytime habits, evening recap, and weekly patterns. Built for people who want a routine, not a burden.</p>
+      </div>
+    </a>
+    <a href="./hydration-ckd-evidence.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Hydration and CKD: What the Evidence Actually Shows</h2>
+        <p class="card-excerpt">Hydration advice for CKD patients is more nuanced than "drink 8 glasses a day." Here's what nephrology research shows, stage-specific guidance, and when fluid restriction is appropriate.</p>
+      </div>
+    </a>
+    <a href="./reading-kidney-labs.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Reading Your Kidney Labs: eGFR, Creatinine, BUN, and ACR Explained</h2>
+        <p class="card-excerpt">Your kidney lab report has four numbers that matter: eGFR, creatinine, BUN, and ACR. Here's what each one measures, normal ranges, and how to interpret trends over time.</p>
+      </div>
+    </a>
+    <a href="./kidney-friendly-diet-urine.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">How a Kidney-Friendly Diet Shows Up in Your Urine</h2>
+        <p class="card-excerpt">Dietary changes for kidney health affect urine color, volume, and composition within days. Here's how sodium, potassium, and phosphorus shifts show up, and what to actually track.</p>
+      </div>
+    </a>
+    <a href="./dialysis-prep-tracking.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Preparing for Dialysis: What to Track at Home in the Months Before</h2>
+        <p class="card-excerpt">The months before dialysis start are when home tracking matters most. Here's what to record, how to build a baseline your care team can use, and what to expect across the transition.</p>
+      </div>
+    </a>
+    <a href="./ckd-stage-3-monitoring.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">CKD Stage 3 Self-Monitoring: A Specific Playbook</h2>
+        <p class="card-excerpt">Stage 3 CKD is the most common stage at diagnosis and where home monitoring pays off most. Here's exactly what to track daily, weekly, and quarterly — plus the warning signs to watch.</p>
+      </div>
+    </a>
+    <a href="./questions-for-nephrologist.html" class="blog-card" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Questions to Ask Your Nephrologist: A Checklist You Can Bring</h2>
+        <p class="card-excerpt">Your nephrology appointment is short. This is a specific checklist of 15 questions to bring — about your numbers, progression, lifestyle, medications, and home tracking.</p>
+      </div>
+    </a>
+    <a href="./home-ckd-monitoring-guide.html" class="blog-card featured" data-topic="Kidney">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#EAF4EF"/>
+<g transform="translate(200,120)">
+<path d="M -42 -55 C -72 -52, -88 -28, -88 5 C -88 38, -68 60, -38 60 C -12 60, 0 45, -4 25 C -8 8, -18 -8, -18 -28 C -18 -45, -28 -57, -42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+<path d="M 42 -55 C 72 -52, 88 -28, 88 5 C 88 38, 68 60, 38 60 C 12 60, 0 45, 4 25 C 8 8, 18 -8, 18 -28 C 18 -45, 28 -57, 42 -55 Z" fill="#0D7A5F" opacity="0.85"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#0D7A5F" letter-spacing="2" style="text-transform:uppercase">Kidney tracking</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Kidney</span><span class="dot"></span><span class="read-time">17 min read</span>
+        </div>
+        <h2 class="card-title">The Complete Home CKD Monitoring Guide: What to Track, How, and When to Act</h2>
+        <p class="card-excerpt">A complete, stage-by-stage home monitoring reference for chronic kidney disease. What to track daily, how to use the right tools, how to work with your care team, and when home data should trigger a call.</p>
+      </div>
+    </a>
+    <a href="./type-2-diabetes-kidney-function.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Type 2 Diabetes and Kidney Function: What Happens Over 10+ Years</h2>
+        <p class="card-excerpt">Type 2 diabetes is the leading cause of chronic kidney disease, but the progression is often preventable. Here's what happens to kidneys over time, the early warning signs, and what actually protects them.</p>
+      </div>
+    </a>
+    <a href="./blood-sugar-urine-color.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Blood Sugar and Urine Color: How They're Connected</h2>
+        <p class="card-excerpt">High blood sugar can change urine color through glucose excretion, dehydration, and ketone production. Here's what each change looks like, what it means, and when it's an emergency.</p>
+      </div>
+    </a>
+    <a href="./t1d-urine-monitoring.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">T1D Urine Monitoring Beyond Glucose: What Else to Watch</h2>
+        <p class="card-excerpt">Your CGM handles glucose. What else matters for type 1 diabetics? Ketones, hydration, kidney signals, and the tracking that protects you over decades.</p>
+      </div>
+    </a>
+    <a href="./diabetic-kidney-disease-signs.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Diabetic Kidney Disease: The Early Signs Most Doctors Don't Emphasize</h2>
+        <p class="card-excerpt">Most diabetic kidney disease is silent until it isn't. Here are the specific early signs that tend to get overlooked — and what to ask your doctor to catch them sooner.</p>
+      </div>
+    </a>
+    <a href="./a1c-kidney-labs-tracking.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">A1C and Kidney Labs: How to Track Them Together</h2>
+        <p class="card-excerpt">Your A1C reflects blood sugar averages. Your kidney labs reflect what that blood sugar has done to your filtering. Here's how to read them together and track the relationship over time.</p>
+      </div>
+    </a>
+    <a href="./ketones-in-urine-meaning.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Ketones in Urine: What It Means and When It's an Emergency</h2>
+        <p class="card-excerpt">Ketones in urine can mean anything from low-carb dieting to diabetic ketoacidosis. Here's how to tell the difference, when to test, and when to go to the ER.</p>
+      </div>
+    </a>
+    <a href="./insulin-hydration.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Insulin and Hydration: How Insulin Affects Fluid Balance</h2>
+        <p class="card-excerpt">Insulin does more than control blood sugar — it affects how your body holds and releases fluid. Here's how insulin shifts hydration status, what to track, and when it matters.</p>
+      </div>
+    </a>
+    <a href="./cgm-hydration.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">CGM Users: Why You Should Also Track Hydration</h2>
+        <p class="card-excerpt">Your CGM captures glucose data in real time. It misses the hydration story that shapes your glucose patterns. Here's why hydration matters for CGM users and how to track it simply.</p>
+      </div>
+    </a>
+    <a href="./diabetic-dehydration-symptoms.html" class="blog-card" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">8 min read</span>
+        </div>
+        <h2 class="card-title">Diabetic Dehydration: Symptoms, Causes, and How to Stay Ahead of It</h2>
+        <p class="card-excerpt">Diabetics dehydrate differently. Here's how high blood sugar pulls fluid out, what symptoms to watch for, and how to rehydrate effectively without spiking glucose.</p>
+      </div>
+    </a>
+    <a href="./diabetes-kidney-complete-guide.html" class="blog-card featured" data-topic="Diabetes">
+      <div class="card-visual"><svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="240" fill="#FFF8EB"/>
+<g transform="translate(80,60)">
+<rect x="0" y="50" width="40" height="50" rx="3" fill="#F5D88A"/>
+<rect x="50" y="30" width="40" height="70" rx="3" fill="#B87A08" opacity="0.7"/>
+<rect x="100" y="40" width="40" height="60" rx="3" fill="#B87A08"/>
+<rect x="150" y="20" width="40" height="80" rx="3" fill="#B87A08" opacity="0.85"/>
+<rect x="200" y="10" width="40" height="90" rx="3" fill="#B87A08"/>
+</g>
+<text x="200" y="210" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="11" fill="#B87A08" letter-spacing="2" style="text-transform:uppercase">Diabetes & kidneys</text>
+</svg></div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span>Diabetes</span><span class="dot"></span><span class="read-time">17 min read</span>
+        </div>
+        <h2 class="card-title">Diabetes and Kidney Disease: A Complete Patient Guide</h2>
+        <p class="card-excerpt">A complete reference for the diabetes-kidney connection. How diabetes damages kidneys, what to track, protective medications, every stage from early risk to late CKD, and how to work with your care team across decades.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const chips = document.querySelectorAll('.filter-chip');
+  const cards = document.querySelectorAll('.blog-card');
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const filter = chip.dataset.filter;
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.topic === filter) card.classList.remove('hidden');
+      else card.classList.add('hidden');
+    });
+  }));
+</script>
+
+</body>
+</html>

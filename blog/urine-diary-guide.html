@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System) — UriVia Health</title>
+<meta name="description" content="Most people quit urine diaries by day 3. Here's a sustainable 2-week system that actually reveals useful patterns without taking over your life.">
+<meta property="og:title" content="How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System)">
+<meta property="og:description" content="Most people quit urine diaries by day 3. Here's a sustainable 2-week system that actually reveals useful patterns without taking over your life.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://uriviahealth.com/blog/urine-diary-guide",
+  "url": "https://uriviahealth.com/blog/urine-diary-guide",
+  "name": "How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System)",
+  "headline": "How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System)",
+  "description": "Most people quit urine diaries by day 3. Here's a sustainable 2-week system that actually reveals useful patterns without taking over your life.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Ben Spanier",
+    "jobTitle": "Founder",
+    "worksFor": { "@type": "Organization", "name": "UriVia Health" }
+  },
+  "datePublished": "2026-05-13",
+  "dateModified": "2026-05-13",
+  "lastReviewed": "2026-05-13",
+  "medicalAudience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+  "specialty": { "@type": "MedicalSpecialty", "name": "PrimaryCare" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UriVia Health",
+    "url": "https://uriviahealth.com"
+  }
+}
+</script>
+<style>
+:root {
+  --ink: #0f1419;
+  --ink-soft: #1e2530;
+  --bone: #f5f1e8;
+  --bone-warm: #ebe4d2;
+  --paper: #faf7ef;
+  --amber: #c8761f;
+  --amber-deep: #a85c14;
+  --amber-soft: #e8b87a;
+  --sage: #6b7a5a;
+  --rule: rgba(15, 20, 25, 0.12);
+  --rule-strong: rgba(15, 20, 25, 0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 239, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--amber-soft), var(--amber) 60%, var(--amber-deep));
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.005em;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active { opacity: 1; color: var(--amber-deep); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  letter-spacing: -0.005em;
+}
+.nav-cta:hover { background: var(--amber-deep); transform: translateY(-1px); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, 0.7);
+  padding: 48px 32px;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 13px;
+}
+.footer-disclaimer {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 13px; }
+  .footer-inner { flex-direction: column; }
+}
+
+.post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
+}
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, color 0.2s;
+}
+.post-back:hover { opacity: 1; color: var(--amber-deep); }
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.post-meta .dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.6;
+}
+.post-meta .read-time {
+  color: var(--ink-soft);
+  opacity: 0.55;
+  letter-spacing: 0.1em;
+}
+.post-title {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.post-byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 16px 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-byline em { font-style: italic; opacity: 0.6; }
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+.post-body p { margin: 0 0 24px; }
+.post-body p strong { font-weight: 600; }
+.post-body h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  margin: 56px 0 20px;
+  color: var(--ink);
+}
+.post-body h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 44px 0 14px;
+  color: var(--ink);
+}
+.post-body h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.post-body ul, .post-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+.post-body li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+}
+.post-body ul li::marker { color: var(--amber); }
+.post-body ol li::marker { color: var(--amber-deep); font-weight: 600; }
+.post-body blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.post-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background: var(--bone-warm);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+.post-body a {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.post-body a:hover { color: var(--ink); }
+
+/* CTA box at end of post */
+.post-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.post-cta-text {
+  flex: 1;
+  min-width: 260px;
+}
+.post-cta h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  line-height: 1.55;
+}
+.post-cta .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.post-cta .app-badge:hover { background: var(--amber-deep); transform: translateY(-1px); }
+.post-cta .app-badge svg { width: 18px; height: 18px; }
+
+/* Related posts */
+.related-posts {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 96px;
+}
+.related-posts h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.related-card {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bone);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
+}
+.related-card .rc-topic {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 780px) {
+  .post-wrap { padding: 48px 20px 64px; }
+  .post-body { font-size: 17px; }
+  .post-body h2 { font-size: 26px; margin-top: 44px; }
+  .post-cta { padding: 28px; gap: 20px; }
+  .related-posts { padding: 0 20px 64px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"></span>
+      UriVia Health
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <a href="../index.html#download" class="nav-cta">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<article class="post-wrap">
+  <a href="./index.html" class="post-back">← Back to the journal</a>
+
+
+  <div class="post-meta">
+    <span>Hydration</span><span class="dot"></span><span class="read-time">6 min read</span>
+  </div>
+  <h1 class="post-title serif">How to Keep a Urine Diary Without Losing Your Mind (A Simple 2-Week System)</h1>
+  <div class="post-byline">
+    <span>By Ben Spanier, founder of UriVia Health</span>
+    <em>Last updated April 2026</em>
+  </div>
+
+  <div class="post-body">
+<p><strong>By Ben Spanier, founder of UriVia Health</strong> <em>Last updated April 2026</em></p>
+<p>The shortest useful urine diary is two weeks of once-daily entries covering color, any unusual observations (foam, cloudiness, blood), hydration notes, and relevant symptoms. Most people quit by day three because they try to log every bathroom visit — which is both unsustainable and unnecessary. The pattern you're looking for emerges from 14 clean morning entries, not from 50 chaotic ones. This guide walks through the 2-week system, what to track, what to ignore, and when the diary has done its job.</p>
+<p>A urine diary is a daily habit. For the appointment-side of things — what to bring, how to present it — see <a href="/blog/preparing-diabetes-kidney-appointment">How to Prepare for a Kidney or Diabetes Appointment</a>. This blog is about building the tracking habit itself.</p>
+<h2 class="serif">Why most people quit urine diaries</h2>
+<p>Most people don't quit from laziness. They quit from friction. Specifically:</p>
+<p><strong>Paper logs get lost or messy.</strong> Notebooks get left at the office. Loose notes pile up unreadable.</p>
+<p><strong>Notes apps become chaotic.</strong> Without structure, entries are impossible to review later.</p>
+<p><strong>Every-visit tracking is exhausting.</strong> If you think you need to log every trip to the bathroom, you'll burn out in 72 hours.</p>
+<p><strong>The data feels pointless.</strong> Without a framework, you're just writing down urine colors with no way to see patterns.</p>
+<p>The solution is the opposite of exhaustive. A simple daily check, structured the same way every time, captured in something you'll actually open tomorrow.</p>
+<h2 class="serif">What a urine diary is actually for</h2>
+<p>The real job of a urine diary is to answer specific questions your doctor might ask:</p>
+<ul>
+<li>"Has your urine been darker than usual for the past week?"</li>
+<li>"Have you been seeing foam that doesn't clear?"</li>
+<li>"Did symptoms appear at the same time as urine changes?"</li>
+<li>"Are there certain days or habits making things worse?"</li>
+</ul>
+<p>If your diary can answer those four questions, it's doing its job. Anything beyond that is over-engineering.</p>
+<h2 class="serif">The 2-week system</h2>
+<p>Here's the framework that actually works for most people:</p>
+<p><strong>Day 1-14: one entry per day, taken first thing in the morning.</strong></p>
+<p>First morning urine is the most concentrated — it tells you the most about hydration from the night before. Logging it consistently gives you a reliable baseline.</p>
+<p><strong>Entry fields (takes 30 seconds):</strong></p>
+<ol>
+<li><strong>Date</strong> — auto-populated if you use an app</li>
+<li><strong>Urine color</strong> — pick from a 7-color chart (clear / pale yellow / yellow / dark yellow / amber / orange / red-brown)</li>
+<li><strong>Anything unusual?</strong> — foam, cloudiness, blood, strong odor</li>
+<li><strong>Hydration yesterday</strong> — how did yesterday's fluid intake feel (low / normal / high)</li>
+<li><strong>Any symptoms?</strong> — headache, fatigue, pain, fever, swelling, burning</li>
+</ol>
+<p>That's it. Five fields. 30 seconds per day.</p>
+<p><strong>Optional second daily check: late afternoon.</strong></p>
+<p>If your doctor specifically wants a fuller picture — say, you're being worked up for overactive bladder or recurring UTIs — add a 4 PM entry with the same fields. But start with morning-only first. Two weeks of morning data is more useful than three days of five-times-a-day data.</p>
+<h2 class="serif">What to track and what to ignore</h2>
+<p>Track:</p>
+<ul>
+<li>Color (the headline signal)</li>
+<li>Obvious changes (foam, cloudiness, blood)</li>
+<li>Relevant symptoms tied to urinary or kidney health</li>
+</ul>
+<p>Ignore:</p>
+<ul>
+<li>Micro-variations in color (don't agonize between "yellow" and "slightly darker yellow")</li>
+<li>Every bathroom visit (one consistent daily check is plenty)</li>
+<li>Volume estimates unless your doctor specifically requested them</li>
+<li>Everything you ate that day (unless you spot a pattern you want to investigate)</li>
+</ul>
+<p>The more fields you try to track, the faster you'll quit. Less is genuinely more here.</p>
+<h2 class="serif">How long to keep it going</h2>
+<p>For most people, <strong>two weeks is the minimum and usually enough.</strong></p>
+<p>After 14 days, you can answer the four questions from above. You have a pattern or you don't. Either way, the diary has done its job.</p>
+<p>For specific recurring issues — repeat UTIs, ongoing CKD monitoring, GLP-1 hydration concerns — you might extend to 30 days or keep a lightweight ongoing log. But start with two weeks. Prove the habit sustainable before extending.</p>
+<p>scans over their first 14 days — enough to produce a meaningful color pattern. Only [Y]% log more than twice per day, and those users don't catch patterns faster than once-daily trackers."]`</p>
+<h2 class="serif">Making the habit stick</h2>
+<p>A few practical tricks that significantly increase completion rates:</p>
+<p><strong>Stack it onto an existing habit.</strong> Most people brush their teeth every morning. Logging happens between "use the bathroom" and "brush teeth." That's a built-in anchor.</p>
+<p><strong>Use notifications sparingly.</strong> One daily reminder is enough. Three daily reminders trains you to ignore the app.</p>
+<p><strong>Accept missed days.</strong> Missing Tuesday doesn't mean starting over. Resume Wednesday. Partial data is still useful.</p>
+<p><strong>Don't read too much into single entries.</strong> You're watching for 3+ consecutive days of a pattern, not reacting to Monday's reading.</p>
+<h2 class="serif">Paper vs app diaries</h2>
+<p>Paper works if you prefer it. A dedicated notebook in the bathroom, always in the same spot, reasonable structure. Works for some people.</p>
+<p>But apps have real advantages for this use case:</p>
+<ul>
+<li>Built-in color reference (so you're not describing in words)</li>
+<li>Automatic date and time stamping</li>
+<li>Pattern surfacing over time</li>
+<li>PDF export for appointments</li>
+<li>Structure that keeps you from forgetting a field</li>
+</ul>
+<p>The tradeoff is privacy. Paper lives on your shelf. Apps may or may not handle data responsibly. Look for apps that store data locally on your device rather than syncing to servers.</p>
+<h2 class="serif">Where UriVia Health fits in</h2>
+<p>UriVia Health is designed specifically for this use case. The 30-second morning scan handles the color logging automatically using your phone camera. The symptom toggles handle the "anything unusual" and "symptoms" fields in two taps. Everything stays on your device by default.</p>
+<p>For a 2-week starter diary, the free tier (10 lifetime scans) isn't enough — you'll need Pro for unlimited. Pro is $1.99/month on annual and adds the PDF export that makes the diary actually useful at your next appointment.</p>
+<h2 class="serif">When a urine diary isn't enough</h2>
+<p>Some situations warrant medical care, not more data:</p>
+<ul>
+<li>Visible blood in urine (any)</li>
+<li>Severe pain, especially with fever</li>
+<li>Very low urine output despite normal fluid intake</li>
+<li>Sudden swelling anywhere on the body</li>
+<li>Shortness of breath at rest</li>
+</ul>
+<p>Any of these means call your doctor, not "wait until I have more data."</p>
+<h2 class="serif">Final thoughts</h2>
+<p>A urine diary is genuinely useful for people managing diabetes, hypertension, CKD, recurring UTIs, or GLP-1 medication — but only if you keep it simple enough to sustain. The 2-week morning-only system produces almost all of the clinical value at a fraction of the effort. Start there. Extend only if your doctor specifically asks.</p>
+<p>The best diary is the one you actually complete. Pick the format you'll use tomorrow.</p>
+<h2 class="serif">Related reading</h2>
+<ul>
+<li><a href="/blog/preparing-diabetes-kidney-appointment">How to Prepare for a Kidney or Diabetes Appointment</a></li>
+<li><a href="/blog/urine-color-chart">Urine Color Chart — A Complete Guide</a></li>
+<li><a href="/blog/home-vs-clinic-kidney-checks">At-Home Kidney Checks vs Clinic Tests</a></li>
+</ul>
+<hr>
+<p><strong>UriVia Health is a consumer wellness app and is not a medical device. A urine diary does not diagnose any condition. Consult a qualified healthcare provider for medical concerns.</strong></p>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Track what this article is about — in 10 seconds a day.</h3>
+      <p>UriVia turns your phone camera into a daily urine check. Scan, log, share with your doctor. Free to start.</p>
+    </div>
+    <a href="https://apps.apple.com/app/urivia/id6761935339" class="app-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.97 2.43-4.39 2.54-4.46-1.38-2.02-3.54-2.3-4.31-2.33-1.83-.19-3.58 1.08-4.51 1.08-.94 0-2.37-1.05-3.9-1.02-2 .03-3.86 1.16-4.89 2.94-2.09 3.63-.53 8.99 1.5 11.93 1 1.44 2.18 3.05 3.73 2.99 1.5-.06 2.07-.97 3.88-.97 1.81 0 2.32.97 3.9.94 1.61-.03 2.63-1.46 3.62-2.91.94-1.37 1.34-2.76 1.35-2.83-.03-.01-2.81-1.08-2.85-4.27 0-.01.01-.02 0-.02Z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</article>
+
+<section class="related-posts">
+  <h3>Keep reading</h3>
+  <div class="related-grid">
+    <a href="./urine-color-chart.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Urine Color Chart: A Complete Guide (What Each Shade Means)</div>
+    </a>
+    <a href="./home-urine-tests-dipsticks.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Home Urine Tests: What Dipsticks Actually Tell You</div>
+    </a>
+    <a href="./hydration-kidney-health.html" class="related-card">
+      <div class="rc-topic">Hydration</div>
+      <div class="rc-title">Hydration and Kidney Health: How Much Does Your Urine Really Tell You?</div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 UriVia Health. All rights reserved.</div>
+    <div class="footer-disclaimer">
+      UriVia Health is a wellness app and does not provide medical advice, diagnosis, or treatment. Always consult your physician about your medication and any changes to your health routine.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
